@@ -25,7 +25,10 @@ router.post('/:id/:resId/', (req, res) => {
   const rating = req.params.rating;
   const comment = req.params.comment;
   reviews.addReview(guest, adventure, reservation, rating, comment)
-    .then((reviews) => {
-      res.json(reviews);
+    .then(() => {
+      res.send('SUCCESS');
+    })
+    .catch((err) => {
+      res.json(err.message);
     });
 });

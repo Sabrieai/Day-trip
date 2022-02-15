@@ -21,13 +21,27 @@ const getAdventuresForUser = (id) => {
   FROM adventures
   WHERE owner_id = $1;
   `, [id])
-  .then((response) => {
-    return response.rows;
-  })
-  .catch((err) => {
-    return err.message;
-  });
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
+
+const getAvailibilty = (id) => {
+  return pool.query(`SELECT adventure_availibilties.*
+  FROM adventure_availibilties
+  WHERE adventure_id = $1;
+  `, [id])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
 };
 
 
-module.exports = { getAdventureDetails, getAdventuresForUser };
+
+module.exports = { getAdventureDetails, getAvailibilty, getAdventuresForUser };

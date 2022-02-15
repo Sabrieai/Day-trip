@@ -15,9 +15,8 @@ const getFavourites = (id) => {
   });
 }
 
-const deleteAFavourite = () => {
-  const user = req.session.user_id
-  const adventure = req.params
+const deleteAFavourite = (user,adventure) => {
+
   return pool.query(`DELETE FROM favourites where user_id = $1 
   AND adventure_id = $2;`, [user, adventure])
   .then((response) => {

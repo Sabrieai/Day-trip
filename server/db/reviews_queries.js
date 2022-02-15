@@ -1,11 +1,11 @@
 const { pool } = require('./database');
 
 
-const getReviewForm = () => {
+const getReviewForm = (id) => {
   return pool.query(`SELECT thumbnail_photo_url, cover_photo_url, users.pic, users.first_name, users.last_name, adventures.id  FROM adventures
   JOIN users ON users.id = owner_id  
    WHERE adventures.id = $1;
-  `, [2])
+  `, [id])
     .then((response) => {
       return response.rows;
     })

@@ -1,12 +1,12 @@
 const { pool } = require('./database');
 
-const getFavourites = () => {
+const getFavourites = (id) => {
   return pool.query(`SELECT title, city, thumbnail_photo_url, accessible, adventure_id 
   FROM favourites 
   JOIN adventures 
   ON adventure_id = adventures.id
   WHERE guest_id = $1;
-  `, [1])
+  `, [id])
   .then((response) => {
     return response.rows;
   })

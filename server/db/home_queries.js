@@ -16,7 +16,7 @@ const placeholder = () => {
   )
     .then(data => {
       const x = Math.floor(Math.random() * data.rows[0].count);
-      return pool.query(`SELECT city FROM adventures where id = ${x};`)
+      return pool.query(`SELECT city FROM adventures where id = ${x};`, )
     })
     .then(data => { return data.rows[0] })
 }

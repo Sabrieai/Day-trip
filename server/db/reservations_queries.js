@@ -29,4 +29,17 @@ const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adven
     });
 };
 
-module.exports = { getReservations, addReservation };
+const updateAvailibilty = (adventure, day) => {
+  return pool.query(`
+  INSERT INTO adventure_availibilties (adventure_id, day, available)
+  VALUES($1, $2,$3)
+  `, [adventure,day,false])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
+
+module.exports = { getReservations, addReservation, updateAvailibilty };

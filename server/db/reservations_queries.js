@@ -1,26 +1,26 @@
 const { pool } = require('./database');
 
 
-const getReservations = (id) => {
+const getReservations = () => {
   // const guest = req.session.user_id
   return pool.query(`SELECT title, city, thumbnail_photo_url, reservations.date FROM adventures 
   JOIN reservations 
   ON adventures.id = adventure_id
   WHERE guest_id = $1
-  `, [id])
+  `, [20])
     .then((response) => {
       return response.rows;
     })
     .catch((err) => {
       return err.message;
     });
-};
+}
 
 const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adventureId) => {
   return pool.query(`
   INSERT INTO reservations(date, total_price, guest_id, payment_id, total_guests, adventure_id)
-  VALUES(date, totalPrice, guestId, paymentId, totalGuests, adventureId)
-  `, [])
+  VALUES($1, $2, $3, $4, $5, $6)
+  `, [date, totalPrice, guestId, paymentId, totalGuests, adventureId])
     .then((response) => {
       return response.rows;
     })
@@ -29,8 +29,4 @@ const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adven
     });
 }
 
-
 module.exports = { getReservations, addReservation }
-
-
-

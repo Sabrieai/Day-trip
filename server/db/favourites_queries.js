@@ -7,24 +7,24 @@ const getFavourites = (id) => {
   ON adventure_id = adventures.id
   WHERE guest_id = $1;
   `, [id])
-  .then((response) => {
-    return response.rows;
-  })
-  .catch((err) => {
-    return err.message;
-  });
-}
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
 
-const deleteAFavourite = (user,adventure) => {
+const deleteAFavourite = (user, adventure) => {
 
   return pool.query(`DELETE FROM favourites where user_id = $1 
   AND adventure_id = $2;`, [user, adventure])
-  .then((response) => {
-    return response.rows;
-  })
-  .catch((err) => {
-    return err.message;
-  });
-}
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
 
-module.exports = { getFavourites, deleteAFavourite }
+module.exports = { getFavourites, deleteAFavourite };

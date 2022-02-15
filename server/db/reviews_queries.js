@@ -1,20 +1,20 @@
 const { pool } = require('./database');
 
 
-const getReviewForm= () => {
+const getReviewForm = (id) => {
   return pool.query(`SELECT thumbnail_photo_url, cover_photo_url, users.pic, users.first_name, users.last_name, adventures.id  FROM adventures
   JOIN users ON users.id = owner_id  
    WHERE adventures.id = $1;
-  `, [2])
+  `, [id])
     .then((response) => {
       return response.rows;
     })
     .catch((err) => {
-      return err.message
+      return err.message;
     });
-}
+};
 
-const getMyAdventureReviews= () => {
+const getMyAdventureReviews = (id) => {
   return pool.query(`SELECT * 
   FROM
   (SELECT adventure_reviews.*
@@ -26,40 +26,40 @@ const getMyAdventureReviews= () => {
   WHERE users.id = $1) sub
   JOIN users as u 
   ON u.id = sub.guest_id 
-  ;`, [7])
+  ;`, [id])
     .then((response) => {
       return response.rows;
     })
     .catch((err) => {
-      return err.message
+      return err.message;
     });
-}
+};
 
-const addReview = () => {
+const addReview = (guest, adventure, reservation, rating, comment) => {
   return pool.query(`INSERT INTO adventure_reviews (guest_id, adventure_id, reservation_id, rating, comment)
   VALUES ($1, $2, $3, $4, $5);
-  `, [])
+  `, [guest, adventure, reservation, rating, comment])
     .then((response) => {
       return response.rows;
     })
     .catch((err) => {
-      return err.message
+      return err.message;
     });
-}
+};
 
-const getMyReviews = () => {
+const getMyReviews = (id) => {
   return pool.query(`SELECT users.pic, first_name, last_name, rating, comment 
   FROM users
   JOIN adventure_reviews on users.id = guest_id
   WHERE users.id = $1;
-  `, [5])
-  .then((response) => {
-    return response.rows;
-  })
-  .catch((err) => {
-    return err.message
-  });
-}
+  `, [id])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
 
 
 

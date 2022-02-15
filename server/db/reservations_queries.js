@@ -16,6 +16,17 @@ const getReservations = () => {
     });
 }
 
+const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adventureId) => {
+  return pool.query(`
+  INSERT INTO reservations(date, total_price, guest_id, payment_id, total_guests, adventure_id)
+  VALUES(date, totalPrice, guestId, paymentId, totalGuests, adventureId)
+  `, [])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message
+    });
+}
 
-
-module.exports = { getReservations }
+module.exports = { getReservations, addReservation }

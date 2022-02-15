@@ -1,20 +1,20 @@
 const { pool } = require('./database');
 
 
-const getReservations = () => {
+const getReservations = (id) => {
   // const guest = req.session.user_id
   return pool.query(`SELECT title, city, thumbnail_photo_url, reservations.date FROM adventures 
   JOIN reservations 
   ON adventures.id = adventure_id
   WHERE guest_id = $1
-  `, [20])
+  `, [id])
     .then((response) => {
       return response.rows;
     })
     .catch((err) => {
       return err.message;
     });
-}
+};
 
 const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adventureId) => {
   return pool.query(`
@@ -29,4 +29,8 @@ const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adven
     });
 }
 
+
 module.exports = { getReservations, addReservation }
+
+
+

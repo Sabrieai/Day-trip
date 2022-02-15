@@ -18,4 +18,4 @@ const getAdventureDetails = (id) => {
 };
 
 
-module.exports = { getAdventureDetails, addReservation }
+module.exports = { getAdventureDetails};

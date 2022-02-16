@@ -4,15 +4,15 @@ const reservations = require('../db/reservations_queries');
 const dateGetter = require('./helpers/reservation_function');
 
 
-// redirects if no id specified
+// redirects if no id specified VALID
 router.get('/', (req, res) => {
-  const id = req.session;
-  res.redirect(`/${id}`);
+  const id = req.session.user_id;
+  res.redirect(`reservation/${id}`);
 });
 
-//gets reservations for a user
+//gets reservations for a user VALID
 router.get('/:id', (req, res) => {
-  const id = req.session;
+  const id = req.session.user_id;
   reservations.getReservations(id)
     .then((reservation) => {
       res.json(reservation);

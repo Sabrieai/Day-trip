@@ -21,14 +21,15 @@ const placeholder = () => {
     .then(data => { return data.rows[0] })
 }
 
+//issue with SQL injection
 const searchDestination = (search) => {
   return pool.query(`
-    SELECT id, thumbnail_photo_url, title, description, count(adventures)
+    SELECT id, thumbnail_photo_url, title, description
     FROM adventures 
-    WHERE lower(city) LIKE lower(‘%$1%’) 
-    OR lower(country) LIKE lower(‘%$1%’) 
-    OR lower(province_state) LIKE lower(‘%$1%’;)
-    `, [search])
+    WHERE lower(city) LIKE lower('%${search}%')
+    OR lower(country) LIKE lower('%${search}%')
+    OR lower(province_state) LIKE lower('%${search}%');
+    `)
     .then((response) => {
       return response.rows;
     })

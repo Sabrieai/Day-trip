@@ -5,7 +5,7 @@ const listingQueries = require('../db/listings_queries')
 
 //create an adventure
 router.post("/create", (req, res) => {
-  userId = req.session.id
+  userId = req.session.user_id
   listingQueries.createListing(userId)
     .then((data) => {
      res.redirect('/')
@@ -16,7 +16,7 @@ router.post("/create", (req, res) => {
 })
 
 router.put("/:id", (req, res) => {
-  userId = req.session.id
+  userId = req.session.user_id
   listingQueries.updateListing(userId, req.params.adventureId)
     .then((data) => {
     res.redirect('/')
@@ -26,9 +26,10 @@ router.put("/:id", (req, res) => {
     });
 })
 
-//delete an adventure
+//delete an adventure (will work when we work on front end)
 router.delete("/:id", (req, res) => {
-  listingQueries.deleteListing(req.params.adventureId)
+  const id = req.params.id;
+  listingQueries.deleteListing(id)
   .then((data) => {
     res.redirect('/')
    })

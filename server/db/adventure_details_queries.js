@@ -1,12 +1,10 @@
 const { pool } = require('./database');
 
 const getAdventureDetails = (id) => {
-  return pool.query(`SELECT adventures.*, adventure_availibilties.*, users.pic, users.first_name, users.last_name
+  return pool.query(`SELECT adventures.*, users.pic, users.first_name, users.last_name
   FROM adventures
   JOIN users ON users.id = owner_id
-  JOIN adventure_availibilties
-   ON adventure_id = adventures.id 
-  WHERE adventures.id = $1;
+  WHERE adventures.id = $1
   `, [id])
     .then((response) => {
       return response.rows;
@@ -17,7 +15,7 @@ const getAdventureDetails = (id) => {
 };
 
 const getAdventuresForUser = (id) => {
-  return pool.query(`SELECT title, city, thumbnail_photo_url, adventure_id 
+  return pool.query(`SELECT title, city, thumbnail_photo_url, id 
   FROM adventures
   WHERE owner_id = $1;
   `, [id])

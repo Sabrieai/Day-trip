@@ -1,17 +1,23 @@
 //declarations
+require('dotenv').config();
 const Express = require('express');
 const bodyParser = require('body-parser');
-const homepage = require('./db/home_queries.js')
-const favourites = require('./db/favourites_queries')
-const reservations = require('./db/reservations_queries')
-const adventureDetails = require('./db/adventure_details_queries')
-const reviews = require('./db/reviews_queries')
+const cookieSession = require('cookie-session');
+// const homepage = require('./db/home_queries.js')
+// const favourites = require('./db/favourites_queries')
+// const reservations = require('./db/reservations_queries')
+// const adventureDetails = require('./db/adventure_details_queries')
+// const reviews = require('./db/reviews_queries')
 
 // Express Configuration
 const app = Express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(Express.static('public'));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['boogaloo']
+}));
 
 //env variables
 const PORT = 8080;
@@ -21,7 +27,6 @@ const adventureFormRouter = require('./routes/adventure_form.js');
 const adventuresRouter = require('./routes/adventures.js');
 const favouritesRouter = require('./routes/favourites.js');
 const homepageRouter = require('./routes/homepage.js');
-const loginRouter = require('./routes/login.js');
 const myReviewsRouter = require('./routes/my_reviews.js');
 const reviewsLeftRouter = require('./routes/reviews_left.js');
 const reservationRouter = require('./routes/reservation.js');
@@ -33,14 +38,13 @@ app.use('/', homepageRouter);
 app.use('/adventures', adventuresRouter);
 app.use('/form', adventureFormRouter);
 app.use('/favourites', favouritesRouter);
-app.use('/login', loginRouter);
 app.use('/myreviews', myReviewsRouter);
 app.use('/reviews', reviewsLeftRouter);
 app.use('/reservation', reservationRouter);
 
 // Sample GET route
 app.get('/api/data', (req, res) => {
-  reviews.getMyReviews()
+  homepage.searchDestination('New York')
     .then((products) => {
       res.json(products);
       // res.render()

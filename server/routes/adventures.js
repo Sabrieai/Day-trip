@@ -3,9 +3,10 @@ const router = express.Router();
 const adventureQueries = require('../db/adventure_details_queries')
 //get adventure queries & adventures page
 
-//gets all adventures a user created
-router.get("/", (req, res) => {
-  adventureQueries.getAdventuresForUser()
+//gets all adventures a user created VALID
+router.get("/user/:id", (req, res) => {
+  const id = req.params.id;
+  adventureQueries.getAdventuresForUser(id)
     .then((details) => {
       res.json(details)
     })
@@ -14,11 +15,16 @@ router.get("/", (req, res) => {
     });
 })
 
-//gets the details for an individual adventure page
+//gets the details for an individual adventure page VALID
 router.get("/:id", (req, res) => {
-  adventureQueries.getAdventureDetails()
-    .then((details) => {
-      res.json(details)
+  const id = req.params.id;
+  adventureQueries.getAdventureDetails(id)
+    .then((adventure) => {
+      adventureQueries.getAvailibilty(id)
+      .then((details) => {
+        res.json({details, adventure});
+      })
+      
     })
     .catch((err) => {
       res.status(404).json({ error: err.message });

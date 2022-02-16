@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const favouriteQueries = require('../db/favourites_queries')
 
-//get favourites
+//get favourites VALID
 router.get('/', (req, res) => {
-  const userId = req.session.id;
+  const userId = req.session.user_id;
   favouriteQueries.getFavourites(userId)
     .then((favourites) => {
       res.json(favourites);
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 //delete a favourite
 router.delete('/:adventureId', (req, res) => {
-  const userId = req.session.id;
+  const userId = req.session.user_id;
   favouriteQueries.deleteAFavourite(userId, req.params.adventureId)
     .then((favourites) => {
       res.send('SUCCESS');

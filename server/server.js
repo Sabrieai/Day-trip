@@ -3,14 +3,13 @@ require('dotenv').config();
 const Express = require('express');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
-// const homepage = require('./db/home_queries.js')
-// const favourites = require('./db/favourites_queries')
-// const reservations = require('./db/reservations_queries')
-// const adventureDetails = require('./db/adventure_details_queries')
-// const reviews = require('./db/reviews_queries')
+const morgan = require('morgan')
+const cors = require('cors')
 
 // Express Configuration
 const app = Express();
+app.use(morgan('dev'));
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(Express.static('public'));
@@ -30,8 +29,6 @@ const homepageRouter = require('./routes/homepage.js');
 const myReviewsRouter = require('./routes/my_reviews.js');
 const reviewsLeftRouter = require('./routes/reviews_left.js');
 const reservationRouter = require('./routes/reservation.js');
-
-
 
 //Pass routers to express as middleware
 app.use('/', homepageRouter);

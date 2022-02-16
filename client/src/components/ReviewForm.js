@@ -1,8 +1,11 @@
 import React from "react"
 import StarRating from './StarRating';
-import Button from './Button';
+import useApplicationData from './../hooks/useApplicationData';
 
-export default function ReviewForm() {
+export default function ReviewForm(props) {
+  const { 
+    postReview
+  } = useApplicationData()
   return (
     <main className="review__form">
       <StarRating />
@@ -13,7 +16,8 @@ export default function ReviewForm() {
         >
         </input>
       </form>
-      <Button />
+      <button onClick={() => postReview(20, 1, 4, 5, 'cool stuff') } />
     </main>
   )
 }
+

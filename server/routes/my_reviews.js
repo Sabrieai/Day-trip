@@ -18,12 +18,12 @@ router.get('/:id', (req, res) => {
 });
 
 // posts after writing my review
-router.post('/:id/:resId/', (req, res) => {
-  const adventure = req.params.id;
-  const guest = req.session;
-  const reservation = req.params.resId;
-  const rating = req.params.rating;
-  const comment = req.params.comment;
+router.post('/', (req, res) => {
+  const adventure = req.body.adventure;
+  const guest = req.body.guest;
+  const reservation = req.body.reservation;
+  const rating = req.body.rating;
+  const comment = req.body.comment;
   reviews.addReview(guest, adventure, reservation, rating, comment)
     .then(() => {
       res.send('SUCCESS');

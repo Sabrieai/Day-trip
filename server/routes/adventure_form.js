@@ -15,7 +15,7 @@ router.post("/create", (req, res) => {
     });
 })
 
-router.post("/update/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   userId = req.session.id
   listingQueries.updateListing(userId, req.params.adventureId)
     .then((data) => {
@@ -27,7 +27,7 @@ router.post("/update/:id", (req, res) => {
 })
 
 //delete an adventure
-router.post("/delete/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   listingQueries.deleteListing(req.params.adventureId)
   .then((data) => {
     res.redirect('/')
@@ -36,3 +36,5 @@ router.post("/delete/:id", (req, res) => {
      res.status(500).json({ error: err.message });
    });
 })
+
+module.exports = router;

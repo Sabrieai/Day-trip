@@ -43,3 +43,5 @@ router.post('/:id/:day', (req, res) => {
 
 
 });
+
+module.exports = router;

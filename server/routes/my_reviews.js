@@ -32,3 +32,5 @@ router.post('/:id/:resId/', (req, res) => {
       res.json(err.message);
     });
 });
+
+module.exports = router;

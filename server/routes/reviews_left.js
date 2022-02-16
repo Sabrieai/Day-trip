@@ -15,3 +15,5 @@ router.get('/:id', (req, res) => {
       res.json(reviews);
     });
 });
+
+module.exports = router;

@@ -15,15 +15,15 @@ router.get('/', (req, res) => {
 });
 
 //delete a favourite
-router.post('/delete/:adventureId', (req, res)=>{
+router.delete('/:adventureId', (req, res) => {
   const userId = req.session.id;
   favouriteQueries.deleteAFavourite(userId, req.params.adventureId)
-  .then((favourites) => {
-    res.send('SUCCESS');
-  })
-  .catch((err) => {
-    res.status(500).json({ error: err.message });
-  });
+    .then((favourites) => {
+      res.send('SUCCESS');
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 })
 
 module.exports = router;

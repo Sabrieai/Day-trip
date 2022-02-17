@@ -9,10 +9,10 @@ export default function useApplicationData() {
       rating,
       comment
     })
-      .then(function (response) {
+      .then(function(response) {
         console.log(response);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       })
   }
@@ -37,10 +37,10 @@ export default function useApplicationData() {
       season,
       category
     })
-      .then(function (response) {
+      .then(function(response) {
         console.log(response);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       })
   }
@@ -74,29 +74,67 @@ export default function useApplicationData() {
       season,
       category
     })
-      .then(function (response) {
+      .then(function(response) {
         console.log(response);
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       })
   }
 
   const postReservation = (adventure, guest, totalPrice, totalGuests, day, paymentId) => {
     return axios.post('http://localhost:8080/reservation/', {
-    adventure,
-    guest,
-    totalPrice,
-    totalGuests,
-    day,
-    paymentId
+      adventure,
+      guest,
+      totalPrice,
+      totalGuests,
+      day,
+      paymentId
     })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
   }
-  return { postReview, postAdventure, deleteAdventure, updateAdventure, postReservation }
+
+  const postFavourite = (user, adventure) => {
+    return axios.post('http://localhost:8080/favourites', {
+      user,
+      adventure
+    })
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  };
+
+  const deleteFavourite = (user, adventure) => {
+ 
+    return axios.delete(`http://localhost:8080/favourites/${user}/${adventure}`)
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  };
+
+
+
+
+
+
+  return {
+    postReview,
+    postAdventure,
+    deleteAdventure,
+    updateAdventure,
+    postReservation,
+    postFavourite,
+    deleteFavourite
+  }
 };

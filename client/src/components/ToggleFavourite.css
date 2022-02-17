@@ -1,0 +1,7 @@
+.favouriteIcon{
+  font-size: 100px;
+}
+path:hover{
+  color: #ffc107;
+  cursor: pointer;
+}

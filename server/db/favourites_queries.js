@@ -17,7 +17,7 @@ const getFavourites = (id) => {
 
 const deleteAFavourite = (user, adventure) => {
 
-  return pool.query(`DELETE FROM favourites where user_id = $1 
+  return pool.query(`DELETE FROM favourites where guest_id = $1 
   AND adventure_id = $2;`, [user, adventure])
     .then((response) => {
       return response.rows;
@@ -27,4 +27,16 @@ const deleteAFavourite = (user, adventure) => {
     });
 };
 
-module.exports = { getFavourites, deleteAFavourite };
+const addFavourite = (user, adventure) => {
+  return pool.query(`INSERT INTO favourites (guest_id, adventure_id)
+  VALUES($1, $2)`
+  , [user, adventure])
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
+
+module.exports = { getFavourites, deleteAFavourite, addFavourite };

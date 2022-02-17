@@ -16,7 +16,7 @@ export default function ReviewForm(props) {
         >
         </input>
       </form>
-      <button onClick={() => postReview(20, 1, 4, 5, 'cool stuff') } />
+      <button onClick={() => postReview(20, 1, 4, 5, 'cool stuff') }>Submit</button>
     </main>
   )
 }

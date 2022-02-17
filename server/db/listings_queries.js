@@ -1,9 +1,9 @@
 const { pool } = require('./database');
 
-const createListing = (title, description, prevPrice, currPrice, accessible, occupancy, street, city, provinceState, country, thumbnailPhoto, coverPhoto, season) => {
-  return pool.query(`INSERT INTO adventures (title, description, prev_price, curr_price, accessible, max_occupancy, street, city, province_state, country, thumbnail_photo_url, cover_photo_url, season)
-VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);
-`, [title, description, prevPrice, currPrice, accessible, occupancy, street, city, provinceState, country, thumbnailPhoto, coverPhoto, season])
+const createListing = (owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category) => {
+  return pool.query(`INSERT INTO adventures(owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category)
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18);
+`, [owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category])
     .then((response) => {
       return response.rows;
     })
@@ -12,12 +12,12 @@ VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);
     });
 }
 
-const updateListing = (title, description, prevPrice, occupancy, street, city, provinceState, country, thumbnailPhoto, coverPhoto, season, currPrice, accessible, id) => {
+const updateListing = (owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category) => {
   return pool.query(`UPDATE adventures 
-SET title = $1, description= $2, prev_price= $3, max_occupancy = $4, street = $5, city =$6, province_state= $7, country =$8, thumbnail_photo_url = $9, cover_photo_url =$10, season = $11, curr_price = $12, accessible = $13
-WHERE id = $14
-VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14);
-`, [title, description, prevPrice, occupancy, street, city, provinceState, country, thumbnailPhoto, coverPhoto, season, currPrice, accessible, id])
+SET title = $2, description = $3, thumbnail_photo_url = $4, cover_photo_url = $5, prev_price = $6, curr_price = $7, accessible = $8, street = $9, city = $10, province_state = $11, post_code_zip = $12, country = $13, active = $14, is_full = $15, max_occupancy = $16, season = $17, category = $18
+WHERE id = $1
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18);
+`, [owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category])
     .then((response) => {
       return response.rows;
     })
@@ -35,6 +35,5 @@ const deleteListing = (id) => {
       return err.message
     });
 }
-
 
 module.exports = { createListing, updateListing, deleteListing }

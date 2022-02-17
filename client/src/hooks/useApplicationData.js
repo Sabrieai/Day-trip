@@ -19,7 +19,36 @@ export default function useApplicationData() {
         console.log(error);
       })
   }
-  return { postReview }
+  const postAdventure = (owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category) => {
+    console.log('attempting to post')
+    return axios.post('http://localhost:8080/form/', {
+      owner_id, 
+      title, 
+      description, 
+      thumbnail_photo_url, 
+      cover_photo_url, 
+      prev_price, 
+      curr_price, 
+      accessible, 
+      street, 
+      city, 
+      province_state, 
+      post_code_zip, 
+      country, 
+      active, 
+      is_full, 
+      max_occupancy, 
+      season, 
+      category
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+  }
+  return { postReview, postAdventure }
 };
 
 

@@ -113,7 +113,7 @@ export default function useApplicationData() {
   };
 
   const deleteFavourite = (user, adventure) => {
- 
+
     return axios.delete(`http://localhost:8080/favourites/${user}/${adventure}`)
       .then(function(response) {
         console.log(response);
@@ -126,8 +126,6 @@ export default function useApplicationData() {
 
 
 
-
-
   return {
     postReview,
     postAdventure,
@@ -135,6 +133,7 @@ export default function useApplicationData() {
     updateAdventure,
     postReservation,
     postFavourite,
-    deleteFavourite
+    deleteFavourite,
+    // handleSearch
   }
 };

@@ -25,7 +25,7 @@ export default function ToggleFavourite() {
 
   return (
     <label className='favourite'>
-      <input />
+   
       <FaHeart className='favouriteIcon' id='heart'
       color={favourite %2 ? "#ffc107" : "#e4e5e9"} size={100} 
       onClick={favourite %2 ? onDelete : onAdd}

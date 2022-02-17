@@ -5,12 +5,13 @@ import ReviewForm from './components/ReviewForm'
 import AdventureForm from './components/AdventureForm';
 import MyAdventures from './components/MyAdventures';
 import ReservationForm from './components/ReservationForm';
-import ToggleFavourite from "./components/ToggleFavourite"
+import ToggleFavourite from "./components/ToggleFavourite";
+import SearchBar from './components/SearchBar';
 
 
-const responseGoogle = response => {
-  console.log(response);
-};
+// const responseGoogle = response => {
+//   console.log(response);
+// };
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         onFailure={responseGoogle}
       /> */}
       <ToggleFavourite/>
+      <SearchBar/>
     </div>
   );
 

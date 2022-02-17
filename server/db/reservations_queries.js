@@ -31,9 +31,11 @@ const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adven
 
 const updateAvailibilty = (adventure, day) => {
   return pool.query(`
-  INSERT INTO adventure_availibilties (adventure_id, day, available)
-  VALUES($1, $2,$3)
-  `, [adventure,day,false])
+ UPDATE adventure_availibilties 
+ SET available = false 
+ WHERE adventure_id = $1
+ AND day = $2
+  `, [adventure, day])
     .then((response) => {
       return response.rows;
     })

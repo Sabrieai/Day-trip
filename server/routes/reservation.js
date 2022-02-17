@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const reservations = require('../db/reservations_queries');
-const dateGetter = require('./helpers/reservation_function');
+const { getReservationDate } = require('./helpers/reservation_function');
 
 
 // redirects if no id specified VALID
@@ -20,17 +20,16 @@ router.get('/:id', (req, res) => {
 });
 
 //posts reservation into reservations table and updates availibiltiy
-router.post('/:id/:day', (req, res) => {
-  const adventure = req.params.id;
-  const guest = req.session;
-  const reservation = req.params.resId;
-  const totalPrice = req.params.total;
-  const totalGuests = req.params.guest;
-  const day = req.params.day;
-  const date = dateGetter(day);
-  const paymentId = req.params.payment;
+router.post('/', (req, res) => {
+  const adventure = req.body.adventure;
+  const guest = req.body.guest;
+  const totalPrice = req.body.totalPrice;
+  const totalGuests = req.body.totalGuests;
+  const day = req.body.day;
+  const date = getReservationDate(day);
+  const paymentId = req.body.payment;
 
-  reservation.addReservation(date, totalPrice, guest, paymentId, totalGuests, adventure)
+  reservations.addReservation(date, totalPrice, guest, paymentId, totalGuests, adventure)
     .then(() => {
       reservations.updateAvailibilty(adventure, day)
         .then(() => {

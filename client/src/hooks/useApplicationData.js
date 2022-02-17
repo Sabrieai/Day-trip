@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 export default function useApplicationData() {
@@ -18,7 +17,6 @@ export default function useApplicationData() {
       })
   }
   const postAdventure = (owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category) => {
-    console.log('attempting to post')
     return axios.post('http://localhost:8080/form/', {
       owner_id,
       title,
@@ -56,7 +54,7 @@ export default function useApplicationData() {
       })
   }
   const updateAdventure = (adventure, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category) => {
-    return axios.put(`http://localhost:8080/form/`, {
+    return axios.put('http://localhost:8080/form/', {
       adventure,
       title,
       description,
@@ -83,5 +81,22 @@ export default function useApplicationData() {
         console.log(error);
       })
   }
-  return { postReview, postAdventure, deleteAdventure, updateAdventure }
+
+  const postReservation = (adventure, guest, totalPrice, totalGuests, day, paymentId) => {
+    return axios.post('http://localhost:8080/reservation/', {
+    adventure,
+    guest,
+    totalPrice,
+    totalGuests,
+    day,
+    paymentId
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
+  return { postReview, postAdventure, deleteAdventure, updateAdventure, postReservation }
 };

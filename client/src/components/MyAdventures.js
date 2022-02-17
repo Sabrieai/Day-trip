@@ -1,5 +1,4 @@
 import React, { Fragment } from "react"
-import StarRating from './StarRating';
 import useApplicationData from './../hooks/useApplicationData';
 
 export default function MyAdventures() {

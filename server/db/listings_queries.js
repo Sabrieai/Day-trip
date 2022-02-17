@@ -38,4 +38,15 @@ const deleteListing = (id) => {
     });
 }
 
-module.exports = { createListing, updateListing, deleteListing }
+const createAvailability = (id) => {
+  return pool.query(`INSERT INTO adventure_availibilties(adventure_id, day, available)
+VALUES ($1,'Monday',true),
+($1,'Tuesday',true),
+($1,'Wednesday',true),
+($1,'Thursday',true),
+($1,'Friday',true),
+($1,'Saturday',true),
+($1,'Sunday',true)`, [id])
+}
+
+module.exports = { createListing, updateListing, deleteListing, createAvailability }

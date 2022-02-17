@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import ReviewForm from './components/ReviewForm'
 import AdventureForm from './components/AdventureForm';
 import MyAdventures from './components/MyAdventures';
 import ReservationForm from './components/ReservationForm';
+import { GoogleLogin } from 'react-google-login';
+
+const responseGoogle = response => {
+  console.log(response);
+};
 
 const App = () => {
   return (
@@ -12,6 +17,11 @@ const App = () => {
       <AdventureForm />
       <MyAdventures />
       <ReservationForm />
+      <GoogleLogin
+        clientId='808382542479-3st5n36i6eamdtgu9bqghm4811s4aree.apps.googleusercontent.com'
+        onSuccess={responseGoogle}
+        onFailure={responseGoogle}
+      />
     </div>
   );
 

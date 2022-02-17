@@ -5,12 +5,12 @@ const homepage = require('../db/home_queries.js')
 
 
 // VALID
-router.get('/login/:id', (req, res) => {
-  const userId = req.params.id;
-  req.session.user_id = userId;
+// router.get('/login/:id', (req, res) => {
+//   const userId = req.params.id;
+//   req.session.user_id = userId;
 
-  res.redirect('/');
-});
+//   res.redirect('/');
+// });
 
 //post to search form VALID
 router.get('/search/:input', (req, res) => {

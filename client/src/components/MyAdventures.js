@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import useApplicationData from './../hooks/useApplicationData';
 
 export default function MyAdventures() {

@@ -2,7 +2,7 @@ import React from "react"
 import StarRating from './StarRating';
 import useApplicationData from './../hooks/useApplicationData';
 
-export default function ReviewForm(props) {
+export default function ReviewForm() {
   const { 
     postReview
   } = useApplicationData()

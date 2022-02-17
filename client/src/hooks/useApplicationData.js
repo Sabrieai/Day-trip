@@ -123,6 +123,16 @@ export default function useApplicationData() {
       })
   };
 
+  const getFavourites = () => {
+
+    return axios.get('http://localhost:8080/favourites')
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
 
 
 
@@ -134,6 +144,7 @@ export default function useApplicationData() {
     postReservation,
     postFavourite,
     deleteFavourite,
+    getFavourites
     // handleSearch
   }
 };

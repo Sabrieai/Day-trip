@@ -131,7 +131,18 @@ export default function useApplicationData() {
 
    return axios.get(`http://localhost:8080/favourites/${id}`)
       .then(function(response) {
-        console.log("response.data", response.data)
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
+  const getReservations = (id) => {
+
+   return axios.get(`http://localhost:8080/reservation/${id}`)
+      .then(function(response) {
+        console.log("response.data.reservations", response.data)
         return response.data;
       })
       .catch(function(error) {
@@ -149,7 +160,8 @@ export default function useApplicationData() {
     postReservation,
     postFavourite,
     deleteFavourite,
-    getFavourites
+    getFavourites,
+    getReservations
     // handleSearch
   }
 };

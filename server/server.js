@@ -40,6 +40,7 @@ app.use('/myreviews', myReviewsRouter);
 app.use('/reviews', reviewsLeftRouter);
 app.use('/reservation', reservationRouter);
 
+
 // Sample GET route
 app.get('/api/data', (req, res) => {
   homepage.searchDestination('New York')

@@ -1,25 +1,37 @@
-import React, { useState } from "react"
-// import useApplicationData from './../hooks/useApplicationData';
+import React, { useState, useEffect } from "react"
+import useApplicationData from './../hooks/useApplicationData';
 import FavouritesCard from "./FavouritesCard";
-import axios from "axios";
+import './FavouritesCard.css';
 
 
 
 export default function FavouritesList() {
   const { getFavourites } = useApplicationData();
-  const getFavourites = () => {
+  const [favourites, setFavourites] = useState([]);
+  useEffect(() => {
 
-    return axios.get('http://localhost:8080/favourites')
-      .then(function(response) {
-        console.log(response);
+    getFavourites(3)
+      .then((data) => {
+        setFavourites(data);
       })
-      .catch(function(error) {
-        console.log(error);
-      })
-  }
+  }, [])
+
+  const favouriteList = favourites.map((favourite, i) => {
+    return (
+      <FavouritesCard
+        key={i}
+        city={favourite.city}
+        photo={favourite.thumbnail_photo_url}
+        title={favourite.title}
+        id={favourite.id}
+      />
+    )
+  })
+
+
   return (
-    <container>
-      <FavouritesCard />
-    </container>
+    <section>
+      {favouriteList}
+    </section>
   )
 }

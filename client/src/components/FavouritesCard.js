@@ -4,13 +4,18 @@ import ToggleFavourite from "./ToggleFavourite";
 
 
 
-export default function FavouritesCard() {
+export default function FavouritesCard(props) {
 
+
+  console.log('FAV PROPS', props);
   return (
-    <container>
-      <img src="" alt="" />
-      <div>Title</div>
+
+
+    <section>
+      <img src={`${props.photo}`} alt="" />
+      <div>{props.title}</div>
+      <div>In {props.city}</div>
       <ToggleFavourite />
-    </container>
+    </section>
   )
 }

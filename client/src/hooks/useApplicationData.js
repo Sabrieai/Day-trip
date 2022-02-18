@@ -1,6 +1,10 @@
 import axios from "axios";
+import { useState } from "react";
 
 export default function useApplicationData() {
+
+  // const [favourites, setFavourites] = useState();
+
   const postReview = (guest, adventure, reservation, rating, comment) => {
     return axios.post('http://localhost:8080/myreviews', {
       guest,
@@ -123,11 +127,12 @@ export default function useApplicationData() {
       })
   };
 
-  const getFavourites = () => {
+  const getFavourites = (id) => {
 
-    return axios.get('http://localhost:8080/favourites')
+   return axios.get(`http://localhost:8080/favourites/${id}`)
       .then(function(response) {
-        console.log(response);
+        console.log("response.data", response.data)
+        return response.data;
       })
       .catch(function(error) {
         console.log(error);

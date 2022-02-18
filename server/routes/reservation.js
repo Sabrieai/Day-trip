@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 //gets reservations for a user VALID
 router.get('/:id', (req, res) => {
-  const id = req.session.user_id;
+  const id = req.params.id;
   reservations.getReservations(id)
     .then((reservation) => {
       res.json(reservation);

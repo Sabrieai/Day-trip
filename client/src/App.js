@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import { GoogleLogin } from 'react-google-login';
 import ReviewForm from './components/ReviewForm'
-import AdventureForm from './components/AdventureForm';
+import AdventureForm from './components/AdventureCreateForm';
 import MyAdventures from './components/MyAdventures';
 import ReservationForm from './components/ReservationForm';
 import ToggleFavourite from "./components/ToggleFavourite";
@@ -14,6 +14,11 @@ import Favourites from './Pages/Favourites'
 import Reservations from './Pages/Reservations';
 import Reviews from './Pages/Reviews';
 import Adventure from './Pages/Adventures';
+import AdventureCreate from './Pages/AdventureCreate';
+import AdventureUpdate from './Pages/AdventureUpdate';
+import ReviewCreate from './Pages/ReviewCreate';
+import Category from './Pages/CategoryPage';
+
 
 const responseGoogle = response => {
   console.log(response);
@@ -33,6 +38,14 @@ const App = () => {
         <Route path="/myreviews" element={<Reviews />} />
         <Route path="/adventures/:id" element={<Adventure />} />
 
+        <Route path="/adventures/create/:id" element={<AdventureCreate />} />
+        <Route path="/adventures/update/:id" element={<AdventureUpdate />} />
+        <Route path="/reviews/create/:id" element={<ReviewCreate />} />
+
+        <Route path="/category/*" element={<Category />} />
+
+
+
 
         {/* <div className='App'> 
         <ReviewForm />
@@ -43,15 +56,15 @@ const App = () => {
         clientId='808382542479-3st5n36i6eamdtgu9bqghm4811s4aree.apps.googleusercontent.com'
         onSuccess={responseGoogle}
         onFailure={responseGoogle} */}
-      {/* /> */}
+        {/* /> */}
         {/* <ToggleFavourite />
           <SearchBar />
          </div> */}
 
-        </Routes>
+      </Routes>
     </Router>
-        );
+  );
 
 };
 
-        export default App
+export default App

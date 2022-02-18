@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react"
+import { useParams } from "react-router";
 import useApplicationData from '../hooks/useApplicationData';
 
 export default function AdventureCard() {
   const { getAdventure } = useApplicationData();
   const [adventure, setAdventure] = useState([]);
   const [availability, setAvailability] = useState([]);
+
+  const params = useParams();
+  const adventureId = Number(params.id);
   useEffect(() => {
 
-    getAdventure(20)
+    getAdventure(adventureId)
       .then((data) => {
-        console.log('ADDDDVEN', data.adventure[0])
         setAdventure(data.adventure[0]);
         setAvailability(data.details)
 

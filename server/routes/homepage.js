@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const homepage = require('../db/home_queries.js')
+const categoryQueries = require('../db/category_queries.js')
 
 
 
@@ -30,7 +31,7 @@ router.get('/', (req, res) => {
     .then((destination) => {
       homepage.getCategories(req.params.input)
         .then((categories) => {
-          res.json({categories, placeholder:destination});
+          res.json({ categories, placeholder: destination });
         })
     })
     .catch((err) => {
@@ -38,4 +39,16 @@ router.get('/', (req, res) => {
     });
 })
 
+
+//get favourites VALID
+router.get('/:category', (req, res) => {
+  const category = req.params.category;
+  categoryQueries.getCategory(category)
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
 module.exports = router;

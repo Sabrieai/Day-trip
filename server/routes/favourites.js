@@ -3,8 +3,8 @@ const router = express.Router();
 const favouriteQueries = require('../db/favourites_queries')
 
 //get favourites VALID
-router.get('/', (req, res) => {
-  const userId = req.session.user_id;
+router.get('/:id', (req, res) => {
+  const userId = req.params.id;
   favouriteQueries.getFavourites(userId)
     .then((favourites) => {
       res.json(favourites);

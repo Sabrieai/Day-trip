@@ -3,10 +3,10 @@ const router = express.Router();
 const reviews = require('../db/reviews_queries');
 
 //VALID
-router.get('/', (req, res) => {
-  const id = req.session.user_id;
-  res.redirect(`reviews/${id}`);
-});
+// router.get('/', (req, res) => {
+//   const id = req.session.user_id;
+//   res.redirect(`reviews/${id}`);
+// });
 
 //VALID
 router.get('/:id', (req, res) => {

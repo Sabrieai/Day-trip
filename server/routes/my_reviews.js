@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const reviews = require('../db/reviews_queries');
 
-//redirect to get reviews for user VAILD
-router.get('/', (req, res) => {
-  const id = req.session.user_id;
-  res.redirect(`myreviews/${id}`);
-});
+// //redirect to get reviews for user VAILD
+// router.get('/', (req, res) => {
+//   const id = req.params.user_id;
+//   res.redirect(`myreviews/${id}`);
+// });
 
 // get reviews for a user VALID
 router.get('/:id', (req, res) => {

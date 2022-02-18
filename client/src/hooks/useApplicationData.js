@@ -185,6 +185,16 @@ export default function useApplicationData() {
     })
   }
 
+  const getCategory = (category) =>{
+    return axios.get(`http://localhost:8080/${category}`)
+    .then(function(response) {
+      console.log("CATEGORY RESPONSE.DATA", response.data)
+      return response.data;
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
 
 
   return {
@@ -199,7 +209,8 @@ export default function useApplicationData() {
     getReservations,
     getReviewsILeft,
     getReviewsLeftForMe,
-    getAdventure
+    getAdventure,
+    getCategory
     // handleSearch
   }
 };

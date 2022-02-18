@@ -174,6 +174,17 @@ export default function useApplicationData() {
       })
   }
 
+  const getAdventure = (id) => {
+    return axios.get(`http://localhost:8080/adventures/${id}`)
+    .then(function(response) {
+      console.log("response.data.adventure", response.data)
+      return response.data;
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
 
 
   return {
@@ -187,7 +198,8 @@ export default function useApplicationData() {
     getFavourites,
     getReservations,
     getReviewsILeft,
-    getReviewsLeftForMe
+    getReviewsLeftForMe,
+    getAdventure
     // handleSearch
   }
 };

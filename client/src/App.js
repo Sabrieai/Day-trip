@@ -13,6 +13,7 @@ import Home from './Pages/Home';
 import Favourites from './Pages/Favourites'
 import Reservations from './Pages/Reservations';
 import Reviews from './Pages/Reviews';
+import Adventure from './Pages/Adventures';
 
 const responseGoogle = response => {
   console.log(response);
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/myreviews" element={<Reviews />} />
+        <Route path="/adventures/:id" element={<Adventure />} />
 
 
         {/* <div className='App'> 

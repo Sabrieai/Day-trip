@@ -1,6 +1,10 @@
 import axios from "axios";
+import { useState } from "react";
 
 export default function useApplicationData() {
+
+  // const [favourites, setFavourites] = useState();
+
   const postReview = (guest, adventure, reservation, rating, comment) => {
     return axios.post('http://localhost:8080/myreviews', {
       guest,
@@ -123,11 +127,47 @@ export default function useApplicationData() {
       })
   };
 
-  const getFavourites = () => {
+  const getFavourites = (id) => {
 
-    return axios.get('http://localhost:8080/favourites')
+   return axios.get(`http://localhost:8080/favourites/${id}`)
       .then(function(response) {
-        console.log(response);
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
+  const getReservations = (id) => {
+
+   return axios.get(`http://localhost:8080/reservation/${id}`)
+      .then(function(response) {
+        console.log("response.data.reservations", response.data)
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
+  const getReviewsILeft = (id) => {
+
+   return axios.get(`http://localhost:8080/myreviews/${id}`)
+      .then(function(response) {
+        console.log("response.data.MYREVIEWS", response.data)
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
+  const getReviewsLeftForMe = (id) => {
+
+   return axios.get(`http://localhost:8080/reviews/${id}`)
+      .then(function(response) {
+        console.log("response.data.reviewsleft", response.data)
+        return response.data;
       })
       .catch(function(error) {
         console.log(error);
@@ -144,7 +184,10 @@ export default function useApplicationData() {
     postReservation,
     postFavourite,
     deleteFavourite,
-    getFavourites
+    getFavourites,
+    getReservations,
+    getReviewsILeft,
+    getReviewsLeftForMe
     // handleSearch
   }
 };

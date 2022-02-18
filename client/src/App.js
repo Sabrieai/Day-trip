@@ -11,6 +11,8 @@ import ToggleFavourite from "./components/ToggleFavourite";
 import SearchBar from './components/SearchBar';
 import Home from './Pages/Home';
 import Favourites from './Pages/Favourites'
+import Reservations from './Pages/Reservations';
+import Reviews from './Pages/Reviews';
 
 const responseGoogle = response => {
   console.log(response);
@@ -26,6 +28,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favourites" element={<Favourites />} />
+        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/myreviews" element={<Reviews />} />
 
 
         {/* <div className='App'> 

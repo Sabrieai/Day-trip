@@ -150,6 +150,30 @@ export default function useApplicationData() {
       })
   }
 
+  const getReviewsILeft = (id) => {
+
+   return axios.get(`http://localhost:8080/myreviews/${id}`)
+      .then(function(response) {
+        console.log("response.data.MYREVIEWS", response.data)
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
+  const getReviewsLeftForMe = (id) => {
+
+   return axios.get(`http://localhost:8080/reservation/${id}`)
+      .then(function(response) {
+        console.log("response.data.reservations", response.data)
+        return response.data;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  }
+
 
 
   return {
@@ -161,7 +185,9 @@ export default function useApplicationData() {
     postFavourite,
     deleteFavourite,
     getFavourites,
-    getReservations
+    getReservations,
+    getReviewsILeft,
+    getReviewsLeftForMe
     // handleSearch
   }
 };

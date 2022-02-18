@@ -196,6 +196,15 @@ export default function useApplicationData() {
     })
   }
 
+  const handleSearch = (search) => {
+    return axios.get(`http://localhost:8080/search/${search}`)
+      .then((data) => {
+        return data.data
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+  };
 
   return {
     postReview,
@@ -210,7 +219,7 @@ export default function useApplicationData() {
     getReviewsILeft,
     getReviewsLeftForMe,
     getAdventure,
-    getCategory
-    // handleSearch
+    getCategory,
+    handleSearch
   }
 };

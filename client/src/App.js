@@ -18,6 +18,7 @@ import AdventureCreate from './Pages/AdventureCreate';
 import AdventureUpdate from './Pages/AdventureUpdate';
 import ReviewCreate from './Pages/ReviewCreate';
 import Category from './Pages/CategoryPage';
+import ResultsList from './Pages/Results'
 
 
 const responseGoogle = response => {
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/reviews/create/:id" element={<ReviewCreate />} />
 
         <Route path="/category/*" element={<Category />} />
+        <Route path="/results/:query" element={<ResultsList />} />
 
 
 

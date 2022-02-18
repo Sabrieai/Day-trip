@@ -1,20 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Button from '@mui/material/Button';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export default function SearchBar() {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
 
-  const handleSearch = (search) => {
-    return axios.get(`http://localhost:8080/search/${search}`)
-      .then((data) => {
-        console.log('DATA', data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      })
-  };
-
-
+  console.log('SEARCH---', search);
 
   return (
     <>
@@ -28,22 +21,11 @@ export default function SearchBar() {
           onChange={(event) => setSearch(event.target.value)}
           data-testid="student-name-input"
         />
-        <button onClick={() => handleSearch(search) }> SEARCH</button>
+        <Button onClick={() => navigate(`results/${search}`)}> SEARCH</Button>
 
       </form>
 
-      {/* <form
-      className="search-bar"
-      placeholder="dfdfdfdf"
-      onSubmit={handleSearch}
-    >
-      <input type="text"
-      value={search}
-      onChange={(event) => setSearch(event.target.value)}
-      
-      />
-      <button onClick={console.log('CLICKED')}> SEARCH</button>
-    </form > */}
+
     </>
   )
 }

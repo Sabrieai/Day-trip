@@ -2,13 +2,10 @@ import React, { useState } from "react"
 import useApplicationData from './../hooks/useApplicationData';
 
 
-
 export default function ReviewCard(props) {
-
 
   console.log('REVIEW PROPS', props);
   return (
-
 
     <section>
       <img src={`${props.avatar}`} alt="" />

@@ -164,9 +164,9 @@ export default function useApplicationData() {
 
   const getReviewsLeftForMe = (id) => {
 
-   return axios.get(`http://localhost:8080/reservation/${id}`)
+   return axios.get(`http://localhost:8080/reviews/${id}`)
       .then(function(response) {
-        console.log("response.data.reservations", response.data)
+        console.log("response.data.reviewsleft", response.data)
         return response.data;
       })
       .catch(function(error) {

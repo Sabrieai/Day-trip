@@ -22,7 +22,7 @@ export default function FavouritesList() {
   }, [])
 
 console.log("USER FROM CONTEXT", user)
-console.log(Array.isArray(favourites), "Favourites");
+console.log(favourites, "Favourites");
 
   const favouriteList = favourites.map((favourite, i) => {
     return (

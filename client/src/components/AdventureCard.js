@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import useApplicationData from '../hooks/useApplicationData';
 import { userContext } from "../providers/UserProvider";
 import ToggleFavourite from "./ToggleFavourite";
@@ -9,7 +9,11 @@ export default function AdventureCard() {
   const { getAdventure } = useApplicationData();
   const [adventure, setAdventure] = useState([]);
   const [availability, setAvailability] = useState([]);
-
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/user/update/${adventure.id}`; 
+    navigate(path);
+  }
   const params = useParams();
   const adventureId = Number(params.id);
   useEffect(() => {
@@ -21,7 +25,6 @@ export default function AdventureCard() {
 
       })
   }, [])
-
 
 // if update is a popup on THIS page we can pass down props
   console.log(adventure, "Adventure")
@@ -38,7 +41,7 @@ export default function AdventureCard() {
       <div>{adventure.description}</div>
       <div>{adventure.curr_price}</div>
       {/* <Bookings id={adventure.id}/> */}
-      { adventure.owner_id === user.id  && <button>UPDATE</button>}
+      { adventure.owner_id === user.id  && <button onClick={routeChange} > UPDATE</button>}
     </section>
   )
 }

@@ -9,17 +9,21 @@ import { userContext } from '../providers/UserProvider';
 export default function FavouritesList() {
   const { user} = useContext(userContext);
   const { getFavourites } = useApplicationData();
-  const [favourites, setFavourites] = useState([]);
-  const id = user.id;
+  const [favourites=[], setFavourites] = useState();
+
 
   useEffect(() => {
 
-    getFavourites(id)
+    getFavourites(1)
       .then((data) => {
+        console.log(data, "DATA")
         setFavourites(data);
       })
   }, [])
- console.log("USER FROM CONTEXT", user)
+
+console.log("USER FROM CONTEXT", user)
+console.log(Array.isArray(favourites), "Favourites");
+
   const favouriteList = favourites.map((favourite, i) => {
     return (
       <FavouritesCard
@@ -27,7 +31,7 @@ export default function FavouritesList() {
         city={favourite.city}
         photo={favourite.thumbnail_photo_url}
         title={favourite.title}
-        id={favourite.id}
+        id={favourite.adventure_id}
       />
     )
   })

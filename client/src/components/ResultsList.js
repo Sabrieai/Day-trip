@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import useApplicationData from './../hooks/useApplicationData';
 import { useParams } from 'react-router-dom';
 import CategoryCard from './CategoryCard';
@@ -15,10 +14,11 @@ export default function ResultsList() {
   useEffect(() => {
     handleSearch(search)
       .then((data) => {
-        setResults(data);
+        setResults(data.data);
       })
   }, [])
 
+  console.log(results, "******")
   const localList = results.map((result, i) => {
     return (
       <CategoryCard

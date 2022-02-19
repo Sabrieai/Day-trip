@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useParams } from "react-router";
 import useApplicationData from '../hooks/useApplicationData';
+import ToggleFavourite from "./ToggleFavourite";
 
 export default function AdventureCard() {
   const { getAdventure } = useApplicationData();
@@ -21,6 +22,9 @@ export default function AdventureCard() {
 
   return (
     <section>
+      <ToggleFavourite
+        id={adventure.id}
+      />
       <div>{adventure.title}</div>
       <div>{adventure.city} {adventure.province}</div>
       <img src={adventure.cover_photo_url} />

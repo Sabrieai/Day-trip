@@ -177,6 +177,17 @@ export default function useApplicationData() {
   const getAdventure = (id) => {
     return axios.get(`http://localhost:8080/adventures/${id}`)
     .then(function(response) {
+      console.log("MY ADVENTURES", response.data)
+      return response.data;
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
+  const getMyAdventures = (id) => {
+    return axios.get(`http://localhost:8080/adventures/user/${id}`)
+    .then(function(response) {
       console.log("response.data.adventure", response.data)
       return response.data;
     })
@@ -199,12 +210,32 @@ export default function useApplicationData() {
   const handleSearch = (search) => {
     return axios.get(`http://localhost:8080/search/${search}`)
       .then((data) => {
-        return data.data
+        return data
       })
       .catch(function(error) {
         console.log(error);
       })
   };
+
+  const getPlaceholder = () => {
+    return axios.get('http://localhost:8080/')
+    .then((data) => {
+      return data.data.placeholder.city;
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
+  const getUser = (id) => {
+    return axios.get(`http://localhost:8080/login/${id}`)
+    .then((data) => {
+      return data.data[0]
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
 
   return {
     postReview,
@@ -220,6 +251,9 @@ export default function useApplicationData() {
     getReviewsLeftForMe,
     getAdventure,
     getCategory,
-    handleSearch
+    handleSearch,
+    getPlaceholder,
+    getMyAdventures,
+    getUser
   }
 };

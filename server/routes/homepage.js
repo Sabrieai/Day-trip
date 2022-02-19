@@ -7,10 +7,15 @@ const categoryQueries = require('../db/category_queries.js')
 
 // VALID
 router.get('/login/:id', (req, res) => {
-  const userId = req.params.id;
-  req.session.user_id = userId;
+  const user = req.params.id
+  homepage.getUser(user)
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
 
-  res.redirect('/');
 });
 
 //post to search form VALID

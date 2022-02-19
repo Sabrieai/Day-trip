@@ -21,6 +21,7 @@ const placeholder = () => {
     .then(data => { return data.rows[0] })
 }
 
+
 //issue with SQL injection
 const searchDestination = (search) => {
   return pool.query(`
@@ -38,6 +39,19 @@ const searchDestination = (search) => {
     });
 }
 
+const getUser = () => {
+  return pool.query(`
+  SELECT id, first_name, last_name, email, pic
+  FROM users 
+  WHERE id = 1;
+  `)
+  .then((response) => {
+    return response.rows;
+  })
+  .catch((err) => {
+    
+  })
+}
 
-module.exports = { getCategories, placeholder, searchDestination };
+module.exports = { getCategories, placeholder, searchDestination, getUser };
 

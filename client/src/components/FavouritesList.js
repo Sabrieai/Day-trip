@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from './../hooks/useApplicationData';
 import FavouritesCard from "./FavouritesCard";
 import './FavouritesCard.css';
+import { userContext } from '../providers/UserProvider';
 
 
 
 export default function FavouritesList() {
+  const { user} = useContext(userContext);
   const { getFavourites } = useApplicationData();
   const [favourites, setFavourites] = useState([]);
+  const id = user.id;
+
   useEffect(() => {
 
-    getFavourites(3)
+    getFavourites(id)
       .then((data) => {
         setFavourites(data);
       })
   }, [])
-
+ console.log("USER FROM CONTEXT", user)
   const favouriteList = favourites.map((favourite, i) => {
     return (
       <FavouritesCard

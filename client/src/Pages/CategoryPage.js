@@ -9,12 +9,10 @@ export default function Categories() {
   return (
 
     <div>
-      FOOD AND DRINK CATEGORY
-      {/* <Category /> */}
+      CATEGORY PAGE
 
       <Routes>
         <Route path=":category" element={<Category />} />
-        <Route path="/" element={<h2>Please choose an item from the list above</h2>} />
       </Routes>
     </div>
   )

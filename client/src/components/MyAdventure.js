@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from './../hooks/useApplicationData';
 import { useParams } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
+import { userContext } from '../providers/UserProvider';
 
 
 
@@ -9,17 +10,17 @@ import CategoryCard from "./CategoryCard";
 export default function Myadventure() {
     const { getMyAdventures } = useApplicationData();
     const [myAdventures, setMyAdventures] = useState([]);
-    const param = useParams();
-    console.log("PARAM IN ADVENTURE", param)
+    const { user} = useContext(userContext);
     
     useEffect(() => {
-
-        getMyAdventures(param.id)
+        if(user.id) {
+        getMyAdventures(user.id)
             .then((data) => {
                 console.log("MY ADVENTRUES COMPONENT", data)
                 setMyAdventures(data);
             })
-    }, [])
+        }
+    }, [user.id])
 
     const adventureList = myAdventures.map((adventure, i) => {
         return (

@@ -12,11 +12,9 @@ export default function NavBar() {
             <Nav.Link href="/reservations">Reservations</Nav.Link>
             <Nav.Link href="/favourites">Favourites</Nav.Link>
             <NavDropdown title="My Adventures" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/user/view/1">View</NavDropdown.Item>
-              <NavDropdown.Item href="/user/create/1">Create</NavDropdown.Item>
-              <NavDropdown.Item href="/user/update/1">Update/Delete</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4"></NavDropdown.Item>
+              <NavDropdown.Item href="/user/view">View</NavDropdown.Item>
+              <NavDropdown.Item href="/user/create">Create</NavDropdown.Item>
+            
             </NavDropdown>
           </Nav>
           <Nav>

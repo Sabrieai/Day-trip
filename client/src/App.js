@@ -40,9 +40,9 @@ const App = () => {
         <Route path="/myreviews" element={<Reviews />} />
         <Route path="/adventures/:id" element={<Adventure/>} />
 
-        <Route path="/user/create/:id" element={<AdventureCreate />} />
+        <Route path="/user/create" element={<AdventureCreate />} />
         <Route path="/user/update/:id" element={<AdventureUpdate />} />
-        <Route path="/user/view/:id" element={<Myadventure />} />
+        <Route path="/user/view/" element={<Myadventure />} />
         <Route path="/reviews/create/:id" element={<ReviewCreate />} />
 
         <Route path="/category/*" element={<Category />} />

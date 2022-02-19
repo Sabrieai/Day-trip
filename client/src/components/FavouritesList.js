@@ -13,13 +13,16 @@ export default function FavouritesList() {
 
 
   useEffect(() => {
-
-    getFavourites(1)
+     if (user.id) {
+    getFavourites(user.id)
       .then((data) => {
         console.log(data, "DATA")
         setFavourites(data);
       })
-  }, [])
+      console.log("CHANGED", user.id)
+    }
+    
+  }, [user.id])
 
 console.log("USER FROM CONTEXT", user)
 console.log(favourites, "Favourites");

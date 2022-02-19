@@ -1,5 +1,5 @@
 import React from "react"
-import ToggleFavourite from "./ToggleFavourite";
+import Deleter from "./DeleteFavourite";
 
 
 
@@ -9,14 +9,13 @@ export default function FavouritesCard(props) {
   console.log('FAV PROPS', props);
   return (
 
-
     <section>
       <a href={link}>
       <img src={`${props.photo}`} alt="" />
       <div>{props.title}</div>
       <div>In {props.city}</div>
-      <ToggleFavourite />
       </a>
+      <Deleter id={props.id}/>
     </section>
   )
 }

@@ -1,0 +1,23 @@
+.navbar{
+  border-radius: 20px;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+}
+.colour-nav{
+}
+
+.nav-link{
+  color: black;
+font-size: 15px;
+}
+.nav-link:hover{
+  color: black;
+font-size: 15px;
+}
+
+#collasible-nav-dropdown{
+  padding-bottom: 5px;
+}
+
+

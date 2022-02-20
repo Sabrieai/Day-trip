@@ -1,0 +1,16 @@
+.adv-form{
+  display: flex;
+  justify-content: start;
+  padding-left: 50px;
+}
+
+.form-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-btn{
+  padding-top: 50px;
+}
+

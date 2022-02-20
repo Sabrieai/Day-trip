@@ -236,6 +236,16 @@ export default function useApplicationData() {
     })
   }
 
+  const getViews = (id) => {
+    return axios.get(`http://localhost:8080/reviews/view/${id}`)
+    .then((data) => {
+      return data.data[0]
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
   return {
     postReview,
     postAdventure,

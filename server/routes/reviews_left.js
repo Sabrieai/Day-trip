@@ -17,4 +17,12 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.get('/view/:id', (req, res) => {
+  const id = req.params.id;
+  reviews.getReviewsViews(id)
+    .then((reviews) => {
+      res.json(reviews);
+    });
+});
+
 module.exports = router;

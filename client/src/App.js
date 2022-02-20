@@ -18,7 +18,6 @@ import Myadventure from './components/MyAdventure';
 import ResultsList from './Pages/Results'
 import NavbarComponent from './components/NavbarComponent';
 import UserProvider from './providers/UserProvider';
-import ImprovedStar from './components/ImprovedStar';
 
 const responseGoogle = response => {
   console.log(response);
@@ -48,7 +47,6 @@ const App = () => {
 
         <Route path="/category/*" element={<Category />} />
         <Route path="/results/:query" element={<ResultsList />} />
-        <Route path="/test" element={<ImprovedStar />} />
 
 
         {/* <GoogleLogin

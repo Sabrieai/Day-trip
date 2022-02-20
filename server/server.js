@@ -10,7 +10,7 @@ const cors = require('cors');
 // Express Configuration
 const app = Express();
 app.use(morgan('dev'));
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(Express.static('public'));
@@ -40,15 +40,6 @@ app.use('/myreviews', myReviewsRouter);
 app.use('/reviews', reviewsLeftRouter);
 app.use('/reservation', reservationRouter);
 
-
-// Sample GET route
-app.get('/api/data', (req, res) => {
-  homepage.searchDestination('New York')
-    .then((products) => {
-      res.json(products);
-      // res.render()
-    });
-});
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

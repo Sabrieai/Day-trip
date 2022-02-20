@@ -1,14 +1,28 @@
 .btn {
 background-color: rgb(168, 132, 168);
-border-radius: 20%;
-width: 35px;
+border-radius: 50%;
+width: auto;
 height: auto;
+position: relative;
+right: 65px;
+bottom: 2px;
 }
 
 .search__icon {
   font-size: 15px;
+
 }
 
-.search__form {
+.search-bar_input {
+width: 400px;
+height: 45px;
+border-radius: 50px;
+border: 1px solid grey;
+padding-left: 30px;
+}
 
+.location__pin-icon {
+  position: relative;
+  right: 395px;
+  bottom: 3px;
 }

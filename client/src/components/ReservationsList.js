@@ -28,17 +28,25 @@ export default function ReservationsList() {
       let path = `/reviews/${reservation.adventure_id}/${reservation.id}`; 
       navigate(path);
     }
+    const now = Date.now();
+    const resTime = Date.parse(reservation.date);
+    const passed = now > resTime
+    const date = new Date(resTime);
+    const readable = date.toDateString() 
+  
     return (
-      <div className ="Indv-reservation">
+     
+      <div className ="Indv-reservation" key={i}>
       <ReservationCard
         key={i}
         city={reservation.city}
         photo={reservation.thumbnail_photo_url}
         title={reservation.title}
         id={reservation.id}
-        date={reservation.date}
+        date={readable}
       />
-      <button onClick={routeChange}>Leave a Review</button>
+     
+      {passed && <button onClick={routeChange}>Leave a Review</button>}
       </div>
     )
   })

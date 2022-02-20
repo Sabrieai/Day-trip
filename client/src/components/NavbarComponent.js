@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav, Container } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav, Container } from 'react-bootstrap';
 
 export default function NavBar() {
   return (
@@ -11,6 +11,7 @@ export default function NavBar() {
           <Nav className="me-auto">
             <Nav.Link href="/reservations">Reservations</Nav.Link>
             <Nav.Link href="/favourites">Favourites</Nav.Link>
+            <Nav.Link href="/myreviews">Reviews</Nav.Link>
             <NavDropdown title="My Adventures" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/user/view">View</NavDropdown.Item>
               <NavDropdown.Item href="/user/create">Create</NavDropdown.Item>

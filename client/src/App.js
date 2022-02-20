@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { GoogleLogin } from 'react-google-login';
 import Home from './Pages/Home';

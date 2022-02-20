@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+
+body {
+font-family: 'Raleway', sans-serif;
+font-weight: 500;
+}
+
+.adventure__title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+.adventure__city_province {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline grey 1px;
+  margin-left: 60px;
+}
+
+.adventure_cover_photo {
+  width: 55%;
+  height: 450px;
+  border-radius: 25px;
+ margin-top: 30px;
+ margin-left: 30px;
+ margin-right: 10px;
+}
+
+.adventure_thumbnail_photo {
+  width: 33%;
+  height: 450px;
+  border-radius: 25px;
+ margin-top: 30px;
+}
+
+.adventure_host_name {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-left: 60px;
+  text-decoration: underline black 2px;
+}
+
+.adventure__host_profile {
+  display: flex;
+}
+
+.adventure_host_pic {
+border-radius: 50%;
+width: 50px;
+height: 25%;
+margin-left: 250px;
+margin-top: 10px;
+}
+
+.adventure__about_title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
+.adventure__description {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 60px;
+}
+
+.adventure__description_div {
+width: 50%;
+margin-top: 20px;
+}

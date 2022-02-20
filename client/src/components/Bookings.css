@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+
+.booking__date_guests {
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.booking__day {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.booking__input {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 7px;
+  border: 1px solid grey;
+  width: 80px;
+  margin-left: 8px;
+}
+
+.booking__user_icon {
+  margin-left: 10px;
+}
+
+.booking__price_pp {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+.booking__total_price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.booking__reserve_button {
+  border-radius: 8px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f65353;
+  height: 30px;
+  width: 80%;
+margin-left: 20px;
+margin-bottom: 10px;
+margin-top: 8px;
+}
+
+.booking__card {
+  border-bottom: solid 1px grey;
+  width: 20%;
+  padding: 5px;
+  margin: 20px;
+}
+
+.booking__calendar_icon {
+  margin-left: 20px ;
+  color: #41c5aa;
+}
+
+.booking__dollar_sign {
+  margin-left: 25px;
+  color: #e67e23;
+  font-size: 14px;
+  position: relative;
+  top: 3px;
+}
+
+.booking__user_icon {
+  margin-left: 20px ;
+  color: #a164bb;
+}
+
+.booking__calculator {
+  margin-left: 20px;
+  color: #3d9ddc;
+}

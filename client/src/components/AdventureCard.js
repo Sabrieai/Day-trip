@@ -34,6 +34,7 @@ export default function AdventureCard() {
   return (
     <section>
 
+
       <div className="adventure__title">{adventure.title}</div>
       <div className="adventure__city_province">{adventure.city}, {adventure.province_state}, {adventure.country}</div>
       <div className="adventure_favourite">
@@ -41,7 +42,7 @@ export default function AdventureCard() {
         id={adventure.id}
       /> save
       </div>
-      <div>
+      <div className="adventure__photo_set">
       <img className="adventure_cover_photo" src={adventure.cover_photo_url} alt="" />
       <img className="adventure_thumbnail_photo" src={adventure.thumbnail_photo_url} alt="" />
       </div>
@@ -49,15 +50,14 @@ export default function AdventureCard() {
       <div className="adventure_host_name">Adventure hosted by {adventure.first_name} {adventure.last_name}</div>
       <img className="adventure_host_pic" src={`${adventure.pic}`} alt="" />
       </div>
+      <div className="adventure__price">${adventure.curr_price}</div>
       <div className="adventure__about_title">
       About your adventure 
       </div>
-    <div>
       <div className="adventure__description_div">
       <div className="adventure__description">{adventure.description}</div>
       </div>
-        {adventure.curr_price}</div>
-     { adventure.owner_id !== user.id  &&<Bookings price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>}
+     { adventure.owner_id !== user.id  &&<Bookings className="adventure__detail_price" price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>}
       { adventure.owner_id === user.id  && <button onClick={routeChange} > UPDATE</button>}
     </section>
   )

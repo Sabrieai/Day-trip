@@ -22,19 +22,17 @@ font-weight: 500;
 }
 
 .adventure_cover_photo {
-  width: 55%;
+  width: 50%;
   height: 450px;
   border-radius: 25px;
- margin-top: 30px;
  margin-left: 30px;
  margin-right: 10px;
 }
 
 .adventure_thumbnail_photo {
-  width: 33%;
+  width: 40%;
   height: 450px;
   border-radius: 25px;
- margin-top: 30px;
 }
 
 .adventure_host_name {
@@ -42,7 +40,7 @@ font-weight: 500;
   font-size: 20px;
   font-weight: 500;
   margin-top: 30px;
-  margin-left: 60px;
+  margin-left: 50px;
   text-decoration: underline black 2px;
 }
 
@@ -53,9 +51,9 @@ font-weight: 500;
 .adventure_host_pic {
 border-radius: 50%;
 width: 50px;
-height: 25%;
-margin-left: 250px;
-margin-top: 10px;
+height: 20%;
+margin-left: 50px;
+margin-top: 15px;
 }
 
 .adventure__about_title {
@@ -63,16 +61,36 @@ margin-top: 10px;
   font-weight: 500;
   font-size: 25px;
   margin-left: 60px;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .adventure__description {
   font-size: 18px;
   font-weight: 400;
   margin-left: 60px;
+  margin-bottom: 30px;
 }
 
 .adventure__description_div {
-width: 50%;
+width: 60%;
 margin-top: 20px;
+}
+
+.adventure__price {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 60px;
+margin-top: 15px;
+}
+
+.adventure_favourite {
+position: relative;
+left: 1140px;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.adventure__photo_set {
+  margin-left: 20px;
 }

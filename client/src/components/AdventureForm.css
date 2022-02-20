@@ -14,3 +14,17 @@
   padding-top: 50px;
 }
 
+#demo-simple-select-label{
+  font-size: 12px;
+  /* padding-bottom: 0px; */
+  margin-bottom: -15px;
+}
+#demo-simple-select{
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+.form-delete-btn{
+  display: flex;
+  justify-content: end;
+}

@@ -10,7 +10,6 @@ import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import "./AdventureForm.css"
-import { Checkbox } from "@mui/material";
 
 export default function AdventureForm() {
   const {
@@ -28,7 +27,7 @@ export default function AdventureForm() {
   const [description, setDescription] = useState('');
   const [thumbnail, setThumbnail] = useState('');
   const [coverPhoto, setCover] = useState('');
-  const [price, setPrice] = useState('');
+  const [currPrice, setCurrPrice] = useState('');
   const [accessible, setAccessible] = useState('');
   const [street, setStreet] = useState('');
   const [city, setCity] = useState('');
@@ -47,7 +46,7 @@ export default function AdventureForm() {
       thumbnail,
       coverPhoto,
       0,
-      price,
+      currPrice,
       accessible,
       street,
       city,
@@ -188,6 +187,7 @@ export default function AdventureForm() {
       noValidate
       autoComplete="off"
       className="adv-form"
+      onSubmit={event => event.preventDefault()}
     >
       <div className="form-section">
         <TextField
@@ -201,8 +201,8 @@ export default function AdventureForm() {
           required
           id="outlined-required"
           label="Price Per Person"
-          value={price}
-          onChange={(event) => { setPrice(event.target.value) }}
+          value={currPrice}
+          onChange={(event) => { setCurrPrice(event.target.value) }}
         />
         <TextField
           id="outlined-number"

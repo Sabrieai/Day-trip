@@ -37,7 +37,7 @@ export default function SearchBar() {
           onChange={(event) => setSearch(event.target.value)}
           data-testid="student-name-input"
         />
-        <Button onClick={() => navigate(`results/${search}`)}> SEARCH</Button>
+        <button onClick={() => navigate(`results/${search}`)}> SEARCH</button>
 
       </form>
 

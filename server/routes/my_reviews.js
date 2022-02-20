@@ -24,9 +24,10 @@ router.post('/', (req, res) => {
   const reservation = req.body.reservation;
   const rating = req.body.rating;
   const comment = req.body.comment;
+  console.log(req.body);
   reviews.addReview(guest, adventure, reservation, rating, comment)
-    .then(() => {
-      res.send('SUCCESS');
+    .then((data) => {
+      res.send(data);
     })
     .catch((err) => {
       res.json(err.message);

@@ -263,6 +263,7 @@ export default function useApplicationData() {
     handleSearch,
     getPlaceholder,
     getMyAdventures,
-    getUser
+    getUser,
+    getViews
   }
 };

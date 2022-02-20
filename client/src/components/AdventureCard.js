@@ -42,7 +42,7 @@ export default function AdventureCard() {
       <img src={`${adventure.pic}`} alt="" />
       <div>{adventure.description}</div>
       <div>{adventure.curr_price}</div>
-      <Bookings price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>
+     { adventure.owner_id !== user.id  &&<Bookings price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>}
       { adventure.owner_id === user.id  && <button onClick={routeChange} > UPDATE</button>}
       
     </section>

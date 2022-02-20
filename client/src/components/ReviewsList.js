@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from '../hooks/useApplicationData';
+import { userContext } from "../providers/UserProvider";
 import ReviewCard from "./ReviewCard";
 // import './FavouritesCard.css';
 
@@ -8,14 +9,16 @@ import ReviewCard from "./ReviewCard";
 export default function ReviewsList() {
   const { getReviewsILeft } = useApplicationData();
   const [reviews, setReviews] = useState([]);
+  const {user} = useContext(userContext)
   useEffect(() => {
-
-    getReviewsILeft(20)
+   if (user.id) {
+    getReviewsILeft(user.id)
       .then((data) => {
         console.log('REVIEW LIST', data)
         setReviews(data);
       })
-  }, [])
+    }
+  }, [user.id])
 
   const reviewsList = reviews.map((review, i) => {
     return (

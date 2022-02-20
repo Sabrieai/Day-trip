@@ -3,6 +3,8 @@ import useApplicationData from '../hooks/useApplicationData';
 
 export default function CategoryCard(props) {
   const link = `/adventures/${props.id}`;
+  console.log(props);
+  //props.price undefined
   return (
     <a href={link}>
       <img src={props.photo} />

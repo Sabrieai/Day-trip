@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from '../hooks/useApplicationData';
 import ReservationCard from "./ReservationCard";
 import { userContext } from "../providers/UserProvider";
+import { useNavigate } from "react-router-dom";
 // import './ReservationCard.css';
 
 export default function ReservationsList() {
@@ -17,9 +18,18 @@ export default function ReservationsList() {
       })
     }
   }, [user.id])
+  
+  let navigate = useNavigate(); 
+ 
+  
 
   const ReservationList = reservations.map((reservation, i) => {
+    const routeChange = () =>{ 
+      let path = `/reviews/${reservation.adventure_id}/${reservation.id}`; 
+      navigate(path);
+    }
     return (
+      <div className ="Indv-reservation">
       <ReservationCard
         key={i}
         city={reservation.city}
@@ -28,6 +38,8 @@ export default function ReservationsList() {
         id={reservation.id}
         date={reservation.date}
       />
+      <button onClick={routeChange}>Leave a Review</button>
+      </div>
     )
   })
 

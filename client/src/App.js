@@ -18,6 +18,7 @@ import Myadventure from './components/MyAdventure';
 import ResultsList from './Pages/Results'
 import NavbarComponent from './components/NavbarComponent';
 import UserProvider from './providers/UserProvider';
+import ImprovedStar from './components/ImprovedStar';
 
 const responseGoogle = response => {
   console.log(response);
@@ -43,10 +44,11 @@ const App = () => {
         <Route path="/user/create" element={<AdventureCreate />} />
         <Route path="/user/update/:id" element={<AdventureUpdate />} />
         <Route path="/user/view/" element={<Myadventure />} />
-        <Route path="/reviews/create/:id" element={<ReviewCreate />} />
+        <Route path="/reviews/:id/:res" element={<ReviewCreate />} />
 
         <Route path="/category/*" element={<Category />} />
         <Route path="/results/:query" element={<ResultsList />} />
+        <Route path="/test" element={<ImprovedStar />} />
 
 
         {/* <GoogleLogin

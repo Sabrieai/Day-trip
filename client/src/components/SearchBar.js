@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import useApplicationData from '../hooks/useApplicationData';
 import { FaSearch } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import './SearchBar.css';
 
 
@@ -36,7 +37,7 @@ export default function SearchBar() {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           data-testid="student-name-input"
-        />
+        /> <FaMapMarkerAlt className="location__pin-icon"/>
         <button className="btn" onClick={() => navigate(`results/${search}`)} ><FaSearch className="search__icon"/></button>
 
       </form>

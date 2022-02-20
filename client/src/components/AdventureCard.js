@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router";
 import useApplicationData from '../hooks/useApplicationData';
 import { userContext } from "../providers/UserProvider";
 import ToggleFavourite from "./ToggleFavourite";
+import Bookings from "./Bookings"
 
 export default function AdventureCard() {
   const { user } = useContext(userContext);
@@ -22,9 +23,10 @@ export default function AdventureCard() {
       .then((data) => {
         setAdventure(data.adventure[0]);
         setAvailability(data.details)
-
       })
   }, [])
+
+  console.log(availability, "AVAILABILTY", adventure.curr_price) 
 
 // if update is a popup on THIS page we can pass down props
   console.log(adventure, "Adventure")
@@ -40,8 +42,9 @@ export default function AdventureCard() {
       <img src={`${adventure.pic}`} alt="" />
       <div>{adventure.description}</div>
       <div>{adventure.curr_price}</div>
-      {/* <Bookings id={adventure.id}/> */}
+      <Bookings price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>
       { adventure.owner_id === user.id  && <button onClick={routeChange} > UPDATE</button>}
+      
     </section>
   )
 }

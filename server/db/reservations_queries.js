@@ -18,7 +18,7 @@ const getReservations = (id) => {
 
 const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adventureId) => {
   return pool.query(`
-  INSERT INTO reservations(date, total_price, guest_id, payment_id, total_guests, adventure_id)
+  INSERT INTO reservations(date, total_price, guest_id, payment_id, total_guest, adventure_id)
   VALUES($1, $2, $3, $4, $5, $6)
   `, [date, totalPrice, guestId, paymentId, totalGuests, adventureId])
     .then((response) => {

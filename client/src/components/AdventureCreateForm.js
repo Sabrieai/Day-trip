@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom";
 import useApplicationData from '../hooks/useApplicationData';
 import { userContext } from "../providers/UserProvider";
 
@@ -7,6 +8,12 @@ export default function AdventureForm() {
     postAdventure
   } = useApplicationData()
   const { user} = useContext(userContext);
+  let navigate = useNavigate(); 
+
+  const routeChange = () =>{ 
+    let path = `/user/view`; 
+    navigate(path);
+  }
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -150,10 +157,12 @@ export default function AdventureForm() {
           <option value="Fall">Fall</option>
           <option value="Winter">Winter</option>
         </select>
-        <button onClick={() => submit()}
+        <button onClick={()=>{submit(); routeChange();}}
         >Submit</button>
       </form>
 
     </main >
   )
 }
+
+

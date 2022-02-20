@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from '../hooks/useApplicationData';
 import ReservationCard from "./ReservationCard";
+import { userContext } from "../providers/UserProvider";
 // import './ReservationCard.css';
 
 export default function ReservationsList() {
   const { getReservations } = useApplicationData();
-  const [reservations, setReservations] = useState([]);
+  const [reservations, setReservations] = useState([]);  
+  const { user } = useContext(userContext)
   useEffect(() => {
-
-    getReservations(5)
+   if(user.id){
+    getReservations(user.id)
       .then((data) => {
         setReservations(data);
         console.log('DATA!!!!!!', data);
       })
-  }, [])
+    }
+  }, [user.id])
 
   const ReservationList = reservations.map((reservation, i) => {
     return (

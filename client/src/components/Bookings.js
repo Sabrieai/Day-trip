@@ -7,6 +7,7 @@ export default function Bookings(props) {
     const price = props.price
     const { user } = useContext(userContext)
     const { postReservation } = useApplicationData();
+    
 
     const bookingList = schedule.map(day => {
         const reserve = () => {

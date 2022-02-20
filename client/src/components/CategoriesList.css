@@ -10,5 +10,29 @@ li{
 .category-link{
   color: rgb(106, 106, 107);
   text-decoration: none;
+}
+.category-link:hover{
+  color: rgb(106, 106, 107);
+}
 
+.category-row{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  font-size: 12px;
+  width: 105%;
+  border-radius: 8px;
+}
+
+li:hover{
+  box-shadow: 1px 1px 8px #888888;
+
+}
+
+.category-list-container{
+  margin-top: 100px;
+}
+
+.header-categories{
+  text-align: center;
 }

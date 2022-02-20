@@ -1,8 +1,9 @@
 import React from "react"
+import "./CategoriesList.css"
 
 export default function CategoriesList() {
   return (
-    <>
+    <div>
       <ul>
         <li>
           <a href="category/food">Food and Drink</a>
@@ -30,6 +31,5 @@ export default function CategoriesList() {
         </li>
       </ul>
 
-    </>
-  )
+    </div>)
 }

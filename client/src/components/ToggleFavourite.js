@@ -29,9 +29,8 @@ export default function ToggleFavourite(props) {
 
   return (
     <label className='favourite'>
-
       <FaHeart className='favouriteIcon' id='heart'
-        color={favourite % 2 ? "#ffc107" : "#e4e5e9"} size={100}
+        color={favourite % 2 ? "#ffc107" : "#e4e5e9"}
         onClick={favourite % 2 ? onDelete : onAdd}
       />
     </label>

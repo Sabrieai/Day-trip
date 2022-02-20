@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+
+.booking__date_guests {
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 4px;
+}
+
+.booking__day {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.booking__input {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 7px;
+  border: 1px solid grey;
+  width: 150px;
+  margin-left: 8px;
+}
+
+.booking__user_icon {
+  margin-left: 10px;
+}
+
+.booking__price_pp {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+.booking__total_price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.booking__reserve_button {
+  border-radius: 8px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f65353;
+  height: 30px;
+  width: 40%;
+margin-left: 20px;
+margin-bottom: 10px;
+}
+
+.booking__card {
+  border-radius: 10px;
+  border: solid 1px grey;
+  padding-top: 15px;
+  padding-bottom: 25;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin: 10px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.booking__calendar_icon {
+  color: #41c5aa;
+}
+
+.booking__dollar_sign {
+  color: #e67e23;
+  font-size: 14px;
+  position: relative;
+  bottom: 1px;
+}
+
+.booking__user_icon {
+  color: #a164bb;
+}
+
+.booking__calculator {
+  color: #3d9ddc;
+}
+
+.adventure__detail_price {
+  font-size: 90px;
+}

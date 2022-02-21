@@ -7,7 +7,7 @@ export default function Favourites() {
   let navigate = useNavigate();
   return (
     <div>
-      FAVOURITES PAGE
+      My Favourites
       <FavouritesList/>
     </div>
   )

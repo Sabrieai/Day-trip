@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from '../hooks/useApplicationData';
 import { userContext } from "../providers/UserProvider";
 import ReviewCard from "./ReviewCard";
-// import './FavouritesCard.css';
-
 
 
 export default function ReviewsList() {

@@ -5,35 +5,16 @@ import { userContext } from "../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 // import './ReservationCard.css';
 
-export default function ReservationsList() {
-  const { getReservations } = useApplicationData();
-  const [reservations, setReservations] = useState([]);  
-  const { user } = useContext(userContext)
-  useEffect(() => {
-   if(user.id){
-    getReservations(user.id)
-      .then((data) => {
-        setReservations(data);
-        console.log('DATA!!!!!!', data);
-      })
-    }
-  }, [user.id])
-  
-  // if(!props) {
-  //   window.location.reload
-  // }
-  let navigate = useNavigate(); 
- 
-  
+export default function ReservationsList(props) {
 
-  const reservationList = reservations.map((reservation, i) => {
+  let navigate = useNavigate(); 
+  const reservationList = props.reservations.map((reservation, i) => {
     const routeChange = () =>{ 
       let path = `/reviews/${reservation.adventure_id}/${reservation.id}`; 
       navigate(path);
     }
-    const now = Date.now();
+   
     const resTime = Date.parse(reservation.date);
-    const passed = now > resTime
     const date = new Date(resTime);
     const readable = date.toDateString() 
   
@@ -49,7 +30,7 @@ export default function ReservationsList() {
         date={readable}
       />
      
-      {passed && <button onClick={routeChange}>Leave a Review</button>}
+      {props.passed && <button onClick={routeChange}>Leave a Review</button>}
       </div>
     )
   })
@@ -57,6 +38,7 @@ export default function ReservationsList() {
 
   return (
     <section>
+      { props.passed ? <h1> Adventures Taken</h1> : <h1> Adventures Yet To Come </h1>  }
       {reservationList}
     </section>
   )

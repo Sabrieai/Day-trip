@@ -38,7 +38,7 @@ export default function ReservationsList(props) {
 
   return (
     <section>
-      { props.passed ? <h1> Adventures Taken</h1> : <h1> Adventures Yet To Come </h1>  }
+      { props.passed ? <h3> Adventures Taken</h3> : <h3> Adventures Yet To Come </h3>  }
       {reservationList}
     </section>
   )

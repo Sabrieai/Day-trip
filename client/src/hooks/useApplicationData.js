@@ -2,8 +2,6 @@ import axios from "axios";
 
 export default function useApplicationData() {
 
-  // const [favourites, setFavourites] = useState();
-
   const postReview = (guest, adventure, reservation, rating, comment) => {
     return axios.post('http://localhost:8080/myreviews', {
       guest,

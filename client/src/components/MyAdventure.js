@@ -23,6 +23,7 @@ export default function Myadventure() {
     }, [user.id])
 
     const adventureList = myAdventures.map((adventure, i) => {
+        console.log(adventure);
         return (
             <CategoryCard
                 key={i}

@@ -57,8 +57,8 @@ export default function AdventureCard() {
       <div className="adventure__description_div">
       <div className="adventure__description">{adventure.description}</div>
       </div>
-     { adventure.owner_id !== user.id  &&<Bookings className="adventure__detail_price" price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>}
-      { adventure.owner_id === user.id  && <button onClick={routeChange} > UPDATE</button>}
+     { adventure.owner_id === user.id  ?  <button onClick={routeChange} > UPDATE</button> : <Bookings className="adventure__detail_price" price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>}
+  
     </section>
   )
 }

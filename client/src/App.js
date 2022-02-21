@@ -19,15 +19,12 @@ import ResultsList from './Pages/Results'
 import NavbarComponent from './components/NavbarComponent';
 import UserProvider from './providers/UserProvider';
 
-
-
-const responseGoogle = response => {
-  console.log(response);
-};
+// const responseGoogle = response => {
+//   console.log(response);
+// };
 
 const App = () => {
- 
-  return (
+return (
     
     <Router>
        <UserProvider>

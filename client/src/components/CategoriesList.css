@@ -1,14 +1,15 @@
 li{
   list-style-type:none;
-  border: 1px solid rgb(106, 106, 107);
   border-radius: 8px;
   padding: 5px 10px;
   text-align: center;
+  background: rgba(255, 255, 255, .8);
+font-family: 'Roboto', sans-serif;
 
 }
 
 .category-link{
-  color: rgb(106, 106, 107);
+  color: #212529;
   text-decoration: none;
 }
 .category-link:hover{
@@ -19,9 +20,10 @@ li{
   display: flex;
   justify-content: space-between;
   padding: 0px;
-  font-size: 12px;
+  font-size: 15px;
   width: 105%;
   border-radius: 8px;
+  
 }
 
 li:hover{
@@ -35,4 +37,8 @@ li:hover{
 
 .header-categories{
   text-align: center;
+color: #41c5aa;
+margin-bottom: 30px;
+font-family: 'Raleway', sans-serif;
+
 }

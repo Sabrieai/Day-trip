@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const homepage = require('../db/home_queries.js')
-const categoryQueries = require('../db/category_queries.js')
+const homepage = require('../db/home_queries.js');
+const categoryQueries = require('../db/category_queries.js');
 
 
 
 // VALID
 router.get('/login/:id', (req, res) => {
-  const user = req.params.id
+  const user = req.params.id;
   homepage.getUser(user)
     .then((results) => {
       res.json(results);
@@ -28,7 +28,7 @@ router.get('/search/:input', (req, res) => {
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-})
+});
 
 //get for placeholder VALID
 router.get('/', (req, res) => {
@@ -37,12 +37,12 @@ router.get('/', (req, res) => {
       homepage.getCategories(req.params.input)
         .then((categories) => {
           res.json({ categories, placeholder: destination });
-        })
+        });
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-})
+});
 
 
 //get favourites VALID

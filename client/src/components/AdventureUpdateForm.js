@@ -8,13 +8,15 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import "./AdventureForm.css"
 
 export default function AdventureForm() {
   const {
     getAdventure,
-    updateAdventure
+    updateAdventure,
+    deleteAdventure
   } = useApplicationData()
 
   const params = useParams();
@@ -27,8 +29,6 @@ export default function AdventureForm() {
     let path = `/user/view`;
     navigate(path);
   }
-
-  // const [adventure, setAdventure] = useState(null);
 
   useEffect(() => {
 
@@ -53,7 +53,7 @@ export default function AdventureForm() {
         setAccessible(adventure.accessible);
       })
   }, [])
- 
+
 
   const [title, setTitle] = useState(``);
   const [description, setDescription] = useState(``);
@@ -284,8 +284,17 @@ export default function AdventureForm() {
               Update
             </Button>
           </div>
-
-          {/* <button onClick={() => { submit(); routeChange(); }}>Submit</button> */}
+          <div className="form-delete-btn">
+            <Button
+              style={{
+                borderRadius: 35,
+                backgroundColor: "#C75D47",
+              }}
+              onClick={() => deleteAdventure(adventureId)}
+              variant="contained"
+              endIcon={<DeleteIcon />}
+            >Delete</Button>
+          </div>
         </div>
 
       </Box>

@@ -30,6 +30,7 @@ const homepageRouter = require('./routes/homepage.js');
 const myReviewsRouter = require('./routes/my_reviews.js');
 const reviewsLeftRouter = require('./routes/reviews_left.js');
 const reservationRouter = require('./routes/reservation.js');
+const reviewedRouter = require('./routes/reviewed');
 
 //Pass routers to express as middleware
 app.use('/', homepageRouter);
@@ -39,6 +40,7 @@ app.use('/favourites', favouritesRouter);
 app.use('/myreviews', myReviewsRouter);
 app.use('/reviews', reviewsLeftRouter);
 app.use('/reservation', reservationRouter);
+app.use('/reviewed', reviewedRouter);
 
 
 app.listen(PORT, () => {

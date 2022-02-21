@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ReservationsList(props) {
 
+ 
   let navigate = useNavigate(); 
   const reservationList = props.reservations.map((reservation, i) => {
     const routeChange = () =>{ 
@@ -15,6 +16,13 @@ export default function ReservationsList(props) {
     const resTime = Date.parse(reservation.date);
     const date = new Date(resTime);
     const readable = date.toDateString() 
+
+    let alreadyReviewed = false
+    
+    if(props.reviewed.length > 0) {
+     alreadyReviewed = props.reviewed.includes(reservation.id);  
+    }
+   
   
     return (
      
@@ -28,7 +36,7 @@ export default function ReservationsList(props) {
         date={readable}
       />
      
-      {props.passed && <button onClick={routeChange}>Leave a Review</button>}
+      {props.passed && alreadyReviewed? <span>Thank you for Reviwing!</span> : props.passed && <button onClick={routeChange}>Leave a Review</button>}
       </div>
     )
   })
@@ -36,7 +44,7 @@ export default function ReservationsList(props) {
 
   return (
     <section>
-      { props.passed ? <h3> Adventures Taken</h3> : <h3> Adventures Yet To Come </h3>  }
+      { props.passed ? <h3> Adventures Taken</h3> : <h3> Adventures {props.today ? `Today!`: `Yet To Come`} </h3>  }
       {reservationList}
     </section>
   )

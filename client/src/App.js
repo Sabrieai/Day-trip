@@ -28,10 +28,10 @@ return (
     
     <Router>
        <UserProvider>
+
       <nav>
       < NavbarComponent/>
       </nav>
-
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/favourites" element={<Favourites />} />

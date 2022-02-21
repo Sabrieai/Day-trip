@@ -178,7 +178,7 @@ export default function AdventureForm() {
 
   return (
     <main>
-    <h1>Create an Adventure</h1>
+    <h1 className="create-header">Create an Adventure</h1>
     <Box
       component="form"
       sx={{
@@ -196,6 +196,7 @@ export default function AdventureForm() {
           label="Title"
           value={title}
           onChange={(event) => { setTitle(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -203,6 +204,7 @@ export default function AdventureForm() {
           label="Price Per Person"
           value={currPrice}
           onChange={(event) => { setCurrPrice(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           id="outlined-number"
@@ -213,6 +215,7 @@ export default function AdventureForm() {
           }}
           value={occupancy}
           onChange={(event) => { setOccupancy(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -220,6 +223,7 @@ export default function AdventureForm() {
           label="Street Address"
           value={street}
           onChange={(event) => { setStreet(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -227,6 +231,7 @@ export default function AdventureForm() {
           label="City"
           value={city}
           onChange={(event) => { setCity(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -234,6 +239,7 @@ export default function AdventureForm() {
           label="Province/State"
           value={provinceState}
           onChange={(event) => { setProvinceState(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -241,6 +247,7 @@ export default function AdventureForm() {
           label="Country"
           value={country}
           onChange={(event) => { setCountry(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -248,6 +255,7 @@ export default function AdventureForm() {
           label="Postal/Zip Code"
           value={postal}
           onChange={(event) => { setPostal(event.target.value) }}
+          style={{width: 350}}
         />
       </div>
       <div className="form-section">
@@ -258,6 +266,7 @@ export default function AdventureForm() {
           rows={4}
           value={description}
           onChange={(event) => { setDescription(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -265,6 +274,7 @@ export default function AdventureForm() {
           label="Thumbnail URL"
           value={thumbnail}
           onChange={(event) => { setThumbnail(event.target.value) }}
+          style={{width: 350}}
         />
         <TextField
           required
@@ -272,13 +282,14 @@ export default function AdventureForm() {
           label="Cover Photo URL"
           value={coverPhoto}
           onChange={(event) => { setCover(event.target.value) }}
+          style={{width: 350}}
         />
         <InputLabel id="demo-simple-select-label">Accessibility</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="accessible"
-          style={{ minWidth: 220 }}
+          style={{width: 350}}
           value={accessible}
           onChange={(event) => { setAccessible(event.target.value) }}
         >
@@ -290,7 +301,7 @@ export default function AdventureForm() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="season"
-          style={{ minWidth: 220 }}
+          style={{width: 350}}
           value={season}
           onChange={(event) => { setSeason(event.target.value) }}
         >
@@ -304,7 +315,7 @@ export default function AdventureForm() {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="category"
-          style={{ minWidth: 220 }}
+          style={{width: 350}}
           value={category}
           onChange={(event) => { setCategory(event.target.value) }}
         >
@@ -320,7 +331,12 @@ export default function AdventureForm() {
 
 
         <div className="create-btn">
-          <Button onClick={() => { submit(); routeChange(); }} variant="contained" endIcon={<CheckCircleIcon />}>
+          <Button 
+          onClick={() => { submit(); routeChange(); }} 
+          variant="contained" 
+          endIcon={<CheckCircleIcon />}
+          style={{width: 300, height:50, fontSize:18, borderRadius: 35}}
+          >
             Create
           </Button>
         </div>

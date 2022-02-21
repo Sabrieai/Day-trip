@@ -1,28 +1,38 @@
 .btn {
-background-color: rgb(168, 132, 168);
+background-color: #41c5aa;
 border-radius: 50%;
 width: auto;
 height: auto;
 position: relative;
-right: 65px;
-bottom: 2px;
+left: 175px;
+bottom: 58px;
 }
 
 .search__icon {
   font-size: 15px;
-
+  color: white;
 }
 
 .search-bar_input {
 width: 400px;
 height: 45px;
 border-radius: 50px;
-border: 1px solid grey;
-padding-left: 30px;
+border: none;
+padding-left: 40px;
+background: rgba(255, 255, 255, .8);
+font-family: 'Roboto', sans-serif;
+}
+
+.search__input_form {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 50%;
 }
 
 .location__pin-icon {
   position: relative;
-  right: 395px;
-  bottom: 3px;
+  right: 180px;
+  bottom: 31px;
 }

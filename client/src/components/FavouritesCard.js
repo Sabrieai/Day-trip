@@ -8,14 +8,13 @@ export default function FavouritesCard(props) {
   const link = `/adventures/${props.id}`;
   console.log('FAV PROPS', props);
   return (
-
-    <section>
+    <section className="favourites__card">
       <a href={link}>
-      <img src={`${props.photo}`} alt="" />
-      <div>{props.title}</div>
-      <div>In {props.city}</div>
+        <img className="favourites__thumbnail" src={`${props.photo}`} alt="" />
+        <div className="favourites__title">{props.title}</div>
+        <div>In {props.city}</div>
       </a>
-      <Deleter id={props.id}/>
+      <Deleter id={props.id} />
     </section>
   )
 }

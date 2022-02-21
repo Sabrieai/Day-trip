@@ -1,4 +1,22 @@
-img{
-  height: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+
+.favourites__thumbnail {
+  height: 220px;
   width: auto;
+border-radius: 20px;
+text-align: center;
+}
+
+.favourites__title {
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+color: black;
+}
+
+.favourites__card {
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  width: 27%;
+  padding-top: 10px;
+  padding-left: 10px;
 }

@@ -25,6 +25,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+
 //posts reservation into reservations table and updates availibiltiy
 router.post('/', (req, res) => {
   const adventure = req.body.adventure;
@@ -52,5 +53,6 @@ router.post('/', (req, res) => {
 
 
 });
+
 
 module.exports = router;

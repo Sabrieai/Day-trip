@@ -43,4 +43,5 @@ router.get('/adventure/:id', (req, res) => {
     });
 });
 
+
 module.exports = router;

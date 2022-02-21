@@ -90,5 +90,20 @@ const getAdventureReviews = (id) => {
 
 };
 
+const getReviewed = (id) => {
+  return pool.query(`SELECT reservations.id
+    FROM adventure_reviews 
+    JOIN reservations ON reservations.id = reservation_id
+    JOIN users ON users.id = reservations.guest_id
+    WHERE users.id = $1;`, [id])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
 
-module.exports = { getReviewForm, addReview, getMyAdventureReviews, getMyReviews, getReviewsViews, getAdventureReviews };
+};
+
+
+module.exports = { getReviewForm, addReview, getMyAdventureReviews, getMyReviews, getReviewsViews, getAdventureReviews, getReviewed };

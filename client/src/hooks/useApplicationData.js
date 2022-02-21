@@ -253,7 +253,15 @@ export default function useApplicationData() {
       console.log(error);
     })
   }
-  
+   const getReviewed = (id) => {
+    return axios.get(`http://localhost:8080/reviewed/${id}`)
+    .then((data) => {
+      return data.data
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
 
   return {
     postReview,
@@ -274,6 +282,7 @@ export default function useApplicationData() {
     getMyAdventures,
     getUser,
     getViews,
-    getAdventureReviews
+    getAdventureReviews,
+    getReviewed
   }
 };

@@ -4,7 +4,7 @@ import { userContext } from '../providers/UserProvider';
 import useApplicationData from '../hooks/useApplicationData';
 
 export default function Reservations(props) {
-  const { getReservations } = useApplicationData();
+  const { getReservations, getReviewed } = useApplicationData();
   const [past, setPast] = useState([]);  
   const [future, setFuture] = useState([]);  
   const { user } = useContext(userContext)
@@ -13,8 +13,12 @@ export default function Reservations(props) {
     getReservations(user.id)
       .then((data) => {
         setFuture(data.future);
-        setPast(data.past)
+        setPast(data.past);
         console.log('DATA!!!!!!', data);
+        getReviewed(user.id)
+        .then((data) => {
+          console.log(data, `REVIEWED DATA`);
+        })
       })
     }
   }, [user.id])

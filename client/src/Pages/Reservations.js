@@ -8,6 +8,7 @@ export default function Reservations(props) {
   const { getReservations, getReviewed } = useApplicationData();
   const [past, setPast] = useState([]);  
   const [future, setFuture] = useState([]);  
+  const [today, setToday] = useState([]);  
   const [reviewed, setReviewed] = useState([]); 
   const { user } = useContext(userContext)
   useEffect(() => {
@@ -16,6 +17,7 @@ export default function Reservations(props) {
       .then((data) => {
         setFuture(data.future);
         setPast(data.past);
+        setToday(data.todays)
         console.log('DATA!!!!!!', data);
         getReviewed(user.id)
         .then((data) => {
@@ -29,6 +31,7 @@ export default function Reservations(props) {
   return (
     <div>
       RESERVATIONS PAGE
+<ReservationsList reservations={today} passed={false} reviewed={reviewed} today={true}/>
 <ReservationsList reservations={past} passed={true} reviewed={reviewed}/>
 <ReservationsList reservations={future} passed={false} reviewed={reviewed}/>
     </div>

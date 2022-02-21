@@ -102,7 +102,7 @@ export default function AdventureForm() {
   console.log(season, `CATEGORY`)
   return (
     <main>
-      <h1>Create an Adventure</h1>
+      <h1 className="update-header">Update an Adventure</h1>
       <Box
         component="form"
         sx={{
@@ -112,6 +112,7 @@ export default function AdventureForm() {
         autoComplete="off"
         className="adv-form"
         onSubmit={event => event.preventDefault()}
+        style={{ width: 350 }}
       >
         <div className="form-section">
           <InputLabel id="demo-simple-select-label">Title</InputLabel>
@@ -121,6 +122,7 @@ export default function AdventureForm() {
             placeholder="Title"
             value={title}
             onChange={(event) => { setTitle(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Previous Price</InputLabel>
           <TextField
@@ -128,6 +130,7 @@ export default function AdventureForm() {
             id="outlined-required"
             placeholder="Price Per Person"
             value={prevPrice}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">New Price</InputLabel>
           <TextField
@@ -136,6 +139,7 @@ export default function AdventureForm() {
             placeholder="Price Per Person"
             value={currPrice}
             onChange={(event) => { setCurrPrice(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Max Guests Per Day</InputLabel>
           <TextField
@@ -147,6 +151,7 @@ export default function AdventureForm() {
             }}
             value={occupancy}
             onChange={(event) => { setOccupancy(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Street Address</InputLabel>
           <TextField
@@ -155,6 +160,7 @@ export default function AdventureForm() {
             placeholder="Street Address"
             value={street}
             onChange={(event) => { setStreet(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">City</InputLabel>
           <TextField
@@ -163,6 +169,7 @@ export default function AdventureForm() {
             placeholder="City"
             value={city}
             onChange={(event) => { setCity(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Province/State</InputLabel>
           <TextField
@@ -171,6 +178,7 @@ export default function AdventureForm() {
             placeholder="Province/State"
             value={provinceState}
             onChange={(event) => { setProvinceState(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Country</InputLabel>
           <TextField
@@ -179,6 +187,7 @@ export default function AdventureForm() {
             placeholder="Country"
             value={country}
             onChange={(event) => { setCountry(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Postal/Zip Code</InputLabel>
           <TextField
@@ -187,6 +196,7 @@ export default function AdventureForm() {
             placeholder="Postal/Zip Code"
             value={postal}
             onChange={(event) => { setPostal(event.target.value) }}
+            style={{ width: 350 }}
           />
         </div>
         <div className="form-section">
@@ -198,6 +208,7 @@ export default function AdventureForm() {
             rows={4}
             value={description}
             onChange={(event) => { setDescription(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Thumbnail URL</InputLabel>
           <TextField
@@ -206,6 +217,7 @@ export default function AdventureForm() {
             placeholder="Thumbnail URL"
             value={thumbnail}
             onChange={(event) => { setThumbnail(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select-label">Cover Photo URL</InputLabel>
           <TextField
@@ -214,13 +226,14 @@ export default function AdventureForm() {
             placeholder="Cover Photo URL"
             value={coverPhoto}
             onChange={(event) => { setCover(event.target.value) }}
+            style={{ width: 350 }}
           />
           <InputLabel id="demo-simple-select">Accessibility</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             placeholder="accessible"
-            style={{ minWidth: 220 }}
+            style={{ width: 350 }}
             value={accessible}
             onChange={(event) => { setAccessible(event.target.value) }}
           >
@@ -232,7 +245,7 @@ export default function AdventureForm() {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             placeholder="season"
-            style={{ minWidth: 220 }}
+            style={{ width: 350 }}
             value={season}
             onChange={(event) => { setSeason(event.target.value) }}
           >
@@ -246,7 +259,7 @@ export default function AdventureForm() {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             placeholder="category"
-            style={{ minWidth: 220 }}
+            style={{ width: 350 }}
             value={category}
             onChange={(event) => { setCategory(event.target.value); }}
           >
@@ -264,7 +277,7 @@ export default function AdventureForm() {
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             placeholder="active"
-            style={{ minWidth: 220 }}
+            style={{ width: 350 }}
             value={active}
             onChange={(event) => { setActive(event.target.value) }}
           >
@@ -272,29 +285,33 @@ export default function AdventureForm() {
             <MenuItem value="false">No</MenuItem>
           </Select>
 
-
-          <div className="create-btn">
-            <Button style={{
-              borderRadius: 35,
-              backgroundColor: "#21b6ae",
-            }}
-              onClick={() => { update(); routeChange(); }}
-              variant="contained"
-              endIcon={<CheckCircleIcon />}>
-              Update
-            </Button>
-          </div>
-          <div className="form-delete-btn">
-            <Button
-              style={{
+          <div className="update-delete-btns">
+            <div className="update-btn">
+              <Button style={{
                 borderRadius: 35,
-                backgroundColor: "#C75D47",
+                backgroundColor: "#21b6ae",
+                width: 160, height:50,
               }}
-              onClick={() => deleteAdventure(adventureId)}
-              variant="contained"
-              endIcon={<DeleteIcon />}
-            >Delete</Button>
+                onClick={() => { update(); routeChange(); }}
+                variant="contained"
+                endIcon={<CheckCircleIcon />}>
+                Update
+              </Button>
+            </div>
+            <div className="form-delete-btn">
+              <Button
+                style={{
+                  borderRadius: 35,
+                  backgroundColor: "#C75D47",
+                  width: 160, height:50,
+                }}
+                onClick={() => deleteAdventure(adventureId)}
+                variant="contained"
+                endIcon={<DeleteIcon />}
+              >Delete</Button>
+            </div>
           </div>
+
         </div>
 
       </Box>

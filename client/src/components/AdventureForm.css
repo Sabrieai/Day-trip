@@ -11,7 +11,7 @@
 }
 
 .create-btn{
-  padding-top: 50px;
+  padding-top: 45px;
 }
 
 #demo-simple-select-label{
@@ -24,7 +24,18 @@
   margin-bottom: 0px;
 }
 
-.form-delete-btn{
+.update-btn{
+margin-right: 10px;
+}
+
+.update-delete-btns{
   display: flex;
-  justify-content: end;
+  flex-direction: row;
+  padding-top: 15px;
+}
+.update-header{
+  padding: 15px 55px;
+}
+.create-header{
+  padding: 15px 55px;
 }

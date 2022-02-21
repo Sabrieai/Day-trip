@@ -1,7 +1,7 @@
 
 const getReservationDate = (day) => {
   const curr = new Date();
-  const first = curr.getDate() - curr.getDay() + 1; // Start from Monday
+  const first = curr.getDate() - curr.getDay(); // Start from Monday
   const monday = new Date(curr.setDate(first));
   let today;
   if (day === "Monday") {
@@ -30,6 +30,6 @@ const getReservationDate = (day) => {
   return formatted;
 };
 
-console.log(getReservationDate('Sunday'));
+console.log(getReservationDate('Monday'));
 
 module.exports = { getReservationDate };

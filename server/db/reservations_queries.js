@@ -35,6 +35,22 @@ const getFutureReservations = (id, today) => {
       return err.message;
     });
 };
+const getTodaysReservations = (id, today) => {
+  // const guest = req.session.user_id
+  return pool.query(`SELECT title, city, thumbnail_photo_url, reservations.date, reservations.id, adventure_id FROM adventures 
+  JOIN reservations 
+  ON adventures.id = adventure_id
+  WHERE guest_id = $1
+  AND reservations.date = $2
+  ORDER BY reservations.date
+  `, [id, today])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
 
 const addReservation = (date, totalPrice, guestId, paymentId, totalGuests, adventureId) => {
   return pool.query(`
@@ -64,4 +80,4 @@ const updateAvailibilty = (adventure, day) => {
     });
 };
 
-module.exports = { getPastReservations, getFutureReservations, addReservation, updateAvailibilty };
+module.exports = { getPastReservations, getFutureReservations, addReservation, updateAvailibilty, getTodaysReservations };

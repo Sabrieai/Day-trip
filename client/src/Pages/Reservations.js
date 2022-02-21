@@ -29,8 +29,8 @@ export default function Reservations(props) {
   return (
     <div>
       RESERVATIONS PAGE
-<ReservationsList reservations={past} passed={true} reviwed={reviewed}/>
-<ReservationsList reservations={future} passed={false} reviwed={reviewed}/>
+<ReservationsList reservations={past} passed={true} reviewed={reviewed}/>
+<ReservationsList reservations={future} passed={false} reviewed={reviewed}/>
     </div>
   )
 

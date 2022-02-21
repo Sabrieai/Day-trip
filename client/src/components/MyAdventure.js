@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from './../hooks/useApplicationData';
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
 import { userContext } from '../providers/UserProvider';
 
@@ -11,6 +11,9 @@ export default function Myadventure() {
     const { getMyAdventures } = useApplicationData();
     const [myAdventures, setMyAdventures] = useState([]);
     const { user} = useContext(userContext);
+
+    const {state} = useLocation();
+    console.log(state,`STATE`)
     
     useEffect(() => {
         if(user.id) {
@@ -22,6 +25,13 @@ export default function Myadventure() {
         }
     }, [user.id])
 
+    // useEffect(() => {
+    //     if(state === true) {
+    //         window.location.reload();
+    //     }
+    // }, [])
+
+    //trigger reload when useNavigate
     const adventureList = myAdventures.map((adventure, i) => {
         console.log(adventure);
         return (

@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useContext } from "react"
-import useApplicationData from '../hooks/useApplicationData';
+import React from "react"
 import ReservationCard from "./ReservationCard";
-import { userContext } from "../providers/UserProvider";
 import { useNavigate } from "react-router-dom";
 // import './ReservationCard.css';
 

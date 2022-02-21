@@ -244,6 +244,17 @@ export default function useApplicationData() {
     })
   }
 
+  const getAdventureReviews = (id) => {
+    return axios.get(`http://localhost:8080/myreviews/adventure/${id}`)
+    .then((data) => {
+      return data.data
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+  
+
   return {
     postReview,
     postAdventure,
@@ -262,6 +273,7 @@ export default function useApplicationData() {
     getPlaceholder,
     getMyAdventures,
     getUser,
-    getViews
+    getViews,
+    getAdventureReviews
   }
 };

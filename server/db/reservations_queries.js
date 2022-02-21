@@ -1,13 +1,33 @@
 const { pool } = require('./database');
 
 
-const getReservations = (id) => {
+const getPastReservations = (id, today) => {
   // const guest = req.session.user_id
   return pool.query(`SELECT title, city, thumbnail_photo_url, reservations.date, reservations.id, adventure_id FROM adventures 
   JOIN reservations 
   ON adventures.id = adventure_id
   WHERE guest_id = $1
-  `, [id])
+  AND reservations.date < $2
+  ORDER BY reservations.date DESC
+  `, [id, today])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
+};
+
+
+const getFutureReservations = (id, today) => {
+  // const guest = req.session.user_id
+  return pool.query(`SELECT title, city, thumbnail_photo_url, reservations.date, reservations.id, adventure_id FROM adventures 
+  JOIN reservations 
+  ON adventures.id = adventure_id
+  WHERE guest_id = $1
+  AND reservations.date > $2
+  ORDER BY reservations.date
+  `, [id, today])
     .then((response) => {
       return response.rows;
     })
@@ -44,4 +64,4 @@ const updateAvailibilty = (adventure, day) => {
     });
 };
 
-module.exports = { getReservations, addReservation, updateAvailibilty };
+module.exports = { getPastReservations, getFutureReservations, addReservation, updateAvailibilty };

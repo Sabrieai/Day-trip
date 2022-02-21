@@ -34,4 +34,13 @@ router.post('/', (req, res) => {
     });
 });
 
+//get reviews for an activity
+router.get('/adventure/:id', (req, res) => {
+  const id = req.params.id;
+  reviews.getAdventureReviews(id)
+    .then((reviews) => {
+      res.json(reviews);
+    });
+});
+
 module.exports = router;

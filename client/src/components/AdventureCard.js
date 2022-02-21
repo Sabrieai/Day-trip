@@ -5,12 +5,14 @@ import { userContext } from "../providers/UserProvider";
 import ToggleFavourite from "./ToggleFavourite";
 import Bookings from "./Bookings"
 import './AdventureCard.css'
+import ActivityReviews from "./ActivityReviewList";
 
 export default function AdventureCard() {
   const { user } = useContext(userContext);
-  const { getAdventure } = useApplicationData();
+  const { getAdventure, getAdventureReviews } = useApplicationData();
   const [adventure, setAdventure] = useState([]);
   const [availability, setAvailability] = useState([]);
+  const [reviews, setReviews] = useState([]);
   let navigate = useNavigate(); 
   const routeChange = () =>{ 
     let path = `/user/update/${adventure.id}`; 
@@ -25,12 +27,23 @@ export default function AdventureCard() {
         setAdventure(data.adventure[0]);
         setAvailability(data.details)
       })
-  }, [])
+      .then(() => {
+         getAdventureReviews(adventureId)
+         .then((data) => {
+       setReviews(data)
+        })
+      })
 
-  console.log(availability, "AVAILABILTY", adventure.curr_price) 
+     
+  }, [adventureId])
+
+
+
+  console.log(reviews, "REVIEWS") 
 
 // if update is a popup on THIS page we can pass down props
   console.log(adventure, "Adventure")
+  console.log(reviews, "Reviews")
   return (
     <section>
 
@@ -58,7 +71,7 @@ export default function AdventureCard() {
       <div className="adventure__description">{adventure.description}</div>
       </div>
      { adventure.owner_id === user.id  ?  <button onClick={routeChange} > UPDATE</button> : <Bookings className="adventure__detail_price" price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability}/>}
-  
+     <ActivityReviews reviews={reviews}/>
     </section>
   )
 }

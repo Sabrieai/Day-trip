@@ -19,11 +19,14 @@ export default function ReservationsList() {
     }
   }, [user.id])
   
+  // if(!props) {
+  //   window.location.reload
+  // }
   let navigate = useNavigate(); 
  
   
 
-  const ReservationList = reservations.map((reservation, i) => {
+  const reservationList = reservations.map((reservation, i) => {
     const routeChange = () =>{ 
       let path = `/reviews/${reservation.adventure_id}/${reservation.id}`; 
       navigate(path);
@@ -54,7 +57,7 @@ export default function ReservationsList() {
 
   return (
     <section>
-      {ReservationList}
+      {reservationList}
     </section>
   )
 }

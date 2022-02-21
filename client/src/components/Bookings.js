@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { userContext } from "../providers/UserProvider"
 import useApplicationData from "../hooks/useApplicationData"
 import { FaCalendarAlt } from "react-icons/fa";
@@ -14,6 +15,12 @@ const Booking = (props) => {
     const { postReservation } = useApplicationData();
     
     const [guests, setGuests] = useState('')
+
+    let navigate = useNavigate(); 
+    const routeChange = () =>{ 
+      let path = `/reservations`; 
+      navigate(path);
+    }
     
     //makes sure we only do math with numbers
     const total = guests !== '' && typeof guests === 'number' ? guests * props.price : 0
@@ -59,7 +66,7 @@ const Booking = (props) => {
                 <span className="booking__total_price"> <FaCalculator className="booking__calculator" /> {`Total: $${total}`}</span>
             </div>
             <h1> {props.day.availaible} </h1>
-            <button onClick={reserve} className="booking__reserve_button">Reserve</button>
+            <button   onClick={() => { reserve(); routeChange(); }} className="booking__reserve_button">Reserve</button>
             {console.log(props.day.available, props.day.day, `DAY AND AVAILIBLE`)}
         </div>
     )

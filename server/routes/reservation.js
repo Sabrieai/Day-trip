@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const reservations = require('../db/reservations_queries');
-const { getReservationDate } = require('./helpers/reservation_function');
+const { getReservationDate} = require('./helpers/reservation_function');
 
 
 // redirects if no id specified VALID
@@ -13,9 +13,15 @@ router.get('/', (req, res) => {
 //gets reservations for a user VALID
 router.get('/:id', (req, res) => {
   const id = req.params.id;
-  reservations.getReservations(id)
-    .then((reservation) => {
-      res.json(reservation);
+  const date = new Date();
+  const today = date.toISOString().slice(0, 10);
+
+  reservations.getPastReservations(id,today)
+    .then((past) => {
+      reservations.getFutureReservations(id, today)
+        .then((future) => {
+          res.json({future,past});
+        });
     });
 });
 

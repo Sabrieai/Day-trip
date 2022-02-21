@@ -73,8 +73,22 @@ const getReviewsViews = (id) => {
     .catch((err) => {
       return err.message;
     });
+};
+
+const getAdventureReviews = (id) => {
+  return pool.query(`SELECT users.pic, first_name, last_name, rating, comment 
+    FROM adventure_reviews 
+    JOIN adventures ON adventure_id = adventures.id
+    JOIN users ON users.id = guest_id
+    WHERE adventures.id = $1;`, [id])
+    .then((response) => {
+      return response.rows;
+    })
+    .catch((err) => {
+      return err.message;
+    });
 
 };
 
 
-module.exports = { getReviewForm, addReview, getMyAdventureReviews, getMyReviews, getReviewsViews };
+module.exports = { getReviewForm, addReview, getMyAdventureReviews, getMyReviews, getReviewsViews, getAdventureReviews };

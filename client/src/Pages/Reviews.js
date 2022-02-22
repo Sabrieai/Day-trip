@@ -6,19 +6,20 @@ import NavbarComponent from '../components/NavbarComponent';
 
 export default function Reviews() {
   return (
-    <div className="all-reviews">
+    <>
       <NavbarComponent/>
+    <div className="all-reviews">
+      <div className="review-card">
         <h2 className='reviews__header'>My Reviews</h2>
-      <div className="I-left">
         <ReviewsList />
       </div>
-      <div>
+
+      <div className="review-card">
       <h2 className='reviews__header'>Reviews People Left Me</h2>
-      <div className="Left-me">
         <ReviewsLeftForMeList />
       </div>
-      </div>
     </div>
+    </>
   )
 
 }

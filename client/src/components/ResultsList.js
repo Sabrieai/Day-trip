@@ -35,7 +35,7 @@ export default function ResultsList() {
 
   return (
     <div>
-      {results.length > 0 ? {localList} : <ErrorMsg /> }
+      {results.length > 0 ? [localList] : <ErrorMsg /> }
     </div>
   )
 

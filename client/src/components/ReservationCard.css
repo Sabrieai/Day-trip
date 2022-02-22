@@ -1,0 +1,79 @@
+.res-card{
+  margin: 20px;
+}
+
+.res-img {
+	width: 30%;
+	border-radius: 20px;
+  margin: 5px;
+
+}
+.res-img-div {
+  border: 3px solid rgb(202, 200, 200);
+	border-radius: 25px;
+	margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+}
+.res-img-div:hover {
+  box-shadow: 1px 2px 8px gray;
+}
+
+.res-header{
+margin-left: 50px;
+font-weight: 700;
+}
+.review-btn{
+  background-color: rgb(64, 161, 140);
+  border: 0px solid transparent;
+  border-radius: 35px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 30px;
+}
+
+.review-btn:hover{
+  box-shadow: 1px 2px 8px gray;
+
+}
+.res-ty{
+  font-size: 18px;
+  font-weight: 700;
+}
+.review-btn-div{
+display: flex;
+flex-direction: row;
+justify-content: end;
+margin-right: 100px;
+position: relative;
+bottom: 100px;
+}
+
+
+.res-details{
+  margin: 40px 0px 0px 60px;
+}
+
+.res-title{
+  font-size: 25px;
+font-weight: 700;
+color: rgb(64, 161, 140);
+
+}
+.res-city{
+  font-size: 18px;
+  margin-bottom: 30px;
+
+}
+.res-date{
+  font-size: 18px;
+  font-weight: 600;
+}
+.res-date-act{
+  color: rgb(64, 161, 140);
+font-size: 18px;
+font-weight: 600;
+
+}

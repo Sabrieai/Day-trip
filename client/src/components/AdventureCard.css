@@ -94,3 +94,11 @@ margin-bottom: 10px;
 .adventure__photo_set {
   margin-left: 20px;
 }
+
+.adventure_review_component {
+  font-family: 'Roboto', sans-serif;
+  margin-left: 40px;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}

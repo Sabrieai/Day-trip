@@ -6,6 +6,9 @@ import ToggleFavourite from "./ToggleFavourite";
 import Bookings from "./Bookings"
 import './AdventureCard.css'
 import ActivityReviews from "./ActivityReviewList";
+import { FaMapMarked} from 'react-icons/fa';
+
+
 
 export default function AdventureCard() {
   const { user } = useContext(userContext);
@@ -47,7 +50,7 @@ export default function AdventureCard() {
 
 
       <div className="adventure__title">{adventure.title}</div>
-      <div className="adventure__city_province">{adventure.city}, {adventure.province_state}, {adventure.country}</div>
+      <div className="adventure__city_province"><FaMapMarked/> {adventure.city}, {adventure.province_state}, {adventure.country}</div>
       <div className="adventure_favourite">
       <ToggleFavourite
         id={adventure.id}

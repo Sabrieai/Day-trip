@@ -28,7 +28,7 @@ export default function AdventureForm() {
 
   const routeChange = () => {
     let path = `/user/view`;
-    navigate(path, {state:true});
+    navigate(path);
   }
 
   useEffect(() => {

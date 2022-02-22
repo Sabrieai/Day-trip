@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext} from "react"
 import useApplicationData from './../hooks/useApplicationData';
-import { useLocation } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
 import { userContext } from '../providers/UserProvider';
 
@@ -12,22 +11,7 @@ export default function Myadventure() {
     const [myAdventures, setMyAdventures] = useState([]);
     const { user } = useContext(userContext);
 
-    const { state } = useLocation();
-    const [reload, setReload] = useState(false)
 
-    console.log(state, `STATE`)
-    console.log(reload, `RELOAD`)
-
-
-    useEffect(() => {
-
-        if (state === true) {
-            setReload(state);
-            console.log(`IN IF`)
-        }
-
-        console.log(`IN USE EFFECT`)
-    }, [state])
 
     const getAdventuresData = async (id) => {
         try {
@@ -37,8 +21,7 @@ export default function Myadventure() {
         } catch (error) {
             throw new Error(`Something bad happened`)
         }
-        
-
+    
     }
 
     useEffect(() => {

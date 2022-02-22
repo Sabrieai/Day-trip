@@ -30,7 +30,7 @@ router.post("/", (req, res) => {
       listingQueries.createAvailability(data[0].id)
         .then((data) => {
           console.log(data);
-          res.send('YOU MADE AN ADVENTURE');
+          res.status(200).json({ status: 'CREATED'});
         });
       
     })

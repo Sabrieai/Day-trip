@@ -38,8 +38,8 @@ export default function AdventureForm() {
   const [season, setSeason] = useState('');
   const [category, setCategory] = useState('');
 
-  const submit = () => {
-    postAdventure(
+  const submit = async () => {
+    const output = await postAdventure(
       user.id,
       title,
       description,
@@ -58,6 +58,16 @@ export default function AdventureForm() {
       occupancy,
       season,
       category)
+
+      return output;
+  }
+
+  const handleCreate = async () => {
+    const res = await submit();
+
+    if (res.data.status === 'CREATED'){
+      routeChange();
+    }
   }
 
   // return (
@@ -332,7 +342,7 @@ export default function AdventureForm() {
 
         <div className="create-btn">
           <Button 
-          onClick={() => { submit(); routeChange(); }} 
+          onClick={handleCreate} 
           variant="contained" 
           endIcon={<CheckCircleIcon />}
           style={{width: 300, height:50, fontSize:18, borderRadius: 35}}

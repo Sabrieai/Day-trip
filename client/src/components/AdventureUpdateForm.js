@@ -12,6 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import "./AdventureForm.css"
 
+
 export default function AdventureForm() {
   const {
     getAdventure,
@@ -27,7 +28,7 @@ export default function AdventureForm() {
 
   const routeChange = () => {
     let path = `/user/view`;
-    navigate(path, {state:true});
+    navigate(path);
   }
 
   useEffect(() => {
@@ -73,8 +74,8 @@ export default function AdventureForm() {
   const [active, setActive] = useState(``);
 
 
-  const update = () => {
-    updateAdventure(
+  const update = async () => {
+    const output = await updateAdventure(
       adventureId,
       title,
       description,
@@ -94,10 +95,31 @@ export default function AdventureForm() {
       season,
       category
     );
-
+    console.log(`OUTPUT`, output)
+    return output;
   }
 
+  const deleteThisAdventure = async () => {
+    const output = await deleteAdventure(adventureId);
+    console.log(`OUTPUT`, output)
+    return output
+  }
 
+  const handleDelete = async () => {
+    const res = await deleteThisAdventure();
+
+    if (res.data.status === 'DELETED'){
+      routeChange();
+    }
+  }
+  
+const handleUpdate = async () => {
+  const res = await update();
+  if (res.data.status === 'SAVED'){
+    routeChange();
+  }
+ 
+}
 
   console.log(season, `CATEGORY`)
   return (
@@ -292,7 +314,7 @@ export default function AdventureForm() {
                 backgroundColor: "#21b6ae",
                 width: 160, height:50,
               }}
-                onClick={() => { update(); routeChange(); }}
+                onClick={handleUpdate}
                 variant="contained"
                 endIcon={<CheckCircleIcon />}>
                 Update
@@ -305,7 +327,7 @@ export default function AdventureForm() {
                   backgroundColor: "#C75D47",
                   width: 160, height:50,
                 }}
-                onClick={() => deleteAdventure(adventureId)}
+                onClick={handleDelete}
                 variant="contained"
                 endIcon={<DeleteIcon />}
               >Delete</Button>

@@ -26,8 +26,8 @@ router.post('/', (req, res) => {
   const comment = req.body.comment;
   console.log(req.body);
   reviews.addReview(guest, adventure, reservation, rating, comment)
-    .then((data) => {
-      res.send(data);
+    .then(() => {
+      res.status(200).json({ status: 'REVIEWED' });
     })
     .catch((err) => {
       res.json(err.message);

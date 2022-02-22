@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useApplicationData from './../hooks/useApplicationData';
-import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import { userContext } from "../providers/UserProvider";
 import "./ReviewForm.css"
@@ -30,33 +29,49 @@ export default function ReviewForm() {
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState(0);
 
-  const review = () => {
+  const review = async () => {
     if (user.id) {
-      postReview(
+      const output = await postReview(
         user.id,
         adventure,
         reservation,
         rating,
         comment
       )
+      return output;
     }
   }
+  let navigate = useNavigate();
 
+  const routeChange = () => {
+    let path = `/myreviews`;
+    navigate(path);
+  }
+  
+  const handleReview = async () => {
+    if (user.id) {
+    const res = await review();
+    if (res.data.status === 'REVIEWED'){
+      routeChange();
+    }
+  }
+  }
+  
 
   return (
     <main className="review__form__page">
       <div className="Views">
         <div className="review-photod">
-        <img className="review-cover" src={views.cover_photo_url} alt="" />
-        <img className="review-thumbnail" src={views.thumbnail_photo_url} alt="" />
+          <img className="review-cover" src={views.cover_photo_url} alt="" />
+          <img className="review-thumbnail" src={views.thumbnail_photo_url} alt="" />
         </div>
 
         <div className="review-host-profile">
 
-        <img className="review-host-img" src={views.pic} alt="" />
-        <div className="review-host-name">
-          Hosted by: {views.first_name} {views.last_name}
-        <h2 className="header-leave-review">Leave the Host a Review</h2>
+          <img className="review-host-img" src={views.pic} alt="" />
+          <div className="review-host-name">
+            Hosted by: {views.first_name} {views.last_name}
+            <h2 className="header-leave-review">Leave the Host a Review</h2>
           </div>
         </div>
       </div>
@@ -69,7 +84,7 @@ export default function ReviewForm() {
               setRating(newRating);
             }}
             style={{
-             fontSize: 80
+              fontSize: 80
             }}
           />
         </div>
@@ -87,19 +102,19 @@ export default function ReviewForm() {
         </form>
         <div className="submit-review-btn">
 
-        <Button
-          onClick={review}
-          variant="contained"
-          endIcon={<PublishIcon />}
-          style={{
-            backgroundColor: "#21b6ae",
-            width: 300,
-            height: 50,
-            fontSize: 18,
-            borderRadius: 35
-          }}
-        >Submit</Button>
-                </div>
+          <Button
+            onClick={handleReview}
+            variant="contained"
+            endIcon={<PublishIcon />}
+            style={{
+              backgroundColor: "#21b6ae",
+              width: 300,
+              height: 50,
+              fontSize: 18,
+              borderRadius: 35
+            }}
+          >Submit</Button>
+        </div>
 
       </div>
     </main >

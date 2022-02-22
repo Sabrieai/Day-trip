@@ -4,8 +4,6 @@ import FavouritesCard from "./FavouritesCard";
 import './FavouritesCard.css';
 import { userContext } from '../providers/UserProvider';
 
-
-
 export default function FavouritesList() {
   const { user} = useContext(userContext);
   const { getFavourites } = useApplicationData();

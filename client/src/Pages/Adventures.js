@@ -6,7 +6,6 @@ export default function Adventure() {
   
   return (
     <div>
-      ADVENTURE PAGE
 <AdventureCard/>
     </div>
   )

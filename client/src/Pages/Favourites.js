@@ -6,7 +6,7 @@ import FavouritesList from '../components/FavouritesList';
 export default function Favourites() {
   let navigate = useNavigate();
   return (
-    <div>
+    <div className='favourite-header'>
       My Favourites
       <FavouritesList/>
     </div>

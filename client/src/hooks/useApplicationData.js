@@ -39,10 +39,11 @@ export default function useApplicationData() {
       category
     })
       .then(function(response) {
-        console.log(response);
+       return response;
       })
       .catch(function(error) {
         console.log(error);
+        throw new Error(`ERROR OCCURED: ${error}`)
       })
   }
   const deleteAdventure = (id) => {
@@ -77,6 +78,7 @@ export default function useApplicationData() {
     })
       .then(function(response) {
         console.log(response);
+        return response;
       })
       .catch(function(error) {
         console.log(error);

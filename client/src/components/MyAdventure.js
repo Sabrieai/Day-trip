@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext} from "react"
 import useApplicationData from './../hooks/useApplicationData';
 import { useLocation } from "react-router-dom";
 import CategoryCard from "./CategoryCard";
@@ -10,30 +10,47 @@ import { userContext } from '../providers/UserProvider';
 export default function Myadventure() {
     const { getMyAdventures } = useApplicationData();
     const [myAdventures, setMyAdventures] = useState([]);
-    const { user} = useContext(userContext);
+    const { user } = useContext(userContext);
 
-    const {state} = useLocation();
-    console.log(state,`STATE`)
-    
+    const { state } = useLocation();
+    const [reload, setReload] = useState(false)
+
+    console.log(state, `STATE`)
+    console.log(reload, `RELOAD`)
+
+
     useEffect(() => {
-        if(user.id) {
-        getMyAdventures(user.id)
-            .then((data) => {
-                console.log("MY ADVENTRUES COMPONENT", data)
-                setMyAdventures(data);
-            })
+
+        if (state === true) {
+            setReload(state);
+            console.log(`IN IF`)
+        }
+
+        console.log(`IN USE EFFECT`)
+    }, [state])
+
+    const getAdventuresData = async (id) => {
+        try {
+            const results = await getMyAdventures(id);
+            console.log(`RESULTS`, results)
+            setMyAdventures(results);   
+        } catch (error) {
+            throw new Error(`Something bad happened`)
+        }
+        
+
+    }
+
+    useEffect(() => {
+
+        if (user.id) {
+        
+            getAdventuresData(user.id)
+            console.log(`USE EFFECT FIRING`)
         }
     }, [user.id])
 
-    // useEffect(() => {
-    //     if(state === true) {
-    //         window.location.reload();
-    //     }
-    // }, [])
-
-    //trigger reload when useNavigate
-    const adventureList = myAdventures.map((adventure, i) => {
-        console.log(adventure);
+    const adventureList = myAdventures.length ? myAdventures.map((adventure, i) => {
         return (
             <CategoryCard
                 key={i}
@@ -44,7 +61,7 @@ export default function Myadventure() {
                 price={adventure.curr_price}
             />
         )
-    })
+    }) : [];
 
 
     return (

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import useApplicationData from './../hooks/useApplicationData';
-import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import { userContext } from "../providers/UserProvider";
 import "./ReviewForm.css"

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const express = require("express");
 const router = express.Router();
 const listingQueries = require('../db/listings_queries');
@@ -26,17 +27,17 @@ router.post("/", (req, res) => {
   const category = req.body.category;
   listingQueries.createListing(owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category)
     .then((data) => {
-      // console.log('DATA', data)
       listingQueries.createAvailability(data[0].id)
         .then((data) => {
-          console.log('second then')
-        })
-      res.send('YOU MADE AN ADVENTURE')
+          console.log(data);
+          res.send('YOU MADE AN ADVENTURE');
+        });
+      
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-})
+});
 
 router.put("/", (req, res) => {
   // userId = req.session.user_id
@@ -60,7 +61,10 @@ router.put("/", (req, res) => {
   const category = req.body.category;
   listingQueries.updateListing(adventure, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category)
     .then((data) => {
-      res.send(data);
+      //res.send(data);
+      console.log(`DATA`, data);
+      res.status(200).json({ status: 'SAVED'});
+     
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });

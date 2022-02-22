@@ -9,7 +9,6 @@ export default function Categories() {
   return (
 
     <div>
-      CATEGORY PAGE
 
       <Routes>
         <Route path=":category" element={<Category />} />

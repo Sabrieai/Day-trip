@@ -35,8 +35,9 @@ export default function ReservationsList(props) {
         id={reservation.id}
         date={readable}
       />
-     
-      {props.passed && alreadyReviewed? <span>Thank you for Reviwing!</span> : props.passed && <button onClick={routeChange}>Leave a Review</button>}
+     <div className="review-btn-div">
+      {props.passed && alreadyReviewed? <span className="res-ty">Thank you for Reviewing!</span> : props.passed && <button className="review-btn" onClick={routeChange}>Leave a Review</button>}
+     </div>
       </div>
     )
   })
@@ -44,7 +45,7 @@ export default function ReservationsList(props) {
 
   return (
     <section>
-      { props.passed ? <h3> Adventures Taken</h3> : <h3> Adventures {props.today ? `Today!`: `Yet To Come`} </h3>  }
+      { props.passed ? <h3 className="res-header"> Adventures Taken :</h3> : <h3 className="res-header"> Adventures {props.today ? `Today :`: `Yet To Come :`} </h3>  }
       {reservationList}
     </section>
   )

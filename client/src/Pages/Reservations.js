@@ -30,7 +30,6 @@ export default function Reservations(props) {
 
   return (
     <div>
-      RESERVATIONS PAGE
 <ReservationsList reservations={today} passed={false} reviewed={reviewed} today={true}/>
 <ReservationsList reservations={past} passed={true} reviewed={reviewed}/>
 <ReservationsList reservations={future} passed={false} reviewed={reviewed}/>

@@ -20,7 +20,11 @@ font-weight: 500;
   text-decoration: underline grey 1px;
   margin-left: 60px;
 }
-
+.update-btn-adv{
+ display: flex;
+ justify-content: end;
+margin-right: 120px;
+}
 .adventure_cover_photo {
   width: 50%;
   height: 450px;

@@ -6,7 +6,9 @@ import ToggleFavourite from "./ToggleFavourite";
 import Bookings from "./Bookings"
 import './AdventureCard.css'
 import ActivityReviews from "./ActivityReviewList";
-import { FaMapMarked} from 'react-icons/fa';
+import { FaMapMarked } from 'react-icons/fa';
+import Button from '@mui/material/Button';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 
@@ -50,7 +52,7 @@ export default function AdventureCard() {
 
 
       <div className="adventure__title">{adventure.title}</div>
-      <div className="adventure__city_province"><FaMapMarked/> {adventure.city}, {adventure.province_state}, {adventure.country}</div>
+      <div className="adventure__city_province"><FaMapMarked /> {adventure.city}, {adventure.province_state}, {adventure.country}</div>
       <div className="adventure_favourite">
         <ToggleFavourite
           id={adventure.id}
@@ -71,7 +73,16 @@ export default function AdventureCard() {
       <div className="adventure__description_div">
         <div className="adventure__description">{adventure.description}</div>
       </div>
-      {adventure.owner_id === user.id ? <button onClick={routeChange} > UPDATE</button> : <Bookings className="adventure__detail_price" price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability} />}
+      {adventure.owner_id === user.id ? <span className="update-btn-adv"><Button style={{
+        borderRadius: 35,
+        backgroundColor: "#21b6ae",
+        width: 160, height: 50,
+      }}
+        onClick={routeChange}
+        variant="contained"
+        endIcon={<CheckCircleIcon />}>
+        Update
+      </Button> </span> : <Bookings className="adventure__detail_price" price={adventure.curr_price} max={adventure.max_occupancy} schedule={availability} />}
       <div className="adventure_review_component">Reviews:</div>
 
       <div className="activty-page-reviews">

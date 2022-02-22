@@ -6,7 +6,7 @@ export default function Results() {
   let navigate = useNavigate();
   return (
     <div>
-    RESULTS PAGE
+      <h2 className="results-header">Results for your search:</h2>
       <ResultsList />
     </div>
   )

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext} from "react"
 import useApplicationData from './../hooks/useApplicationData';
 import CategoryCard from "./CategoryCard";
 import { userContext } from '../providers/UserProvider';
+import NavbarComponent from './NavbarComponent';
 
 
 
@@ -50,6 +51,8 @@ export default function Myadventure() {
     return (
 
         <>
+        <NavbarComponent/>
+        
             <h1>MY ADVENTURES</h1>
             {adventureList}
         </>

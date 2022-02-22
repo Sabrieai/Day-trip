@@ -102,3 +102,27 @@ margin-bottom: 10px;
   margin-top: 50px;
   margin-bottom: 10px;
 }
+
+.results-alert{
+  width: 60%;
+  margin-left: 40px;
+}
+
+.back-btn-div{
+display: flex;
+justify-content: center;
+}
+.results-back-btn{
+  border: 1px solid transparent;
+  border-radius: 35px;
+  padding: 10px 100px;
+  background-color:rgb(64, 161, 140);
+  justify-self: end;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+}
+.results-back-btn:hover{
+  box-shadow: 1px 2px 8px gray;
+
+}

@@ -16,7 +16,7 @@ import ReviewCreate from './Pages/ReviewCreate';
 import Category from './Pages/CategoryPage';
 import Myadventure from './components/MyAdventure';
 import ResultsList from './Pages/Results'
-import NavbarComponent from './components/NavbarComponent';
+// import NavbarComponent from './components/NavbarComponent';
 import UserProvider from './providers/UserProvider';
 
 // const responseGoogle = response => {
@@ -29,9 +29,9 @@ return (
     <Router>
        <UserProvider>
 
-      <nav>
+      {/* <nav>
       < NavbarComponent/>
-      </nav>
+      </nav> */}
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/favourites" element={<Favourites />} />

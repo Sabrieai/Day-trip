@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useApplicationData from './../hooks/useApplicationData';
 import { useParams } from 'react-router-dom';
 import CategoryCard from './CategoryCard';
+import ErrorMsg from './ErrorMsg.js'
 
 
 export default function ResultsList() {
@@ -34,7 +35,7 @@ export default function ResultsList() {
 
   return (
     <div>
-      {localList}
+      {results.length > 0 ? {localList} : <ErrorMsg /> }
     </div>
   )
 

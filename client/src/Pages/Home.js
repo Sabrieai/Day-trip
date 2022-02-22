@@ -15,13 +15,17 @@ export default function Home() {
         position: "absolute",
         width: "100%",
         // left: "50%",
-        height: "95%",
+        height: "100%",
         objectFit: "cover",
         // transform: "translate(-50%, -50%)",
         zIndex: "-1"
       }}>
         <source src={Hero} type="video/mp4"/>
       </video>
+      <div className="home-page-header"> 
+      <img className="day-trip-logo-png" src="https://cdn.discordapp.com/attachments/941861557506289715/945728553666899998/Remove_background.png" alt="" />
+      <h1 className="day-trip-logo">Daytrip</h1>
+      </div>
       <SearchBar/>
       <CategoriesList/>
     </main>

@@ -24,7 +24,8 @@ font-weight: 400;
 }
 
 .review__card {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   border-radius: 25px;
   margin: 15px;
   width: 300px;

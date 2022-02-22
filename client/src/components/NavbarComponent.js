@@ -6,7 +6,7 @@ export default function NavBar() {
   return (
     <Navbar className="navbar" collapseOnSelect expand="lg" >
       <Container className="navbar">
-        <Navbar.Brand href="/">Daytrip</Navbar.Brand>
+        <Navbar.Brand className="day-trip-font" href="/">Daytrip</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

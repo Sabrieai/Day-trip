@@ -11,6 +11,7 @@ font-family: 'Roboto', sans-serif;
 .category-link{
   color: #212529;
   text-decoration: none;
+  font-size: 18px;
 }
 .category-link:hover{
   color: rgb(106, 106, 107);
@@ -32,13 +33,20 @@ li:hover{
 }
 
 .category-list-container{
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 .header-categories{
-  text-align: center;
+display: flex;
+flex-direction: row;
+justify-content: center;
 color: #41c5aa;
+/* background: rgba(255, 255, 255, .7); */
+width: 50%;
+padding: 5px 0px;
+border-radius: 8px;
 margin-bottom: 30px;
+margin-left: 120px;
 font-family: 'Raleway', sans-serif;
-
+font-weight: 700;
 }

@@ -3,6 +3,8 @@ import ReservationsList from '../components/ReservationsList';
 import { userContext } from '../providers/UserProvider';
 import useApplicationData from '../hooks/useApplicationData';
 import { simpleArray } from '../helpers/simpleArray';
+import NavbarComponent from '../components/NavbarComponent';
+
 
 export default function Reservations(props) {
   const { getReservations, getReviewed } = useApplicationData();
@@ -30,6 +32,7 @@ export default function Reservations(props) {
 
   return (
     <div>
+      <NavbarComponent/>
 <ReservationsList reservations={today} passed={false} reviewed={reviewed} today={true}/>
 <ReservationsList reservations={past} passed={true} reviewed={reviewed}/>
 <ReservationsList reservations={future} passed={false} reviewed={reviewed}/>

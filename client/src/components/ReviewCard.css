@@ -5,8 +5,9 @@
   flex-direction: row;
   justify-content: center;
   border-radius: 50%;
-  margin: 5px 2% 30px;
-  border: 2px solid black;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  height: 100px;
 }
 
 .review__name {
@@ -17,32 +18,53 @@
 }
 
 .review__comment {
-margin-top: 10px;
+margin-top: 5px;
 margin-bottom: 10px;
+margin-left: 10px;
 font-family: 'Roboto', sans-serif;
 font-weight: 400;
+width: 70%;
 }
-
-.review__card {
+.review__comment_rating{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  width: 70%;
+}
+.review__card {
+  display: flex;
+  flex-direction: row;
   border-radius: 25px;
   margin: 15px;
-  width: 300px;
+  width: 700px;
   border: 2px solid rgb(202, 200, 200);
   padding: 15px;
+  background-color: white;
 }
 .review__card:hover {
   box-shadow: 1px 2px 8px gray;
 
 }
 
+.review-card{
+  height: 830px;
+  border: 1px solid transparent;
+  border-radius: 35px;
+  background-color: rgb(180, 192, 226);
+  ;
+}
+.review__profile{
+width: 200px;
+}
 .review__rating {
   font-family: 'Roboto', sans-serif;
+font-size: 20px;
+
 }
 
 .review__star {
   color: #ffc107;
+  font-size: 25px;
 }
 
 .reviews__header {
@@ -51,5 +73,15 @@ font-weight: 400;
   text-align: left;
   margin-left: 40px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
+.all-reviews{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.activty-page-reviews{
+  margin-left: 45px;
+}

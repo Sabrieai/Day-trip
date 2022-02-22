@@ -29,13 +29,14 @@ export default function ResultsList() {
         title={result.title}
         id={result.id}
         price={result.curr_price}
+        prev={result.prev_price}
       />
     )
   })
 
   return (
     <div>
-      {results.length > 0 ? {localList} : <ErrorMsg /> }
+      {results.length > 0 ? localList : <ErrorMsg /> }
     </div>
   )
 

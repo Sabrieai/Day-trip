@@ -99,6 +99,20 @@ export default function AdventureForm() {
     return output;
   }
 
+  const deleteThisAdventure = async () => {
+    const output = await deleteAdventure(adventureId);
+    console.log(`OUTPUT`, output)
+    return output
+  }
+
+  const handleDelete = async () => {
+    const res = await deleteThisAdventure();
+
+    if (res.data.status === 'DELETED'){
+      routeChange();
+    }
+  }
+  
 const handleUpdate = async () => {
   const res = await update();
   if (res.data.status === 'SAVED'){
@@ -313,7 +327,7 @@ const handleUpdate = async () => {
                   backgroundColor: "#C75D47",
                   width: 160, height:50,
                 }}
-                onClick={() => deleteAdventure(adventureId)}
+                onClick={handleDelete}
                 variant="contained"
                 endIcon={<DeleteIcon />}
               >Delete</Button>

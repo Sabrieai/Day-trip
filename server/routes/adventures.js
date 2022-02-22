@@ -35,8 +35,8 @@ router.get("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
   listingQueries.deleteListing(id)
-    .then((data) => {
-      res.send(data);
+    .then(() => {
+      res.status(200).json({ status: 'DELETED' });
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });

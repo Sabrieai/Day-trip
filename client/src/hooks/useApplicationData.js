@@ -48,8 +48,9 @@ export default function useApplicationData() {
   }
   const deleteAdventure = (id) => {
     return axios.delete(`http://localhost:8080/adventures/${id}`)
-      .then(() => {
-        console.log('response');
+      .then((data) => {
+        console.log(data);
+        return data
       })
       .catch((error) => {
         console.log(error);
@@ -120,6 +121,7 @@ export default function useApplicationData() {
     return axios.delete(`http://localhost:8080/favourites/${user}/${adventure}`)
       .then(function(response) {
         console.log(response);
+        return response
       })
       .catch(function(error) {
         console.log(error);

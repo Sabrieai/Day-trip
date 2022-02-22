@@ -5,6 +5,7 @@
   border-radius: 25px;
   margin: 15px;
   width: 300px;
+  vertical-align: top;
 }
 .center:hover {
   box-shadow: 1px 2px 8px gray;
@@ -39,8 +40,13 @@ border-radius: 20px;
   border-radius: 25px;
   width: 300px;
   text-align: center;
-}
+  height: 440px;
 
+}
+/* .favourites-container{
+  display: inline-block;
+  vertical-align:top;
+} */
 .heart {
   margin-bottom: 30px;
   text-align: end;

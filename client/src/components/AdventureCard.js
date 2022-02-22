@@ -37,8 +37,6 @@ export default function AdventureCard() {
      
   }, [adventureId])
 
-
-
   console.log(reviews, "REVIEWS") 
 
 // if update is a popup on THIS page we can pass down props

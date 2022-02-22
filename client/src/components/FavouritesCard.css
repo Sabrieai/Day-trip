@@ -5,18 +5,44 @@
   width: auto;
 border-radius: 20px;
 text-align: center;
+
 }
 
 .favourites__title {
 font-family: 'Roboto', sans-serif;
 font-weight: 500;
 color: black;
+margin-left: 50px;
+margin-right: 50px;
 }
 
 .favourites__card {
   box-shadow: 0 3px 3px rgba(0,0,0,0.2);
   border-radius: 20px;
-  width: 27%;
   padding-top: 10px;
   padding-left: 10px;
+  width: 40%;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: #d5e1ef;
 }
+
+.heart {
+  margin-bottom: 30px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  display: inline-block;
+}
+.favourite-header {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+a:link { text-decoration: none; }
+

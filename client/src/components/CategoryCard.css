@@ -2,7 +2,7 @@
   display:inline-block;
   border-radius: 25px;
   margin: 15px;
-
+  vertical-align:top;
 }
 .results-container:hover{
 box-shadow: 1px 2px 8px gray;
@@ -13,6 +13,7 @@ box-shadow: 1px 2px 8px gray;
   border-radius: 25px;
   width: 300px;
   text-align: center;
+  height: 440px;
 }
 
 .results-card-img-div{

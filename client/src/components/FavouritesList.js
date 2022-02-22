@@ -39,7 +39,7 @@ console.log(favourites, "Favourites");
 
 
   return (
-    <section>
+    <section className="favourites-container">
       {favouriteList}
     </section>
   )

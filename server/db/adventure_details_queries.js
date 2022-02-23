@@ -30,7 +30,8 @@ const getAdventuresForUser = (id) => {
 const getAvailibilty = (id) => {
   return pool.query(`SELECT adventure_availibilties.*
   FROM adventure_availibilties
-  WHERE adventure_id = $1;
+  WHERE adventure_id = $1
+  ORDER BY id;
   `, [id])
     .then((response) => {
       return response.rows;

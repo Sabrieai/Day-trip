@@ -50,9 +50,6 @@ export default function CategoriesList() {
         <li>
           <a className="category-link" href="season/winter">Winter</a>
         </li>
-        <li>
-          <a className="category-link" href="season/all">All</a>
-        </li>
       </ul>
 
 

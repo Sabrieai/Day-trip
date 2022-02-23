@@ -6,6 +6,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaUserPlus } from "react-icons/fa";
 import { FaDollarSign } from "react-icons/fa";
 import { FaCalculator } from "react-icons/fa";
+import { isPassed } from "../helpers/Passed";
 
 import './Bookings.css'
 
@@ -13,23 +14,23 @@ const Booking = (props) => {
 
     const { user } = useContext(userContext)
     const { postReservation } = useApplicationData();
-    
+
     const [guests, setGuests] = useState('')
 
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-      let path = `/reservations`; 
-      navigate(path);
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = `/reservations`;
+        navigate(path);
     }
-    
+
     //makes sure we only do math with numbers
     const total = guests !== '' && typeof guests === 'number' ? guests * props.price : 0
-    console.log(typeof guests, `TYPE OF GUESTS`)
-    
-    const reserve = () => {
+
+
+    const reserve = async () => {
         if (user.id) {
 
-            postReservation(
+            const output = await postReservation(
                 props.day.adventure_id,
                 user.id,
                 total,
@@ -37,14 +38,27 @@ const Booking = (props) => {
                 props.day.day,
                 '1'
             )
-            console.log(`IN IN THE FUNCTION`)
+            console.log(output, `OUTPUT`)
+            return output;
+            
         };
-        console.log(`IN THE FUNCTION`)
+       
     }
 
+    const handleReservation = async () => {
+        if (user.id) {
+            const res = await reserve();
+            if (res.data.status === 'RESERVED') {
+                routeChange();
+            }
+        }
+    }
 
+    const buttonText = () => {
+        return props.passed ? `Passed` : props.day.available ? `Reserve` : `Reserved` 
+    }
     return (
-        <div className="booking__card">
+        <div className={`booking__card__${props.passed}__${props.day.available}`}>
             <div className="booking__date_guests">
                 <FaCalendarAlt className="booking__calendar_icon" />
                 <h1 className="booking__day"> {props.day.day} </h1>
@@ -59,23 +73,25 @@ const Booking = (props) => {
                     type="number"
                     placeholder="Guests"
                     value={guests < props.max ? guests : props.max}
-                    onChange={(event) => { setGuests(Number(event.target.value))}}
+                    onChange={(event) => { setGuests(Number(event.target.value)) }}
                 />
             </div>
             <div>
                 <span className="booking__total_price"> <FaCalculator className="booking__calculator" /> {`Total: $${total}`}</span>
             </div>
             <h1> {props.day.availaible} </h1>
-            <button   onClick={() => { reserve(); routeChange(); }} className="booking__reserve_button">Reserve</button>
-            {console.log(props.day.available, props.day.day, `DAY AND AVAILIBLE`)}
+            <button onClick={handleReservation} className={`booking__reserve_button__${props.day.available}__${props.passed}`}>{buttonText()}</button>
         </div>
     )
 }
 
 export default function Bookings(props) {
 
+
     const bookingList = props.schedule.map((day) => {
-      return <Booking key={day.day} day={day}  price={props.price} max={props.max}/>
+        const passed = isPassed(day.day);
+
+        return <Booking key={day.day} day={day} price={props.price} max={props.max} passed={passed} />
     })
 
     return (

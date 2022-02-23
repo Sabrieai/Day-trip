@@ -33,18 +33,68 @@
   font-size: 14px;
 }
 
-.booking__reserve_button {
+.booking__reserve_button__true__false {
   border-radius: 8px;
   border: none;
   font-family: 'Roboto', sans-serif;
   background-color: #f65353;
   height: 30px;
   width: 40%;
-margin-left: 20px;
-margin-bottom: 10px;
+ margin-left: 20px;
+ margin-bottom: 10px;
 }
 
-.booking__card {
+.booking__reserve_button__false__true {
+  border-radius: 8px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  background-color:grey;
+  height: 30px;
+  width: 40%;
+ margin-left: 20px;
+ margin-bottom: 10px;
+}
+
+.booking__reserve_button__false__false {
+  border-radius: 8px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  background-color: grey;
+  height: 30px;
+  width: 40%;
+margin-left: 20px;
+margin-bottom: 10px;
+opacity: 50%;
+}
+
+.booking__reserve_button__true__true{
+  border-radius: 8px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  background-color: grey;
+  height: 30px;
+  width: 40%;
+margin-left: 20px;
+margin-bottom: 10px;
+opacity: 50%;
+}
+
+.booking__card__false__false {
+  border-radius: 10px;
+  border: solid 1px grey;
+  padding-top: 15px;
+  padding-bottom: 25;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin: 10px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 50%;
+
+}
+.booking__card__false__true {
   border-radius: 10px;
   border: solid 1px grey;
   padding-top: 15px;
@@ -58,6 +108,39 @@ margin-bottom: 10px;
   justify-content: space-between;
 
 }
+
+.booking__card__true__true {
+  border-radius: 10px;
+  border: solid 1px grey;
+  padding-top: 15px;
+  padding-bottom: 25;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin: 10px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 50%;
+
+}
+
+.booking__card__true__false {
+  border-radius: 10px;
+  border: solid 1px grey;
+  padding-top: 15px;
+  padding-bottom: 25;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  margin: 10px 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 50%;
+
+}
+
 
 .booking__calendar_icon {
   color: #41c5aa;

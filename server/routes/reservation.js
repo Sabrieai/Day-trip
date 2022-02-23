@@ -46,10 +46,10 @@ router.post('/', (req, res) => {
   console.log(totalGuests);
 
   reservations.addReservation(date, totalPrice, guest, paymentId, totalGuests, adventure)
-    .then((data) => {
+    .then(() => {
       reservations.updateAvailibilty(adventure, day)
         .then(() => {
-          res.json(data);
+          res.status(200).json({ status: 'RESERVED' });
         });
     })
     .catch((err) => {

@@ -30,7 +30,7 @@ export default function DeleteFavourite(props) {
     <label className='favourite'>
 
       <FaHeart className='favouriteIcon' id='heart'
-        color={"#ffc107"} 
+        color={"#f0246f"} 
         onClick={onDelete}
       />
     </label>

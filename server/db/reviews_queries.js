@@ -26,6 +26,7 @@ const getMyAdventureReviews = (id) => {
   WHERE users.id = $1) sub
   JOIN users as u 
   ON u.id = sub.guest_id 
+  JOIN adventures ON adventures.id = sub.adventure_id
   ;`, [id])
     .then((response) => {
       return response.rows;
@@ -48,9 +49,10 @@ const addReview = (guest, adventure, reservation, rating, comment) => {
 };
 
 const getMyReviews = (id) => {
-  return pool.query(`SELECT users.pic, first_name, last_name, rating, comment 
+  return pool.query(`SELECT users.pic, first_name, last_name, rating, comment, title
   FROM users
   JOIN adventure_reviews on users.id = guest_id
+  JOIN adventures ON adventures.id = adventure_id
   WHERE users.id = $1;
   `, [id])
     .then((response) => {
@@ -76,7 +78,7 @@ const getReviewsViews = (id) => {
 };
 
 const getAdventureReviews = (id) => {
-  return pool.query(`SELECT users.pic, first_name, last_name, rating, comment 
+  return pool.query(`SELECT users.pic, first_name, last_name, rating, comment, title
     FROM adventure_reviews 
     JOIN adventures ON adventure_id = adventures.id
     JOIN users ON users.id = guest_id

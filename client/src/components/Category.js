@@ -27,6 +27,8 @@ export default function Category() {
         title={category.title}
         id={category.id}
         price={category.curr_price}
+        prev={category.prev_price}
+        accessible={category.accessible}
       />
     )
   })

@@ -16,6 +16,7 @@ import ReviewCreate from './Pages/ReviewCreate';
 import Category from './Pages/CategoryPage';
 import Myadventure from './components/MyAdventure';
 import ResultsList from './Pages/Results'
+import Season from './Pages/SeasonPage'
 // import NavbarComponent from './components/NavbarComponent';
 import UserProvider from './providers/UserProvider';
 
@@ -45,6 +46,7 @@ return (
         <Route path="/reviews/:id/:res" element={<ReviewCreate />} />
 
         <Route path="/category/*" element={<Category />} />
+        <Route path="/season/*" element={<Season />} />
         <Route path="/results/:query" element={<ResultsList />} />
 
 

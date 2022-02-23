@@ -59,6 +59,7 @@ router.put("/", (req, res) => {
   const max_occupancy = req.body.max_occupancy;
   const season = req.body.season;
   const category = req.body.category;
+  console.log(`SEASON`,season);
   listingQueries.updateListing(adventure, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category)
     .then((data) => {
       //res.send(data);

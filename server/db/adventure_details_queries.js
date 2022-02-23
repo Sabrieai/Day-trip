@@ -15,7 +15,7 @@ const getAdventureDetails = (id) => {
 };
 
 const getAdventuresForUser = (id) => {
-  return pool.query(`SELECT title, city, thumbnail_photo_url, id , curr_price, prev_price
+  return pool.query(`SELECT title, city, thumbnail_photo_url, id , curr_price, prev_price, accessible
   FROM adventures
   WHERE owner_id = $1;
   `, [id])

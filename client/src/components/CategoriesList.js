@@ -37,6 +37,24 @@ export default function CategoriesList() {
         </li>
       </ul>
 
+      <ul className="category-row">
+        <li>
+          <a className="category-link" href="season/spring">Spring</a>
+        </li>
+        <li>
+          <a className="category-link" href="season/summer">Summer</a>
+        </li>
+        <li>
+          <a className="category-link" href="season/fall">Fall</a>
+        </li>
+        <li>
+          <a className="category-link" href="season/winter">Winters</a>
+        </li>
+        <li>
+          <a className="category-link" href="season/all">All</a>
+        </li>
+      </ul>
+
 
     </div>)
 }

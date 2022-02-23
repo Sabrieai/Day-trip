@@ -8,7 +8,7 @@ export default function Favourites() {
   return (
     <div className='favourite-header'>
       <NavbarComponent/>
-      My Favourites
+      <h1 className="my-fav-title">My Favourites</h1>
       <FavouritesList/>
     </div>
   )

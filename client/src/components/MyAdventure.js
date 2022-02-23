@@ -34,6 +34,7 @@ export default function Myadventure() {
         }
     }, [user.id])
 
+    console.log(myAdventures, `MY ADVENTURES`)
     const adventureList = myAdventures.length ? myAdventures.map((adventure, i) => {
         return (
             <CategoryCard
@@ -43,6 +44,7 @@ export default function Myadventure() {
                 title={adventure.title}
                 id={adventure.id}
                 price={adventure.curr_price}
+                accessible={adventure.accessible}
             />
         )
     }) : [];

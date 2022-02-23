@@ -209,6 +209,17 @@ export default function useApplicationData() {
     })
   }
 
+  const getSeason = (season) =>{
+    return axios.get(`http://localhost:8080/api/${season}`)
+    .then(function(response) {
+      console.log("SEASON RESPONSE.DATA", response.data)
+      return response.data;
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
   const handleSearch = (search) => {
     return axios.get(`http://localhost:8080/search/${search}`)
       .then((data) => {
@@ -282,6 +293,7 @@ export default function useApplicationData() {
     getReviewsLeftForMe,
     getAdventure,
     getCategory,
+    getSeason,
     handleSearch,
     getPlaceholder,
     getMyAdventures,

@@ -18,9 +18,10 @@ export default function ResultsList() {
         setResults(data.data);
       })
   }, [])
-
   console.log(results, "******")
+ 
   const localList = results.map((result, i) => {
+    
     return (
       <CategoryCard
         key={i}
@@ -30,6 +31,7 @@ export default function ResultsList() {
         id={result.id}
         price={result.curr_price}
         prev={result.prev_price}
+        accessible={result.accessible}
       />
     )
   })

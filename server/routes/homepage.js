@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const homepage = require('../db/home_queries.js');
 const categoryQueries = require('../db/category_queries.js');
+const seasonQueries = require('../db/season_queries');
 
 
 
@@ -49,6 +50,17 @@ router.get('/', (req, res) => {
 router.get('/:category', (req, res) => {
   const category = req.params.category;
   categoryQueries.getCategory(category)
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+router.get('/api/:season', (req, res) => {
+  const season = req.params.season;
+  seasonQueries.getSeason(season)
     .then((results) => {
       res.json(results);
     })

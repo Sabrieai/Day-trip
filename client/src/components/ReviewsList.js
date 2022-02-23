@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
+import { propTypes } from "react-bootstrap/esm/Image";
 import useApplicationData from '../hooks/useApplicationData';
 import { userContext } from "../providers/UserProvider";
 import ReviewCard from "./ReviewCard";
@@ -27,6 +28,7 @@ export default function ReviewsList() {
         avatar={review.pic}
         comment={review.comment}
         rating={review.rating}
+        title={review.title}
       />
     )
   })

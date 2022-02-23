@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import useApplicationData from '../hooks/useApplicationData';
 import ReviewCard from "./ReviewCard";
-// import './FavouritesCard.css';
+import { userContext } from "../providers/UserProvider";
 
 
 
 export default function ReviewsLeftForMeList() {
   const { getReviewsLeftForMe } = useApplicationData();
   const [reviewsLeft, setReviewsLeft] = useState([]);
+  const {user} = useContext(userContext);
   useEffect(() => {
-
-    getReviewsLeftForMe(7)
+     if(user.id){
+    getReviewsLeftForMe(user.id)
       .then((data) => {
         console.log('REVIEW LEFT', data)
         setReviewsLeft(data);
       })
-  }, [])
+    }
+  }, [user.id])
 
   const reviewsLeftList = reviewsLeft.map((review, i) => {
     return (
@@ -26,6 +28,7 @@ export default function ReviewsLeftForMeList() {
         avatar={review.pic}
         comment={review.comment}
         rating={review.rating}
+        title={review.title}
       />
     )
   })

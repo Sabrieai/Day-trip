@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import useApplicationData from '../hooks/useApplicationData';
 import "./CategoryCard.css"
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaWheelchair } from 'react-icons/fa';
 
 function Cheaper(props){
   return(
@@ -18,8 +19,8 @@ export default function CategoryCard(props) {
   return (
     <main className="results-container">
 
+    <div className="results-card-accesible">{props.accessible && <FaWheelchair/>}</div>
     <div className="results-card">
-
     <a className="review-card-link" href={link}>
       <div className="results-card-img-div">
       <img className="results-card-img" src={props.photo} />

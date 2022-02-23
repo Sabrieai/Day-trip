@@ -34,7 +34,7 @@ export default function SearchBar() {
         <input
           className="search-bar_input"
           type="text"
-          placeholder={`${placeholder}...?`}
+          placeholder={ placeholder ? `${placeholder}...?` : `Tulum...?`}
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           data-testid="student-name-input"

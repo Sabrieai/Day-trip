@@ -11,6 +11,11 @@
   box-shadow: 1px 2px 8px gray;
 
 }
+.my-fav-title{
+  font: 20px;
+  font-weight: 700;
+margin-left: 50px;
+}
 .favourites-card-img{
   display: flex;
   flex-direction: row;

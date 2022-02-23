@@ -7,6 +7,7 @@ import Bookings from "./Bookings"
 import './AdventureCard.css'
 import ActivityReviews from "./ActivityReviewList";
 import { FaMapMarked } from 'react-icons/fa';
+import { FaWheelchair } from 'react-icons/fa';
 import Button from '@mui/material/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
@@ -47,11 +48,15 @@ export default function AdventureCard() {
   // if update is a popup on THIS page we can pass down props
   console.log(adventure, "Adventure")
   console.log(reviews, "Reviews")
+
+  const accessibilty = () => {
+   return adventure.accessible? <FaWheelchair className="chair" /> : ''
+  }
   return (
     <section>
 
 
-      <div className="adventure__title">{adventure.title}</div>
+      <div className="adventure__title">{accessibilty()}{adventure.title}</div>
       <div className="adventure__city_province"><FaMapMarked /> {adventure.city}, {adventure.province_state}, {adventure.country}</div>
       <div className="adventure_favourite">
         <ToggleFavourite

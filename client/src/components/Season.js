@@ -37,7 +37,7 @@ export default function Season() {
 
   return (
     <section>
-      <h4>{params.season.toUpperCase()} ACTIVITIES</h4>
+      <h2 className="season-act">{params.season.toUpperCase()} ACTIVITIES</h2>
       {seasonList}
     </section>
   )

@@ -14,9 +14,9 @@ export default function ReviewCard(props) {
       <div className="review__name">{props.first_name} {props.last_name}</div>
       </div>
       <div className="review__comment_rating">
-         <span>{props.title}</span>
+         <span className="review-title">{props.title}</span>
       <div className="review__rating"><FaStar className="review__star"/> {props.rating} stars</div>
-      <div className="review__comment">{props.comment}</div>
+      <div className="review__comment">"{props.comment}"</div>
       </div>
     </section>
   )

@@ -57,10 +57,12 @@ width: 200px;
 }
 .review__rating {
   font-family: 'Roboto', sans-serif;
-font-size: 20px;
+font-size: 15px;
 
 }
-
+.review-title{
+  font-weight: 700;
+}
 .review__star {
   color: #ffc107;
   font-size: 25px;

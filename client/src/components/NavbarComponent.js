@@ -20,7 +20,7 @@ export default function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Log in</Nav.Link>
+            <Nav.Link href="#deets">Log out</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

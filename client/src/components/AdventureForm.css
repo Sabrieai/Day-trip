@@ -2,6 +2,7 @@
   display: flex;
   justify-content: start;
   padding-left: 50px;
+  align-items: center;
 }
 
 .form-section{
@@ -38,4 +39,11 @@ margin-right: 10px;
 }
 .create-header{
   padding: 15px 55px;
+}
+
+.Quote {
+  border-radius: 50%;
+  height: 400px;
+  width: 400px;
+  margin-left: 100px;
 }

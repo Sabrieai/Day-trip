@@ -108,18 +108,18 @@ export default function AdventureForm() {
   const handleDelete = async () => {
     const res = await deleteThisAdventure();
 
-    if (res.data.status === 'DELETED'){
+    if (res.data.status === 'DELETED') {
       routeChange();
     }
   }
-  
-const handleUpdate = async () => {
-  const res = await update();
-  if (res.data.status === 'SAVED'){
-    routeChange();
+
+  const handleUpdate = async () => {
+    const res = await update();
+    if (res.data.status === 'SAVED') {
+      routeChange();
+    }
+
   }
- 
-}
 
   console.log(season, `CATEGORY`)
   return (
@@ -275,6 +275,7 @@ const handleUpdate = async () => {
             <MenuItem value="summer">Summer</MenuItem>
             <MenuItem value="fall">Fall</MenuItem>
             <MenuItem value="winter">Winter</MenuItem>
+            <MenuItem value="all">All</MenuItem>
           </Select>
           <InputLabel id="demo-simple-select">Category</InputLabel>
           <Select
@@ -312,7 +313,7 @@ const handleUpdate = async () => {
               <Button style={{
                 borderRadius: 35,
                 backgroundColor: "#21b6ae",
-                width: 160, height:50,
+                width: 160, height: 50,
               }}
                 onClick={handleUpdate}
                 variant="contained"
@@ -325,7 +326,7 @@ const handleUpdate = async () => {
                 style={{
                   borderRadius: 35,
                   backgroundColor: "#C75D47",
-                  width: 160, height:50,
+                  width: 160, height: 50,
                 }}
                 onClick={handleDelete}
                 variant="contained"
@@ -335,7 +336,7 @@ const handleUpdate = async () => {
           </div>
 
         </div>
-
+        <img src="http://img.picturequotes.com/2/19/18449/and-so-the-adventure-begins-quote-1.jpg" alt="" className="Quote" />
       </Box>
     </main>
   );

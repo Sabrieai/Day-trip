@@ -7,7 +7,6 @@ export default function Reviews() {
   return (
     <div>
       <NavbarComponent />
-      REVIEWS FORM PAGE
       <ReviewForm />
     </div>
   )

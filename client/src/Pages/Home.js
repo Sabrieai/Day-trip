@@ -15,7 +15,7 @@ export default function Home() {
         position: "absolute",
         width: "100%",
         // left: "50%",
-        height: "100%",
+        height: "110%",
         objectFit: "cover",
         // transform: "translate(-50%, -50%)",
         zIndex: "-1"

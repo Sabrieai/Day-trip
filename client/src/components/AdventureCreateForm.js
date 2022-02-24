@@ -203,6 +203,7 @@ export default function AdventureForm() {
           <MenuItem value="summer">Summer</MenuItem>
           <MenuItem value="fall">Fall</MenuItem>
           <MenuItem value="winter">Winter</MenuItem>
+          <MenuItem value="all">All</MenuItem>
         </Select>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
         <Select
@@ -235,8 +236,8 @@ export default function AdventureForm() {
           </Button>
         </div>
 
-        {/* <button onClick={() => { submit(); routeChange(); }}>Submit</button> */}
       </div>
+      <img src="http://img.picturequotes.com/2/19/18449/and-so-the-adventure-begins-quote-1.jpg" alt="" className="Quote"/>
 
     </Box>
     </main>

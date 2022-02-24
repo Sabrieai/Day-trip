@@ -34,8 +34,8 @@ export default function Reservations(props) {
     <div>
       <NavbarComponent/>
 <ReservationsList reservations={today} passed={false} reviewed={reviewed} today={true}/>
-<ReservationsList reservations={past} passed={true} reviewed={reviewed}/>
 <ReservationsList reservations={future} passed={false} reviewed={reviewed}/>
+<ReservationsList reservations={past} passed={true} reviewed={reviewed}/>
     </div>
   )
 

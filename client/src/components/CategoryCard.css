@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+
 .results-container{
   display:inline-block;
   border-radius: 25px;
@@ -26,6 +28,7 @@ box-shadow: 1px 2px 8px gray;
 }
 .season-act{
   margin-left: 40px;
+  font-weight: 700;
 }
 .results-card-img{
   width: 100%;

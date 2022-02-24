@@ -55,7 +55,7 @@ export default function Myadventure() {
         <>
         <NavbarComponent/>
         
-            <h1>MY ADVENTURES</h1>
+            <h1 className="res-header">My Adventures</h1>
             {adventureList}
         </>
     )

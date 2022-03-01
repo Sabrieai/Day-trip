@@ -6,6 +6,26 @@ The inspiration for developing Daytrip was to make itinerary planning and choosi
 
 
 ## Final Product
+###### The placeholder is a randomly generated city from our database
+<img width="1424" alt="Screen Shot 2022-02-28 at 9 55 42 PM" src="https://user-images.githubusercontent.com/93690436/156096492-5fecc481-5860-4db9-84aa-13194a5002b0.png">
+<img width="1429" alt="Screen Shot 2022-02-28 at 9 56 26 PM" src="https://user-images.githubusercontent.com/93690436/156096499-689c888d-6453-4fb5-b4fc-68feb70ebc0a.png">
+<img width="1413" alt="Screen Shot 2022-02-28 at 9 55 12 PM" src="https://user-images.githubusercontent.com/93690436/156096514-1a05da6e-241b-405d-8241-49513895a786.png">
+
+###### Users can search by location
+
+![search](https://user-images.githubusercontent.com/93690436/156097445-75027dde-ed45-4e3c-8c6f-49886a16bef4.gif)
+
+###### Users can leave reviews and see the reviews left them
+
+![review page](https://user-images.githubusercontent.com/93690436/156094787-fefbc76a-746d-4043-ab06-47b53bd1a801.jpg)
+
+![reviews page](https://user-images.githubusercontent.com/93690436/156094772-6cfec4df-dda2-4ad9-89ef-cc9bc730e28f.png)
+
+###### Delete functionality
+
+![delete](https://user-images.githubusercontent.com/93690436/156094775-bd856bd2-7249-43b5-a893-d57d82ab961d.gif)
+
+
 
 ## Running the projects
 

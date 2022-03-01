@@ -12,8 +12,15 @@ The inspiration for developing Daytrip was to make itinerary planning and choosi
 <img width="1413" alt="Screen Shot 2022-02-28 at 9 55 12 PM" src="https://user-images.githubusercontent.com/93690436/156096514-1a05da6e-241b-405d-8241-49513895a786.png">
 
 ###### Users can search by location
+<img width="1059" alt="Screen Shot 2022-02-28 at 10 23 16 PM" src="https://user-images.githubusercontent.com/93690436/156099248-679b0aed-81ab-4378-92ca-366f9599163f.png">
 
-![search](https://user-images.githubusercontent.com/93690436/156097445-75027dde-ed45-4e3c-8c6f-49886a16bef4.gif)
+<img width="838" alt="Screen Shot 2022-02-28 at 10 23 34 PM" src="https://user-images.githubusercontent.com/93690436/156099291-2a0a824c-6ba7-405d-97b9-a9897bd83552.png">
+
+<img width="853" alt="Screen Shot 2022-02-28 at 10 23 50 PM" src="https://user-images.githubusercontent.com/93690436/156099217-58f83bb4-a94b-40ac-81e5-a6ea7a2d92a0.png">
+
+![chrome-capture (1)](https://user-images.githubusercontent.com/93690436/156099190-f986cc92-1943-4581-ad9a-87ef97514a91.jpg)
+
+
 
 ###### Users can leave reviews and see the reviews left them
 

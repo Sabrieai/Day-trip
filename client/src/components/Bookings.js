@@ -80,7 +80,7 @@ const Booking = (props) => {
                 <span className="booking__total_price"> <FaCalculator className="booking__calculator" /> {`Total: $${total}`}</span>
             </div>
             <h1> {props.day.availaible} </h1>
-            <button onClick={handleReservation} className={`booking__reserve_button__${props.day.available}__${props.passed}`}>{buttonText()}</button>
+            <button disabled={props.passed||!props.day.available} onClick={handleReservation} className={`booking__reserve_button__${props.day.available}__${props.passed}`}>{buttonText()}</button>
         </div>
     )
 }

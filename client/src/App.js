@@ -26,7 +26,12 @@ import UserProvider from './providers/UserProvider';
 
 const App = () => {
 return (
-    
+  <>
+  {/* <GoogleLogin
+  clientId='808382542479-3st5n36i6eamdtgu9bqghm4811s4aree.apps.googleusercontent.com'
+  onSuccess={responseGoogle}
+  onFailure={responseGoogle}
+  />  */}
     <Router>
        <UserProvider>
 
@@ -50,11 +55,7 @@ return (
         <Route path="/results/:query" element={<ResultsList />} />
 
 
-        {/* <GoogleLogin
-        clientId='808382542479-3st5n36i6eamdtgu9bqghm4811s4aree.apps.googleusercontent.com'
-        onSuccess={responseGoogle}
-        onFailure={responseGoogle} */}
-        {/* /> */}
+        
         {/* <ToggleFavourite />
           <SearchBar />
          </div> */}
@@ -62,6 +63,7 @@ return (
       </Routes>
       </UserProvider>
     </Router>
+    </>
   );
 
 };

@@ -4,7 +4,7 @@ import ReviewCard from "./ReviewCard";
 import { userContext } from "../providers/UserProvider";
 
 
-
+//reviews that other users have left for owner
 export default function ReviewsLeftForMeList() {
   const { getReviewsLeftForMe } = useApplicationData();
   const [reviewsLeft, setReviewsLeft] = useState([]);
@@ -13,7 +13,6 @@ export default function ReviewsLeftForMeList() {
      if(user.id){
     getReviewsLeftForMe(user.id)
       .then((data) => {
-        console.log('REVIEW LEFT', data)
         setReviewsLeft(data);
       })
     }
@@ -32,7 +31,6 @@ export default function ReviewsLeftForMeList() {
       />
     )
   })
-
 
   return (
     <section>

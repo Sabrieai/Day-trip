@@ -9,8 +9,8 @@
 }
 
 .header-leave-review{
-font-size: 14px;
-text-align: center;
+  font-size: 14px;
+  text-align: center;
 }
 .Star{
   text-align: center;
@@ -37,16 +37,16 @@ text-align: center;
   margin-top: 10px;
 }
 .review-thumbnail{
-border-radius: 25px;
-width: 40%;
-height: 450px;
+  border-radius: 25px;
+  width: 40%;
+  height: 450px;
 }
 .review-cover{
-border-radius: 25px;
-width: 50%;
-height: 450px;
-margin-left: 30px;
-margin-right: 10px;
+  border-radius: 25px;
+  width: 50%;
+  height: 450px;
+  margin-left: 30px;
+  margin-right: 10px;
 }
 .review-photos{
   display: flex;

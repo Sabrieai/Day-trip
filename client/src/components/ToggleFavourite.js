@@ -4,12 +4,11 @@ import { userContext } from "../providers/UserProvider";
 import { FaHeart } from 'react-icons/fa';
 import './ToggleFavourite.css';
 
+//toggle favourite for adventure
 export default function ToggleFavourite(props) {
   const [favourite, setFavourite] = useState(null);
   const { user} = useContext(userContext);
-  // const [hover, setHover] = useState(null);
   const id = props.id;
-  console.log("ID",id);
   const {
     postFavourite,
     deleteFavourite
@@ -24,8 +23,6 @@ export default function ToggleFavourite(props) {
     deleteFavourite(user.id, id);
     setFavourite(favourite + 1);
   }
-
-
 
   return (
     <label className='favourite'>

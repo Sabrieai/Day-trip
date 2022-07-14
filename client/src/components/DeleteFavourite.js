@@ -4,16 +4,14 @@ import { FaHeart } from 'react-icons/fa';
 import { userContext } from "../providers/UserProvider";
 import './ToggleFavourite.css';
 
-
+//unfavourite an adventure by clicking icon
 export default function DeleteFavourite(props) {
   const [favourite, setFavourite] = useState(null);
   const { user} = useContext(userContext);
   const id = props.id;
-  console.log("ID",id);
   const {
     deleteFavourite
   } = useApplicationData()
-
 
   const onDelete = () => {
     deleteFavourite(user.id, id);
@@ -24,11 +22,8 @@ export default function DeleteFavourite(props) {
     window.location.reload();
   }
 
-  console.log(favourite, "STATE OF FAVOURITE")
-
   return (
     <label className='favourite'>
-
       <FaHeart className='favouriteIcon' id='heart'
         color={"#f0246f"} 
         onClick={onDelete}

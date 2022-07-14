@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router';
 import ResultsList from '../components/ResultsList';
 import NavbarComponent from '../components/NavbarComponent';
 
-
 export default function Results() {
   let navigate = useNavigate();
   return (
@@ -13,5 +12,4 @@ export default function Results() {
       <ResultsList />
     </div>
   )
-
 }

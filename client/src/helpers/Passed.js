@@ -1,5 +1,4 @@
 // function that takes in a day and returns if that day has passed/its today or not
-
 const isPassed = (day) => {
   const today = new Date();
   const todayDay = today.getDay();
@@ -24,7 +23,6 @@ const isPassed = (day) => {
   if (day === 'Saturday' && todayDay === 0) {
     passed = true
   }
-
  return passed;
 }
 

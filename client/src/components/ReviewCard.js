@@ -3,10 +3,9 @@ import useApplicationData from './../hooks/useApplicationData';
 import './ReviewCard.css'
 import {FaStar} from 'react-icons/fa'
 
-
+//single review of an adventure
 export default function ReviewCard(props) {
 
-  console.log('REVIEW PROPS', props);
   return (
     <section className="review__card">
       <div className="review__profile">

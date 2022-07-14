@@ -7,7 +7,7 @@
   vertical-align:top;
 }
 .results-container:hover{
-box-shadow: 1px 2px 8px gray;
+  box-shadow: 1px 2px 8px gray;
 }
 
 .results-card{
@@ -53,7 +53,6 @@ box-shadow: 1px 2px 8px gray;
   color: rgb(64, 161, 140);
 }
 
-
 .adventure-card-pp{
   font-size: 14px;
 }
@@ -74,8 +73,8 @@ box-shadow: 1px 2px 8px gray;
 .results-card-accesible{
   display: flex;
   flex-direction: row;
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
   color:  #4fa4ea;;
   font-size: xx-large;
   position:relative;
@@ -84,5 +83,4 @@ align-items: center;
   width: 15%;
   height: 40px;
   border-radius: 10px;
-
 }

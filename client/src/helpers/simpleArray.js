@@ -1,5 +1,4 @@
 
-
 const simpleArray = (reviewed) => {
   const results = [];
   for (const review of reviewed) {

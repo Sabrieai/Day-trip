@@ -30,6 +30,4 @@ const getReservationDate = (day) => {
   return formatted;
 };
 
-console.log(getReservationDate('Monday'));
-
 module.exports = { getReservationDate };

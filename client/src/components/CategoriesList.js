@@ -1,6 +1,7 @@
 import React from "react"
 import "./CategoriesList.css"
 
+//list of categories on homepage
 export default function CategoriesList() {
   return (
 

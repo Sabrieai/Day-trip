@@ -1,12 +1,10 @@
-/* eslint-disable camelcase */
 const express = require("express");
 const router = express.Router();
 const listingQueries = require('../db/listings_queries');
-//create, update, delete adventure form
+//create, update adventure form
 
 //create an adventure
 router.post("/", (req, res) => {
-  // userId = req.session.user_id;
   const owner_id = req.body.owner_id;
   const title = req.body.title;
   const description = req.body.description;
@@ -29,7 +27,6 @@ router.post("/", (req, res) => {
     .then((data) => {
       listingQueries.createAvailability(data[0].id)
         .then((data) => {
-          console.log(data);
           res.status(200).json({ status: 'CREATED'});
         });
       
@@ -39,8 +36,8 @@ router.post("/", (req, res) => {
     });
 });
 
+//update adventure
 router.put("/", (req, res) => {
-  // userId = req.session.user_id
   const adventure = req.body.adventure;
   const title = req.body.title;
   const description = req.body.description;
@@ -59,11 +56,9 @@ router.put("/", (req, res) => {
   const max_occupancy = req.body.max_occupancy;
   const season = req.body.season;
   const category = req.body.category;
-  console.log(`SEASON`,season);
   listingQueries.updateListing(adventure, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category)
     .then((data) => {
       //res.send(data);
-      console.log(`DATA`, data);
       res.status(200).json({ status: 'SAVED'});
      
     })

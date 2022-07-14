@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert'
 
 
+//default error message
 export default function ErrorMsg() {
   const [show, setShow] = useState(true);
   const navigate = useNavigate();
@@ -18,7 +19,6 @@ export default function ErrorMsg() {
           {show && <button className="results-back-btn" onClick={() => navigate(-1)}>Back</button>}
         </div>
       </Alert>
-
     </>
   );
 }

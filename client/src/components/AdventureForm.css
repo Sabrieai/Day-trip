@@ -17,7 +17,6 @@
 
 #demo-simple-select-label{
   font-size: 12px;
-  /* padding-bottom: 0px; */
   margin-bottom: -15px;
 }
 #demo-simple-select{
@@ -26,7 +25,7 @@
 }
 
 .update-btn{
-margin-right: 10px;
+  margin-right: 10px;
 }
 
 .update-delete-btns{

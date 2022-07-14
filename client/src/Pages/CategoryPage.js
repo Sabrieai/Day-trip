@@ -6,9 +6,7 @@ import NavbarComponent from '../components/NavbarComponent';
 
 export default function Categories() {
   const params = useParams();
-  console.log('PARAMS----', params)
   return (
-
     <div>
       <NavbarComponent />
       <Routes>

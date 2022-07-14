@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import PublishIcon from '@mui/icons-material/Publish';
 
-
+//review form to leave a review
 export default function ReviewForm() {
   const { user } = useContext(userContext)
   const {
@@ -57,7 +57,6 @@ export default function ReviewForm() {
   }
   }
   
-
   return (
     <main className="review__form__page">
       <div className="Views">
@@ -65,9 +64,7 @@ export default function ReviewForm() {
           <img className="review-cover" src={views.cover_photo_url} alt="" />
           <img className="review-thumbnail" src={views.thumbnail_photo_url} alt="" />
         </div>
-
         <div className="review-host-profile">
-
           <img className="review-host-img" src={views.pic} alt="" />
           <div className="review-host-name">
             Hosted by: {views.first_name} {views.last_name}

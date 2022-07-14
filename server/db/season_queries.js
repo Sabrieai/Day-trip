@@ -1,6 +1,5 @@
 const { pool } = require('./database');
 
-
 const getSeason = (season) => {
   return pool.query(`SELECT * FROM adventures 
   WHERE season = '${season}';

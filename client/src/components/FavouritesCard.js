@@ -2,9 +2,9 @@ import React from "react"
 import Deleter from "./DeleteFavourite";
 import './FavouritesCard.css'
 
+//individual favourited adventures
 export default function FavouritesCard(props) {
 const link = `/adventures/${props.id}`;
-  console.log('FAV PROPS', props);
   return (
     <div className="center">
     <section className="favourites__card">

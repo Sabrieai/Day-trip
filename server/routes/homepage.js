@@ -4,9 +4,7 @@ const homepage = require('../db/home_queries.js');
 const categoryQueries = require('../db/category_queries.js');
 const seasonQueries = require('../db/season_queries');
 
-
-
-// VALID
+//get login page 
 router.get('/login/:id', (req, res) => {
   const user = req.params.id;
   homepage.getUser(user)
@@ -19,19 +17,18 @@ router.get('/login/:id', (req, res) => {
 
 });
 
-//post to search form VALID
+//post to search form
 router.get('/search/:input', (req, res) => {
   homepage.searchDestination(req.params.input)
     .then((results) => {
       res.json(results);
-      // console.log(results)
     })
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
 });
 
-//get for placeholder VALID
+//get for placeholder text
 router.get('/', (req, res) => {
   homepage.placeholder()
     .then((destination) => {
@@ -58,6 +55,7 @@ router.get('/:category', (req, res) => {
     });
 });
 
+//get adventures by season
 router.get('/api/:season', (req, res) => {
   const season = req.params.season;
   seasonQueries.getSeason(season)

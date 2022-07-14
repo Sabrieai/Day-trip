@@ -2,13 +2,7 @@ const express = require("express");
 const router = express.Router();
 const reviews = require('../db/reviews_queries');
 
-//VALID
-// router.get('/', (req, res) => {
-//   const id = req.session.user_id;
-//   res.redirect(`reviews/${id}`);
-// });
-
-//VALID
+//get reviews left by you
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   reviews.getMyAdventureReviews(id)
@@ -17,6 +11,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//get reviews users left for you
 router.get('/view/:id', (req, res) => {
   const id = req.params.id;
   reviews.getReviewsViews(id)

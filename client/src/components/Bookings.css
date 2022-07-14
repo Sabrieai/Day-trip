@@ -40,8 +40,8 @@
   background-color: #f65353;
   height: 30px;
   width: 40%;
- margin-left: 20px;
- margin-bottom: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .booking__reserve_button__false__true {
@@ -51,9 +51,9 @@
   background-color:grey;
   height: 30px;
   width: 40%;
- margin-left: 20px;
- margin-bottom: 10px;
- font-weight: 700;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .booking__reserve_button__false__false {
@@ -63,9 +63,9 @@
   background-color: grey;
   height: 30px;
   width: 40%;
-margin-left: 20px;
-margin-bottom: 10px;
-font-weight: 700;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .booking__reserve_button__true__true{
@@ -75,9 +75,9 @@ font-weight: 700;
   background-color: grey;
   height: 30px;
   width: 40%;
-margin-left: 20px;
-margin-bottom: 10px;
-font-weight: 700;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .booking__card__false__false {

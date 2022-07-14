@@ -16,7 +16,6 @@ export default function NavBar() {
             <NavDropdown title="My Adventures" id="collasible-nav-dropdown">
               <NavDropdown.Item href="/user/view">View</NavDropdown.Item>
               <NavDropdown.Item href="/user/create">Create</NavDropdown.Item>
-            
             </NavDropdown>
           </Nav>
           <Nav>

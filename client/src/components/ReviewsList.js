@@ -4,7 +4,7 @@ import useApplicationData from '../hooks/useApplicationData';
 import { userContext } from "../providers/UserProvider";
 import ReviewCard from "./ReviewCard";
 
-
+//display all reviews
 export default function ReviewsList() {
   const { getReviewsILeft } = useApplicationData();
   const [reviews, setReviews] = useState([]);
@@ -13,7 +13,6 @@ export default function ReviewsList() {
    if (user.id) {
     getReviewsILeft(user.id)
       .then((data) => {
-        console.log('REVIEW LIST', data)
         setReviews(data);
       })
     }
@@ -32,7 +31,6 @@ export default function ReviewsList() {
       />
     )
   })
-
 
   return (
     <section>

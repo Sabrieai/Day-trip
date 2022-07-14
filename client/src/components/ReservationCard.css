@@ -16,6 +16,7 @@
   flex-direction: row;
   height: 300px;
 }
+
 .res-img-div:hover {
   box-shadow: 1px 2px 8px gray;
 }
@@ -24,6 +25,7 @@
 margin-left: 50px;
 font-weight: 700;
 }
+
 .review-btn{
   background-color: rgb(64, 161, 140);
   border: 0px solid transparent;
@@ -43,12 +45,12 @@ font-weight: 700;
   font-weight: 700;
 }
 .review-btn-div{
-display: flex;
-flex-direction: row;
-justify-content: end;
-margin-right: 100px;
-position: relative;
-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-right: 100px;
+  position: relative;
+  bottom: 100px;
 }
 
 
@@ -58,8 +60,8 @@ bottom: 100px;
 
 .res-title{
   font-size: 25px;
-font-weight: 700;
-color: rgb(64, 161, 140);
+  font-weight: 700;
+  color: rgb(64, 161, 140);
 
 }
 .res-city{
@@ -67,13 +69,14 @@ color: rgb(64, 161, 140);
   margin-bottom: 30px;
 
 }
+
 .res-date{
   font-size: 18px;
   font-weight: 600;
 }
+
 .res-date-act{
   color: rgb(64, 161, 140);
-font-size: 18px;
-font-weight: 600;
-
+  font-size: 18px;
+  font-weight: 600;
 }

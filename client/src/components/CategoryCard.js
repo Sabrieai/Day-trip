@@ -4,6 +4,7 @@ import "./CategoryCard.css"
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { FaWheelchair } from 'react-icons/fa';
 
+//display discounted price
 function Cheaper(props){
   return(
     <div>
@@ -12,10 +13,10 @@ function Cheaper(props){
     </div>
   )
 }
+
+//individual cards for selected category
 export default function CategoryCard(props) {
   const link = `/adventures/${props.id}`;
-  console.log(props);
-  //props.price undefined
   return (
     <main className="results-container">
 

@@ -7,7 +7,6 @@ export const userContext = createContext();
 
 // Create a Component wrapper from Context.Provider
 export default function UserProvider(props) {
-
   const [user, setUser] = useState({});
   const { getUser } = useApplicationData();
    useEffect(() =>{
@@ -17,9 +16,7 @@ export default function UserProvider(props) {
 })
 }, [])
 
-console.log("USER IN CONTEXT", user)
   const providerData = {user};
-
 
   return (
     <userContext.Provider value={providerData}>

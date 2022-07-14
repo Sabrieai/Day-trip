@@ -2,12 +2,6 @@ const express = require("express");
 const router = express.Router();
 const reviews = require('../db/reviews_queries');
 
-// //redirect to get reviews for user VAILD
-// router.get('/', (req, res) => {
-//   const id = req.params.user_id;
-//   res.redirect(`myreviews/${id}`);
-// });
-
 // get reviews for a user VALID
 router.get('/:id', (req, res) => {
   const id = req.params.id;
@@ -24,7 +18,7 @@ router.post('/', (req, res) => {
   const reservation = req.body.reservation;
   const rating = req.body.rating;
   const comment = req.body.comment;
-  console.log(req.body);
+
   reviews.addReview(guest, adventure, reservation, rating, comment)
     .then(() => {
       res.status(200).json({ status: 'REVIEWED' });

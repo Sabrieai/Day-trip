@@ -11,7 +11,6 @@ export default function useApplicationData() {
       comment
     })
       .then(function(response) {
-        console.log(response);
         return response
       })
       .catch(function(error) {
@@ -50,7 +49,6 @@ export default function useApplicationData() {
   const deleteAdventure = (id) => {
     return axios.delete(`http://localhost:8080/adventures/${id}`)
       .then((data) => {
-        console.log(data);
         return data
       })
       .catch((error) => {
@@ -79,7 +77,6 @@ export default function useApplicationData() {
       category
     })
       .then(function(response) {
-        console.log(response);
         return response;
       })
       .catch(function(error) {
@@ -110,7 +107,6 @@ export default function useApplicationData() {
       adventure
     })
       .then(function(response) {
-        console.log(response);
       })
       .catch(function(error) {
         console.log(error);
@@ -118,10 +114,8 @@ export default function useApplicationData() {
   };
 
   const deleteFavourite = (user, adventure) => {
-
     return axios.delete(`http://localhost:8080/favourites/${user}/${adventure}`)
       .then(function(response) {
-        console.log(response);
         return response
       })
       .catch(function(error) {
@@ -130,7 +124,6 @@ export default function useApplicationData() {
   };
 
   const getFavourites = (id) => {
-
    return axios.get(`http://localhost:8080/favourites/${id}`)
       .then(function(response) {
         return response.data;
@@ -141,10 +134,8 @@ export default function useApplicationData() {
   }
 
   const getReservations = (id) => {
-
    return axios.get(`http://localhost:8080/reservation/${id}`)
       .then(function(response) {
-        console.log("response.data.reservations", response.data)
         return response.data;
       })
       .catch(function(error) {
@@ -153,10 +144,8 @@ export default function useApplicationData() {
   }
 
   const getReviewsILeft = (id) => {
-
    return axios.get(`http://localhost:8080/myreviews/${id}`)
       .then(function(response) {
-        console.log("response.data.MYREVIEWS", response.data)
         return response.data;
       })
       .catch(function(error) {
@@ -165,10 +154,8 @@ export default function useApplicationData() {
   }
 
   const getReviewsLeftForMe = (id) => {
-
    return axios.get(`http://localhost:8080/reviews/${id}`)
       .then(function(response) {
-        console.log("response.data.reviewsleft", response.data)
         return response.data;
       })
       .catch(function(error) {
@@ -179,7 +166,6 @@ export default function useApplicationData() {
   const getAdventure = (id) => {
     return axios.get(`http://localhost:8080/adventures/${id}`)
     .then(function(response) {
-      console.log("MY ADVENTURES", response.data)
       return response.data;
     })
     .catch(function(error) {
@@ -190,7 +176,6 @@ export default function useApplicationData() {
   const getMyAdventures = (id) => {
     return axios.get(`http://localhost:8080/adventures/user/${id}`)
     .then(function(response) {
-      console.log("response.data.adventure", response.data)
       return response.data;
     })
     .catch(function(error) {
@@ -201,7 +186,6 @@ export default function useApplicationData() {
   const getCategory = (category) =>{
     return axios.get(`http://localhost:8080/${category}`)
     .then(function(response) {
-      console.log("CATEGORY RESPONSE.DATA", response.data)
       return response.data;
     })
     .catch(function(error) {
@@ -212,7 +196,6 @@ export default function useApplicationData() {
   const getSeason = (season) =>{
     return axios.get(`http://localhost:8080/api/${season}`)
     .then(function(response) {
-      console.log("SEASON RESPONSE.DATA", response.data)
       return response.data;
     })
     .catch(function(error) {

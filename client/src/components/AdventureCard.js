@@ -11,8 +11,7 @@ import { FaWheelchair } from 'react-icons/fa';
 import Button from '@mui/material/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-
-
+//individual adventure cards
 export default function AdventureCard() {
   const { user } = useContext(userContext);
   const { getAdventure, getAdventureReviews } = useApplicationData();
@@ -27,7 +26,6 @@ export default function AdventureCard() {
   const params = useParams();
   const adventureId = Number(params.id);
   useEffect(() => {
-
     getAdventure(adventureId)
       .then((data) => {
         setAdventure(data.adventure[0]);
@@ -39,23 +37,14 @@ export default function AdventureCard() {
             setReviews(data)
           })
       })
-
-
   }, [adventureId])
 
-  console.log(reviews, "REVIEWS")
-
-  // if update is a popup on THIS page we can pass down props
-  console.log(adventure, "Adventure")
-  console.log(reviews, "Reviews")
-
+  //display accessibility icon if true else leave blank
   const accessibilty = () => {
-   return adventure.accessible? <FaWheelchair className="chair" /> : ''
+    return adventure.accessible ? <FaWheelchair className="chair" /> : ''
   }
   return (
     <section>
-
-
       <div className="adventure__title">{accessibilty()}{adventure.title}</div>
       <div className="adventure__city_province"><FaMapMarked /> {adventure.city}, {adventure.province_state}, {adventure.country}</div>
       <div className="adventure_favourite">
@@ -93,7 +82,6 @@ export default function AdventureCard() {
       <div className="activty-page-reviews">
         <ActivityReviews reviews={reviews} />
       </div>
-
     </section>
   )
 }

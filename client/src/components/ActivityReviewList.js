@@ -1,9 +1,8 @@
 import React from "react";
 import ReviewCard from "./ReviewCard";
 
+//Adventure review list component
 export default function ActivityReviews(props) {
-
-
   const activityReviewList = props.reviews.map((review, i) => {
     return (
       <ReviewCard
@@ -21,6 +20,5 @@ export default function ActivityReviews(props) {
     <section>
       {activityReviewList}
     </section>
-
   )
 };

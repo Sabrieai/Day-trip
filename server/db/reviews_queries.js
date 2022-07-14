@@ -1,6 +1,5 @@
 const { pool } = require('./database');
 
-
 const getReviewForm = (id) => {
   return pool.query(`SELECT thumbnail_photo_url, cover_photo_url, users.pic, users.first_name, users.last_name, adventures.id  FROM adventures
   JOIN users ON users.id = owner_id  
@@ -104,8 +103,6 @@ const getReviewed = (id) => {
     .catch((err) => {
       return err.message;
     });
-
 };
-
 
 module.exports = { getReviewForm, addReview, getMyAdventureReviews, getMyReviews, getReviewsViews, getAdventureReviews, getReviewed };

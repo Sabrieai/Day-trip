@@ -7,16 +7,14 @@
   top: 0;
   z-index: 1;
 }
-.colour-nav{
-}
 
 .nav-link{
   color: black;
-font-size: 15px;
+  font-size: 15px;
 }
 .nav-link:hover{
   color: black;
-font-size: 15px;
+  font-size: 15px;
 }
 
 #collasible-nav-dropdown{

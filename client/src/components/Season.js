@@ -2,20 +2,16 @@ import React, { useState, useEffect } from "react"
 import { useParams } from "react-router";
 import useApplicationData from '../hooks/useApplicationData';
 import CategoryCard from "./CategoryCard";
-// import './FavouritesCard.css';
 
+//results based off season selection
 export default function Season() {
   const params = useParams();
-  console.log('PARAMSIN SEASON', params);
-
   const { getSeason } = useApplicationData();
   const [seasons, setSeasons] = useState([]);
   useEffect(() => {
-
     getSeason(params.season)
       .then((data) => {
         setSeasons(data);
-        console.log(data)
       })
   }, [])
 
@@ -33,7 +29,6 @@ export default function Season() {
       />
     )
   })
-
 
   return (
     <section>

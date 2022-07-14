@@ -41,6 +41,4 @@ const getAvailibilty = (id) => {
     });
 };
 
-
-
 module.exports = { getAdventureDetails, getAvailibilty, getAdventuresForUser };

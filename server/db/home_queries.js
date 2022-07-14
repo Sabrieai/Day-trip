@@ -1,6 +1,5 @@
 const { pool } = require('./database');
 
-
 const getCategories = () => {
   return pool.query(`SELECT DISTINCT category FROM adventures;`)
     .then((response) => {
@@ -16,7 +15,6 @@ const placeholder = () => {
   )
     .then(data => {
       const x = Math.floor(Math.random() * data.rows[0].count) + 1;
-      console.log(`X`, x);
       return pool.query(`SELECT city, id FROM adventures where id = ${x};`);
     })
     .then(data => {
@@ -24,8 +22,6 @@ const placeholder = () => {
     });
 };
 
-
-//issue with SQL injection
 const searchDestination = (search) => {
   return pool.query(`
     SELECT id, thumbnail_photo_url, title, description, city, curr_price, prev_price, accessible

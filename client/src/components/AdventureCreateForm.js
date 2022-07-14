@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import "./AdventureForm.css"
 
+//new adventure form
 export default function AdventureForm() {
   const {
     postAdventure
@@ -224,7 +225,6 @@ export default function AdventureForm() {
           <MenuItem value="Nature and Outdoors">Nature and Outdoors</MenuItem>
         </Select>
 
-
         <div className="create-btn">
           <Button 
           onClick={handleCreate} 
@@ -235,10 +235,8 @@ export default function AdventureForm() {
             Create
           </Button>
         </div>
-
       </div>
       <img src="http://img.picturequotes.com/2/19/18449/and-so-the-adventure-begins-quote-1.jpg" alt="" className="Quote"/>
-
     </Box>
     </main>
   );

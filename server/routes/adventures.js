@@ -4,7 +4,7 @@ const adventureQueries = require('../db/adventure_details_queries');
 const listingQueries = require('../db/listings_queries');
 //get adventure queries & adventures page
 
-//gets all adventures a user created VALID
+//gets all adventures a user created
 router.get("/user/:id", (req, res) => {
   const id = req.params.id;
   adventureQueries.getAdventuresForUser(id)
@@ -16,7 +16,7 @@ router.get("/user/:id", (req, res) => {
     });
 });
 
-//gets the details for an individual adventure page VALID
+//gets the details for an individual adventure page
 router.get("/:id", (req, res) => {
   const id = req.params.id;
   adventureQueries.getAdventureDetails(id)
@@ -32,6 +32,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//delete adventure
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
   listingQueries.deleteListing(id)

@@ -10,8 +10,6 @@ router.get('/', (req, res) => {
   res.redirect(`reservation/${id}`);
 });
 
-
-
 //gets reservations for a user VALID
 router.get('/:id', (req, res) => {
   const id = req.params.id;
@@ -30,7 +28,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
 //posts reservation into reservations table and updates availibiltiy
 router.post('/', (req, res) => {
   const adventure = req.body.adventure;
@@ -40,10 +37,6 @@ router.post('/', (req, res) => {
   const day = req.body.day;
   const date = getReservationDate(day);
   const paymentId = req.body.paymentId;
-
-  console.log(date, `DATE`);
-  console.log(req.body, `REQ.BODY`);
-  console.log(totalGuests);
 
   reservations.addReservation(date, totalPrice, guest, paymentId, totalGuests, adventure)
     .then(() => {

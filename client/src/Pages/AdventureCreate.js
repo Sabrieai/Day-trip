@@ -8,7 +8,6 @@ export default function AdventureCreate() {
     <main className="adventure__form">
       <NavbarComponent/>
       <AdventureCreateForm />
- 
     </main>
   )
 }

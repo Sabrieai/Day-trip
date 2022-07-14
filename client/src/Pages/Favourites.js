@@ -7,10 +7,9 @@ export default function Favourites() {
   let navigate = useNavigate();
   return (
     <div className='favourite-header'>
-      <NavbarComponent/>
+      <NavbarComponent />
       <h1 className="my-fav-title">My Favourites</h1>
-      <FavouritesList/>
+      <FavouritesList />
     </div>
   )
-
 }

@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import "./AdventureForm.css"
 
-
+//update adventure form
 export default function AdventureForm() {
   const {
     getAdventure,
@@ -22,7 +22,6 @@ export default function AdventureForm() {
 
   const params = useParams();
   const adventureId = Number(params.id);
-  console.log(adventureId);
 
   let navigate = useNavigate();
 
@@ -95,13 +94,11 @@ export default function AdventureForm() {
       season,
       category
     );
-    console.log(`OUTPUT`, output)
     return output;
   }
 
   const deleteThisAdventure = async () => {
     const output = await deleteAdventure(adventureId);
-    console.log(`OUTPUT`, output)
     return output
   }
 
@@ -121,7 +118,6 @@ export default function AdventureForm() {
 
   }
 
-  console.log(season, `CATEGORY`)
   return (
     <main>
       <h1 className="update-header">Update an Adventure</h1>

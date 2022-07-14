@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react"
 import { useParams } from "react-router";
 import useApplicationData from '../hooks/useApplicationData';
 import CategoryCard from "./CategoryCard";
-// import './FavouritesCard.css';
 
+//renders activities of a selected category
 export default function Category() {
   const params = useParams();
-  console.log('PARAMSIN CATEGORY', params);
 
   const { getCategory } = useApplicationData();
   const [categories, setCategory] = useState([]);
@@ -32,7 +31,6 @@ export default function Category() {
       />
     )
   })
-
 
   return (
     <section>

@@ -7,7 +7,6 @@ VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $
 RETURNING id;
 `, [owner_id, title, description, thumbnail_photo_url, cover_photo_url, prev_price, curr_price, accessible, street, city, province_state, post_code_zip, country, active, is_full, max_occupancy, season, category])
     .then((response) => {
-      console.log('RESPONSE', response);
       return response.rows;
     })
     .catch((err) => {

@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { GoogleLogin } from 'react-google-login';
 import Home from './Pages/Home';
 import Favourites from './Pages/Favourites'
 import Reservations from './Pages/Reservations';
@@ -17,27 +16,13 @@ import Category from './Pages/CategoryPage';
 import Myadventure from './components/MyAdventure';
 import ResultsList from './Pages/Results'
 import Season from './Pages/SeasonPage'
-// import NavbarComponent from './components/NavbarComponent';
 import UserProvider from './providers/UserProvider';
-
-// const responseGoogle = response => {
-//   console.log(response);
-// };
 
 const App = () => {
 return (
   <>
-  {/* <GoogleLogin
-  clientId='808382542479-3st5n36i6eamdtgu9bqghm4811s4aree.apps.googleusercontent.com'
-  onSuccess={responseGoogle}
-  onFailure={responseGoogle}
-  />  */}
     <Router>
        <UserProvider>
-
-      {/* <nav>
-      < NavbarComponent/>
-      </nav> */}
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/favourites" element={<Favourites />} />
@@ -53,13 +38,6 @@ return (
         <Route path="/category/*" element={<Category />} />
         <Route path="/season/*" element={<Season />} />
         <Route path="/results/:query" element={<ResultsList />} />
-
-
-        
-        {/* <ToggleFavourite />
-          <SearchBar />
-         </div> */}
-
       </Routes>
       </UserProvider>
     </Router>

@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
 
 body {
-font-family: 'Raleway', sans-serif;
-font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
 }
 
 .adventure__title {
@@ -20,17 +20,19 @@ font-weight: 500;
   text-decoration: underline grey 1px;
   margin-left: 60px;
 }
+
 .update-btn-adv{
  display: flex;
  justify-content: end;
-margin-right: 120px;
+  margin-right: 120px;
 }
+
 .adventure_cover_photo {
   width: 50%;
   height: 450px;
   border-radius: 25px;
- margin-left: 30px;
- margin-right: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
 }
 
 .adventure_thumbnail_photo {
@@ -53,11 +55,11 @@ margin-right: 120px;
 }
 
 .adventure_host_pic {
-border-radius: 50%;
-width: 50px;
-height: 20%;
-margin-left: 50px;
-margin-top: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 20%;
+  margin-left: 50px;
+  margin-top: 15px;
 }
 
 .adventure__about_title {
@@ -76,8 +78,8 @@ margin-top: 15px;
 }
 
 .adventure__description_div {
-width: 60%;
-margin-top: 20px;
+  width: 60%;
+  margin-top: 20px;
 }
 
 .adventure__price {
@@ -85,14 +87,14 @@ margin-top: 20px;
   font-weight: 500;
   font-size: 20px;
   margin-left: 60px;
-margin-top: 15px;
+  margin-top: 15px;
 }
 
 .adventure_favourite {
-position: relative;
-left: 1140px;
-margin-top: 20px;
-margin-bottom: 10px;
+  position: relative;
+  left: 1140px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .adventure__photo_set {
@@ -113,9 +115,10 @@ margin-bottom: 10px;
 }
 
 .back-btn-div{
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
+
 .results-back-btn{
   border: 1px solid transparent;
   border-radius: 35px;
@@ -126,10 +129,11 @@ justify-content: center;
   color: white;
   font-weight: 700;
 }
+
 .results-back-btn:hover{
   box-shadow: 1px 2px 8px gray;
-
 }
+
 .chair{
   color: #4fa4ea;
 }

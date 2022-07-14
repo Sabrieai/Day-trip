@@ -4,13 +4,11 @@ import { useParams } from 'react-router-dom';
 import CategoryCard from './CategoryCard';
 import ErrorMsg from './ErrorMsg.js'
 
-
+//search results
 export default function ResultsList() {
-
   const [results, setResults] = useState([]);
   const { handleSearch } = useApplicationData();
   const params = useParams();
-  console.log('SEARCH', params);
   const search = params.query;
   useEffect(() => {
     handleSearch(search)
@@ -18,10 +16,8 @@ export default function ResultsList() {
         setResults(data.data);
       })
   }, [])
-  console.log(results, "******")
  
   const localList = results.map((result, i) => {
-    
     return (
       <CategoryCard
         key={i}
@@ -41,6 +37,5 @@ export default function ResultsList() {
       {results.length > 0 ? localList : <ErrorMsg /> }
     </div>
   )
-
 }
 
